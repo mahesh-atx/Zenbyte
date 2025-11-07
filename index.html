@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenByte Software Solutions - Intelligent Software for a Digital World</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Load Lucide Icons for high-quality SVG icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Load GSAP and ScrollTrigger for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <style>
+        /* Custom Font Setup (Inter is recommended for readability) */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        
+        /* --- Minimal Custom CSS for Complex Effects --- */
+        
+        /* Hero Dotted Background: Requires CSS pseudo-element for complex pattern */
+        #hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Creates small white dots on a transparent background */
+            background-image: radial-gradient(#FFFFFF 1px, transparent 1px);
+            background-size: 30px 30px; /* Spacing of the dots */
+            opacity: 0.15; /* Visibility setting for the dotted pattern */
+            z-index: 0;
+        }
+
+        /* Typing cursor animation keyframes */
+        .typing-cursor {
+            border-right: 2px solid #FFFFFF;
+            animation: blink-cursor 0.75s step-end infinite;
+        }
+
+        @keyframes blink-cursor {
+            from, to { border-color: transparent }
+            50% { border-color: #FFFFFF; }
+        }
+        /* --- End Minimal Custom CSS --- */
+    </style>
+</head>
+<body class="font-['Inter'] bg-[#0A0A0A] text-gray-100 scroll-smooth">
+
+    <!-- Header / Navigation -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 backdrop-blur-md bg-[#0A0A0A]/90 border-b border-[#1F2937]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo (Used arbitrary color for contrast) -->
+                <a href="#" class="text-2xl font-extrabold text-white tracking-widest">
+                    ZEN<span class="text-[#B0B0B0]">BYTE</span>
+                </a>
+                <!-- Nav Links -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-sm font-medium text-gray-400 hover:text-white transition duration-150">About</a>
+                    <a href="#services" class="text-sm font-medium text-gray-400 hover:text-white transition duration-150">Services</a>
+                    <a href="#projects" class="text-sm font-medium text-gray-400 hover:text-white transition duration-150">Projects</a>
+                    <a href="#testimonials" class="text-sm font-medium text-gray-400 hover:text-white transition duration-150">Testimonials</a>
+                    <a href="#process" class="text-sm font-medium text-gray-400 hover:text-white transition duration-150">Process</a>
+                    <a href="#contact-form" class="px-4 py-2 text-sm font-semibold rounded-lg bg-white text-gray-900 shadow-lg hover:bg-opacity-90 transition duration-150">Contact Us</a>
+                </nav>
+                <!-- Mobile Menu Icon - omitted for single file simplicity but structure is responsive -->
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. HERO SECTION (Engaging and Attractive) -->
+        <section id="hero-section" class="pt-32 pb-24 lg:pt-48 lg:pb-36 text-center 
+                                          relative overflow-hidden 
+                                          bg-gradient-to-br from-[#0A0A0A] via-[#111111] to-[#0A0A0A]">
+            <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <p class="text-lg font-semibold text-gray-400 mb-4 uppercase tracking-wider">ZenByte Software Solutions</p>
+                
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
+                    Engineering the Future, <br class="hidden sm:block">
+                    <!-- Text accent now white, as defined by typing cursor CSS -->
+                    <span id="typing-text" class="text-white">Intelligent Software</span>
+                    <span class="typing-cursor">|</span>
+                </h1>
+                
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-10">
+                    We build scalable, robust, and data-driven solutions that transform businesses and unlock next-level efficiency.
+                </p>
+
+                <div class="flex justify-center space-x-4">
+                    <a href="#contact-form" class="px-8 py-3 bg-white text-gray-900 font-bold rounded-xl shadow-2xl shadow-white/40 transform hover:scale-[1.03] transition duration-300">
+                        Get a Free Quote
+                    </a>
+                    <a href="#services" class="px-8 py-3 border border-gray-600 text-white font-semibold rounded-xl hover:bg-gray-800 transition duration-300">
+                        Explore Services
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 2. ABOUT ZENBYTE SECTION -->
+        <section id="about" class="py-20 lg:py-28 bg-[#1A1A1A]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="gsap-content">
+                        <span class="text-sm font-medium text-gray-400 uppercase tracking-widest mb-2 block">Who We Are</span>
+                        <h2 class="text-4xl font-bold text-white mb-6">Pioneering Digital Transformation Since 2018.</h2>
+                        <p class="text-lg text-gray-400 mb-6">
+                            ZenByte is a collective of elite software architects, engineers, and designers dedicated to solving complex business problems through technology. We believe in lean, iterative development, focusing on delivering measurable value to our clients from day one.
+                        </p>
+                        <p class="text-gray-400">
+                            Our philosophy is rooted in transparency and partnership. We don't just write code; we become an extension of your team, ensuring that every solution is future-proof, easy to maintain, and aligned with your long-term vision.
+                        </p>
+                    </div>
+                    
+                    <!-- Key Metrics / Stats (anim-card added for staggered animation) -->
+                    <div id="metrics" class="grid grid-cols-2 gap-6 p-6 rounded-xl border border-gray-700 bg-[#111111]">
+                        <!-- Metric 1 -->
+                        <div class="anim-card p-4 bg-[#1A1A1A] rounded-lg border-l-4 border-white/80">
+                            <p class="text-4xl font-extrabold text-white">150+</p>
+                            <p class="text-sm text-gray-400">Successful Projects</p>
+                        </div>
+                        <!-- Metric 2 -->
+                        <div class="anim-card p-4 bg-[#1A1A1A] rounded-lg border-l-4 border-white/80">
+                            <p class="text-4xl font-extrabold text-white">99.8%</p>
+                            <p class="text-sm text-gray-400">Client Retention Rate</p>
+                        </div>
+                        <!-- Metric 3 -->
+                        <div class="anim-card p-4 bg-[#1A1A1A] rounded-lg border-l-4 border-white/80">
+                            <p class="text-4xl font-extrabold text-white">12+</p>
+                            <p class="text-sm text-gray-400">Years of Collective Experience</p>
+                        </div>
+                        <!-- Metric 4 -->
+                        <div class="anim-card p-4 bg-[#1A1A1A] rounded-lg border-l-4 border-white/80">
+                            <p class="text-4xl font-extrabold text-white">5X</p>
+                            <p class="text-sm text-gray-400">Average ROI for Clients</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. SERVICES SECTION -->
+        <section id="services" class="py-20 lg:py-28 bg-[#0A0A0A]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-4 gsap-content">Our Core Expertise</h2>
+                <p class="text-xl text-gray-400 text-center max-w-3xl mx-auto mb-16 gsap-content-p">
+                    From concept to deployment, we cover the full technology spectrum required for modern business success.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Service Card 1 (Added anim-card class) -->
+                    <div class="anim-card p-8 bg-[#111111] rounded-xl shadow-xl transition duration-300 hover:shadow-[0_0_20px_0_rgba(255,255,255,0.2)] transform hover:scale-[1.01] border border-[#111111] hover:border-white">
+                        <div class="p-3 inline-block bg-white text-gray-900 rounded-lg mb-4">
+                            <i data-lucide="code-square" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3 text-white">Custom Software Development</h3>
+                        <p class="text-gray-400">
+                            Building bespoke web, mobile, and enterprise applications tailored precisely to your unique workflows and business challenges.
+                        </p>
+                    </div>
+
+                    <!-- Service Card 2 (Added anim-card class) -->
+                    <div class="anim-card p-8 bg-[#111111] rounded-xl shadow-xl transition duration-300 hover:shadow-[0_0_20px_0_rgba(255,255,255,0.2)] transform hover:scale-[1.01] border border-[#111111] hover:border-white">
+                        <div class="p-3 inline-block bg-white text-gray-900 rounded-lg mb-4">
+                            <i data-lucide="cloud" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3 text-white">Cloud & DevOps Solutions</h3>
+                        <p class="text-gray-400">
+                            Accelerate your deployment pipeline and ensure high availability with modern cloud architecture and continuous integration/delivery (CI/CD).
+                        </p>
+                    </div>
+
+                    <!-- Service Card 3 (Added anim-card class) -->
+                    <div class="anim-card p-8 bg-[#111111] rounded-xl shadow-xl transition duration-300 hover:shadow-[0_0_20px_0_rgba(255,255,255,0.2)] transform hover:scale-[1.01] border border-[#111111] hover:border-white">
+                        <div class="p-3 inline-block bg-white text-gray-900 rounded-lg mb-4">
+                            <i data-lucide="brain" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3 text-white">Data & AI Solutions</h3>
+                        <p class="text-gray-400">
+                            Leverage your data to gain predictive insights, automate decisions, and create new value streams with machine learning models.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 4. PROJECTS / CASE STUDIES SECTION -->
+        <section id="projects" class="py-20 lg:py-28 bg-[#1A1A1A]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-4 gsap-content">Recent Projects</h2>
+                <p class="text-xl text-gray-400 text-center max-w-3xl mx-auto mb-16 gsap-content-p">
+                    A glimpse into how ZenByte transforms businesses across various industries with tailored solutions.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Project Card 1 (Added anim-card class) -->
+                    <div class="anim-card rounded-xl overflow-hidden shadow-2xl bg-[#111111] transition duration-300 hover:shadow-white/20">
+                        <img src="https://placehold.co/600x400/1E293B/E2E8F0?text=E-Commerce+App" alt="E-Commerce+App" class="w-full h-48 object-cover border-b border-gray-700">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Nexus Retail Cloud</h3>
+                            <p class="text-sm text-gray-400 mb-3">**Industry:** Retail & E-Commerce</p>
+                            <p class="text-gray-400 text-sm">
+                                Developed a fully scalable, headless e-commerce platform integrated with automated inventory management and personalized recommendation engines.
+                            </p>
+                            <a href="#" class="inline-flex items-center mt-4 text-white hover:text-gray-400 text-sm font-medium">
+                                View Case Study <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 (Added anim-card class) -->
+                    <div class="anim-card rounded-xl overflow-hidden shadow-2xl bg-[#111111] transition duration-300 hover:shadow-white/20">
+                        <img src="https://placehold.co/600x400/1E293B/E2E8F0?text=FinTech+Dashboard" alt="FinTech+Dashboard" class="w-full h-48 object-cover border-b border-gray-700">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Aura Financial AI</h3>
+                            <p class="text-sm text-gray-400 mb-3">**Industry:** Financial Services</p>
+                            <p class="text-gray-400 text-sm">
+                                Created a real-time risk analysis dashboard using machine learning to predict market volatility and improve compliance reporting efficiency by 40%.
+                            </p>
+                            <a href="#" class="inline-flex items-center mt-4 text-white hover:text-gray-400 text-sm font-medium">
+                                View Case Study <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 (Added anim-card class) -->
+                    <div class="anim-card rounded-xl overflow-hidden shadow-2xl bg-[#111111] transition duration-300 hover:shadow-white/20">
+                        <img src="https://placehold.co/600x400/1E293B/E2E8F0?text=HealthTech+App" alt="HealthTech+App" class="w-full h-48 object-cover border-b border-gray-700">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">MediLink Patient Portal</h3>
+                            <p class="text-sm text-gray-400 mb-3">**Industry:** Healthcare</p>
+                            <p class="text-gray-400 text-sm">
+                                Designed a HIPAA-compliant mobile application to manage patient scheduling, telehealth calls, and electronic health record access securely.
+                            </p>
+                            <a href="#" class="inline-flex items-center mt-4 text-white hover:text-gray-400 text-sm font-medium">
+                                View Case Study <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 5. TESTIMONIALS SECTION -->
+        <section id="testimonials" class="py-20 lg:py-28 bg-[#0A0A0A]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-4 gsap-content">What Our Clients Say</h2>
+                <p class="text-xl text-gray-400 text-center max-w-3xl mx-auto mb-16 gsap-content-p">
+                    Trusted by industry leaders to deliver mission-critical software solutions.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 (Added anim-card class) -->
+                    <div class="anim-card p-8 bg-[#111111] rounded-xl border border-gray-700 shadow-xl transition duration-300 hover:shadow-white/20">
+                        <i data-lucide="quote" class="w-8 h-8 text-white mb-4"></i>
+                        <p class="text-gray-300 italic mb-6">
+                            "ZenByte delivered our custom ERP system ahead of schedule and under budget. The quality of the code and their responsiveness were exceptional. A true partner in innovation."
+                        </p>
+                        <div class="flex items-center">
+                            <img src="https://placehold.co/40x40/374151/F9FAFB?text=A" alt="Avatar A" class="w-10 h-10 rounded-full mr-4 border-2 border-white">
+                            <div>
+                                <p class="font-semibold text-white">Alex Thompson</p>
+                                <p class="text-sm text-gray-400">CTO, Nexus Corp</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 (Added anim-card class) -->
+                    <div class="anim-card p-8 bg-[#111111] rounded-xl border border-gray-700 shadow-xl transition duration-300 hover:shadow-white/20">
+                        <i data-lucide="quote" class="w-8 h-8 text-white mb-4"></i>
+                        <p class="text-gray-300 italic mb-6">
+                            "Their expertise in cloud infrastructure revolutionized our deployment process. We moved from monthly releases to continuous delivery almost overnight. Highly recommended."
+                        </p>
+                        <div class="flex items-center">
+                            <img src="https://placehold.co/40x40/374151/F9FAFB?text=B" alt="Avatar B" class="w-10 h-10 rounded-full mr-4 border-2 border-white">
+                            <div>
+                                <p class="font-semibold text-white">Sarah Chen</p>
+                                <p class="text-sm text-gray-400">VP of Engineering, Global FinTech</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 (Added anim-card class) -->
+                    <div class="anim-card p-8 bg-[#111111] rounded-xl border border-gray-700 shadow-xl transition duration-300 hover:shadow-white/20">
+                        <i data-lucide="quote" class="w-8 h-8 text-white mb-4"></i>
+                        <p class="text-gray-300 italic mb-6">
+                            "The AI model they built for us delivers stunningly accurate predictions. ZenByte's team is technically brilliant and operates with complete transparency throughout the project."
+                        </p>
+                        <div class="flex items-center">
+                            <img src="https://placehold.co/40x40/374151/F9FAFB?text=C" alt="Avatar C" class="w-10 h-10 rounded-full mr-4 border-2 border-white">
+                            <div>
+                                <p class="font-semibold text-white">Michael Lee</p>
+                                <p class="text-sm text-gray-400">Director of Product, HealthLink</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. HOW WE DO IT (Interactive Process) -->
+        <section id="process" class="py-20 lg:py-28 bg-[#1A1A1A]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-4 gsap-content">ZenByte's Digital Engineering Process</h2>
+                <p class="text-xl text-gray-400 text-center max-w-3xl mx-auto mb-16 gsap-content-p">
+                    Our agile methodology ensures transparency, adaptability, and continuous collaboration.
+                </p>
+
+                <!-- Process Timeline Grid -->
+                <div class="relative grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
+
+                    <!-- Vertical Line for large screens -->
+                    <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-700 hidden lg:block"></div>
+
+                    <!-- Step 1 (Right) (Added anim-card class) -->
+                    <div class="anim-card lg:col-start-2 p-6 rounded-xl border border-gray-700 shadow-lg bg-[#0A0A0A] transition duration-300 hover:translate-y-[-5px] hover:bg-[#111111]">
+                        <div class="flex items-start mb-4">
+                            <span class="text-3xl font-bold text-gray-900 bg-white p-3 rounded-full mr-4 shadow-xl">01</span>
+                            <div class="flex flex-col">
+                                <h3 class="text-2xl font-semibold pt-2 text-white">Discovery & Strategy</h3>
+                                <p class="text-sm text-gray-500 flex items-center mt-1"><i data-lucide="search" class="w-4 h-4 mr-1"></i> Defining the success roadmap</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-400">
+                            We start by deeply understanding your business goals, target users, and technical landscape. We define the project scope, key deliverables, and recommend the optimal technology stack. This phase results in a clear project blueprint.
+                        </p>
+                    </div>
+
+                    <!-- Step 2 (Left) (Added anim-card class) -->
+                    <div class="anim-card lg:col-start-1 p-6 rounded-xl border border-gray-700 shadow-lg bg-[#0A0A0A] transition duration-300 hover:translate-y-[-5px] hover:bg-[#111111]">
+                        <div class="flex items-start justify-end text-right mb-4">
+                            <div class="flex flex-col items-end">
+                                <h3 class="text-2xl font-semibold pt-2 text-white">Agile Design & Sprint Planning</h3>
+                                <p class="text-sm text-gray-500 flex items-center mt-1"><i data-lucide="layout-grid" class="w-4 h-4 mr-1"></i> Iterative design and planning</p>
+                            </div>
+                            <span class="text-3xl font-bold text-gray-900 bg-white p-3 rounded-full ml-4 shadow-xl">02</span>
+                        </div>
+                        <p class="text-gray-400 text-right">
+                            We move into designing wireframes and high-fidelity mockups. Based on the design, we break down the work into 1-2 week sprints. This allows for frequent feedback loops and maximum responsiveness to changes.
+                        </p>
+                    </div>
+
+                    <!-- Step 3 (Right) (Added anim-card class) -->
+                    <div class="anim-card lg:col-start-2 p-6 rounded-xl border border-gray-700 shadow-lg bg-[#0A0A0A] transition duration-300 hover:translate-y-[-5px] hover:bg-[#111111]">
+                        <div class="flex items-start mb-4">
+                            <span class="text-3xl font-bold text-gray-900 bg-white p-3 rounded-full mr-4 shadow-xl">03</span>
+                            <div class="flex flex-col">
+                                <h3 class="text-2xl font-semibold pt-2 text-white">Development & Rigorous Testing</h3>
+                                <p class="text-sm text-gray-500 flex items-center mt-1"><i data-lucide="rocket" class="w-4 h-4 mr-1"></i> Building scalable, clean code</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-400">
+                            Our engineers write clean, scalable, and well-documented code. Every feature undergoes unit, integration, and end-to-end testing. We maintain continuous integration/continuous deployment (CI/CD) practices for quality assurance.
+                        </p>
+                    </div>
+
+                    <!-- Step 4 (Left) (Added anim-card class) -->
+                    <div class="anim-card lg:col-start-1 p-6 rounded-xl border border-gray-700 shadow-lg bg-[#0A0A0A] transition duration-300 hover:translate-y-[-5px] hover:bg-[#111111]">
+                        <div class="flex items-start justify-end text-right mb-4">
+                            <div class="flex flex-col items-end">
+                                <h3 class="text-2xl font-semibold pt-2 text-white">Launch & Long-Term Partnership</h3>
+                                <p class="text-sm text-gray-500 flex items-center mt-1"><i data-lucide="thumbs-up" class="w-4 h-4 mr-1"></i> Support and feature evolution</p>
+                            </div>
+                            <span class="text-3xl font-bold text-gray-900 bg-white p-3 rounded-full ml-4 shadow-xl">04</span>
+                        </div>
+                        <p class="text-gray-400 text-right">
+                            The software is deployed to the production environment. Our engagement doesn't stop here; we provide ongoing monitoring, maintenance, and further feature development based on your evolving business needs.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 7. CONTACT FORM SECTION (Above Footer) -->
+        <section id="contact-form" class="py-20 lg:py-28 bg-[#0A0A0A]">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 p-10 rounded-3xl bg-[#1A1A1A] border border-gray-700 shadow-2xl">
+                <h2 class="text-4xl font-bold text-white text-center mb-4 gsap-content">Let's Build Something Great Together.</h2>
+                <p class="text-xl text-gray-400 text-center max-w-2xl mx-auto mb-10 gsap-content-p">
+                    Tell us about your project, and a solution architect will get back to you within 24 hours.
+                </p>
+                
+                <form id="contact-form-element" class="space-y-6" onsubmit="handleFormSubmit(event)">
+                    <!-- Name Field -->
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Full Name / Company</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name or Company Name"
+                               class="w-full p-3 rounded-lg bg-gray-900 border border-gray-700 text-white focus:ring-white focus:border-white transition" required>
+                    </div>
+
+                    <!-- Email Field -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Work Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="example@zenbyte.com"
+                               class="w-full p-3 rounded-lg bg-gray-900 border border-gray-700 text-white focus:ring-white focus:border-white transition" required>
+                    </div>
+
+                    <!-- Message Field -->
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Project Details</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Describe your project, budget, and timeline..."
+                                  class="w-full p-3 rounded-lg bg-gray-900 border border-gray-700 text-white focus:ring-white focus:border-white transition" required></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full px-8 py-3 bg-white text-gray-900 font-bold rounded-xl text-lg shadow-xl shadow-white/40 transform hover:scale-[1.01] transition duration-300">
+                        Send Project Inquiry
+                    </button>
+
+                    <!-- Submission Message -->
+                    <p id="submission-message" class="hidden text-center py-3 rounded-xl bg-white/10 text-white font-semibold transition duration-500">
+                        <i data-lucide="check-circle" class="w-5 h-5 inline mr-2 text-white"></i> Thank you! Your inquiry has been successfully sent to ZenByte.
+                    </p>
+
+                    <p class="text-xs text-gray-500 text-center pt-2">Your information is confidential and will only be used to discuss your project.</p>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer class="bg-black border-t border-gray-800 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                
+                <!-- Company Info -->
+                <div class="col-span-2 md:col-span-1">
+                    <!-- Logo (Used arbitrary color for contrast) -->
+                    <a href="#" class="text-3xl font-extrabold text-white tracking-widest mb-4 block">
+                        ZEN<span class="text-[#B0B0B0]">BYTE</span>
+                    </a>
+                    <p class="text-gray-400 text-sm mt-4">
+                        Intelligent Software Solutions, Engineered with Precision.
+                    </p>
+                    <div class="flex space-x-3 mt-4">
+                        <a href="#" class="text-gray-500 hover:text-white transition"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-white transition"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                        <a href="#" class="text-gray-500 hover:text-white transition"><i data-lucide="github" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+
+                <!-- Services Links -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Services</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Custom Development</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Cloud & DevOps</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Data & AI</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">UI/UX Design</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Links -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Company</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-white transition">Case Studies</a></li>
+                        <li><a href="#process" class="text-gray-400 hover:text-white transition">Our Process</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Careers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Contact</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start">
+                            <i data-lucide="map-pin" class="w-4 h-4 mr-3 text-white mt-1 flex-shrink-0"></i>
+                            <span class="text-gray-400">123 Tech Avenue, Silicon City, USA 10001</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="mail" class="w-4 h-4 mr-3 text-white flex-shrink-0"></i>
+                            <a href="mailto:hello@zenbyte.com" class="text-gray-400 hover:text-white transition">hello@zenbyte.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="phone" class="w-4 h-4 mr-3 text-white flex-shrink-0"></i>
+                            <span class="text-gray-400">+1 (555) 123-4567</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center">
+                <p class="text-sm text-gray-500">&copy; 2024 ZenByte Software Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // --- Globals ---
+        const typingTextElement = document.getElementById('typing-text');
+        const phrases = ["Intelligent Software", "Innovative Solutions", "Unstoppable Growth", "Modern Technology"];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
+
+        // --- Hero Section Typing Animation ---
+        function type() {
+            const currentPhrase = phrases[phraseIndex];
+            const displayValue = currentPhrase.substring(0, charIndex);
+            
+            typingTextElement.textContent = displayValue;
+
+            if (isDeleting) {
+                // Deleting state
+                charIndex--;
+                typingSpeed = 50;
+            } else {
+                // Typing state
+                charIndex++;
+                typingSpeed = 100;
+            }
+
+            if (!isDeleting && charIndex > currentPhrase.length) {
+                // End of typing, start deleting after a pause
+                isDeleting = true;
+                typingSpeed = 1500; // Pause at the end of the word
+            } else if (isDeleting && charIndex < 0) {
+                // End of deleting, move to the next phrase
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typingSpeed = 150; // Pause before starting the next word
+            }
+            
+            // Set the next call to type()
+            setTimeout(type, typingSpeed);
+        }
+
+        // --- GSAP Scroll Animations Fix ---
+        function initScrollAnimations() {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // 1. Define all elements that should animate on scroll
+            const allAnimatedCards = [
+                '#metrics .anim-card', 
+                '#services .anim-card', 
+                '#projects .anim-card', 
+                '#testimonials .anim-card',
+                '#process .anim-card'
+            ];
+
+            // 2. Set the initial, invisible state for all card-like elements. 
+            // This prevents them from showing before the animation is triggered.
+            gsap.set(allAnimatedCards.join(','), { opacity: 0, y: 30 }); 
+            
+            // Set initial state for major text blocks
+            gsap.set('.gsap-content, .gsap-content-p', { opacity: 0, y: 20 });
+
+
+            // 3. Create a ScrollTrigger for each content group
+            const cardGroups = {
+                // Target the parent element for triggering
+                '#about': '#metrics .anim-card', 
+                '#services': '#services .anim-card',
+                '#projects': '#projects .anim-card',
+                '#testimonials': '#testimonials .anim-card',
+                '#process': '#process .anim-card'
+            };
+
+            for (const triggerId in cardGroups) {
+                const targetSelector = cardGroups[triggerId];
+
+                gsap.to(targetSelector, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    stagger: 0.15,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: triggerId,
+                        start: "top 85%", // Trigger when the section comes into view
+                        toggleActions: "play none none none",
+                        once: true
+                    }
+                });
+            }
+            
+            // 4. Simple fade-up for major titles/text blocks
+            gsap.to(".gsap-content, .gsap-content-p", {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                stagger: 0.1,
+                ease: "power1.out",
+                scrollTrigger: {
+                    trigger: "main", // Use main as trigger, but set start high up
+                    start: "top 90%",
+                    toggleActions: "play none none none",
+                    once: true
+                }
+            });
+        }
+
+        // --- Contact Form Submission Handler (Dummy) ---
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Stop default form submission
+            const form = event.target;
+            
+            if (form.checkValidity()) {
+                // Simulate form success
+                form.reset(); // Clear form fields
+
+                const messageElement = document.getElementById('submission-message');
+                // Re-create icons for the dynamically added message
+                lucide.createIcons(); 
+                
+                messageElement.classList.remove('hidden'); // Show message
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    messageElement.classList.add('hidden');
+                }, 5000);
+            }
+        }
+
+        // --- Initialization ---
+        window.onload = function() {
+            setTimeout(type, 500); // Start the typing animation
+            initScrollAnimations(); // Initialize GSAP animations
+            lucide.createIcons(); // Initialize Lucide icons
+        };
+    </script>
+
+</body>
+</html>
