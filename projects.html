@@ -1,512 +1,652 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Work | ZenByte</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/config.js"></script>
+    <link rel="stylesheet" href="css/features.css">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - ZenByte Software Solutions</title>
-    <meta name="description"
-        content="Explore ZenByte's portfolio of 150+ successful projects across e-commerce, fintech, healthcare, manufacturing, and more. See how we transform businesses with technology.">
-    <meta name="keywords"
-        content="software projects, case studies, portfolio, e-commerce, fintech, healthcare apps, AI projects">
-    <meta name="author" content="ZenByte Software Solutions">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="canonical" href="https://zenbyte.com/projects">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://zenbyte.com/projects">
-    <meta property="og:title" content="Our Portfolio - ZenByte Software Solutions">
-    <meta property="og:description"
-        content="150+ successful projects delivered. Explore our work across web apps, mobile, AI, and cloud solutions.">
-    <meta property="og:image" content="https://zenbyte.com/og-image.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ZenByte Projects Portfolio">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+  </head>
+  <body class="antialiased">
+    <!-- Page Loader -->
+    <div id="pageLoader" class="page-loader">
+      <div class="loader-spinner"></div>
+    </div>
 
-        .project-card:hover .project-overlay {
-            opacity: 1;
-        }
-
-        .project-card:hover img {
-            transform: scale(1.05);
-        }
-
-        .filter-btn.active {
-            background-color: white;
-            color: #0A0A0A;
-        }
-    </style>
-</head>
-
-<body class="font-['Inter'] bg-[#0A0A0A] text-gray-100 scroll-smooth">
-
+    <!-- Custom Cursor -->
+    <div id="customCursor" class="custom-cursor"></div>
     <!-- Header -->
-    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-[#0A0A0A]/90 border-b border-[#1F2937]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <a href="index.html" class="text-2xl font-extrabold text-white tracking-widest">
-                    ZEN<span class="text-[#B0B0B0]">BYTE</span>
-                </a>
-                <nav class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-sm font-medium text-gray-400 hover:text-white transition">Home</a>
-                    <a href="about.html" class="text-sm font-medium text-gray-400 hover:text-white transition">About</a>
-                    <a href="services.html"
-                        class="text-sm font-medium text-gray-400 hover:text-white transition">Services</a>
-                    <a href="projects.html" class="text-sm font-medium text-white transition">Projects</a>
-                    <a href="contact.html"
-                        class="px-4 py-2 text-sm font-semibold rounded-lg bg-white text-gray-900 hover:bg-opacity-90 transition">Contact
-                        Us</a>
-                </nav>
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-[#111111] border-b border-gray-800 absolute w-full">
-            <div class="px-4 pt-2 pb-6 space-y-2">
-                <a href="index.html" class="block px-3 py-2 text-gray-300 hover:text-white">Home</a>
-                <a href="about.html" class="block px-3 py-2 text-gray-300 hover:text-white">About</a>
-                <a href="services.html" class="block px-3 py-2 text-gray-300 hover:text-white">Services</a>
-                <a href="projects.html" class="block px-3 py-2 text-white bg-gray-800 rounded-md">Projects</a>
-                <a href="contact.html"
-                    class="block mt-4 px-3 py-2 text-center text-base font-bold bg-white text-gray-900 rounded-md">Contact
-                    Us</a>
-            </div>
-        </div>
+    <header class="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50 transition-all duration-300">
+      <div class="absolute inset-0 bg-surface/40 backdrop-blur-2xl rounded-full border border-white/10 shadow-2xl shadow-primary/10"></div>
+      <div
+        class="relative px-8 h-16 flex items-center justify-between rounded-full"
+      >
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div
+            class="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors"
+          >
+            <i data-lucide="zap" class="w-5 h-5"></i>
+          </div>
+          <span class="font-display font-bold text-xl tracking-tight"
+            >Zen<span class="text-primary">byte</span></span
+          >
+        </a>
+        <nav class="hidden md:flex items-center gap-8">
+          <a
+            href="index.html"
+            class="text-sm font-medium text-gray-400 hover:text-primary transition-colors"
+            >Home</a
+          >
+          <a
+            href="services.html"
+            class="text-sm font-medium text-gray-400 hover:text-primary transition-colors"
+            >Services</a
+          >
+          <a
+            href="projects.html"
+            class="text-sm font-medium text-white transition-colors"
+            >Work</a
+          >
+          <a
+            href="about.html"
+            class="text-sm font-medium text-gray-400 hover:text-primary transition-colors"
+            >About</a
+          >
+        </nav>
+        <a
+          href="contact.html"
+          class="hidden md:flex bg-primary text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-primary/90 transition-all shadow-lg shadow-primary/25"
+          >Start Project</a
+        >
+        <button id="themeToggle" class="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors ml-4">
+          <i data-lucide="sun" class="theme-icon-sun w-5 h-5"></i>
+          <i data-lucide="moon" class="theme-icon-moon w-5 h-5 hidden"></i>
+        </button>
+      </div>
+
     </header>
 
-    <main class="pt-24">
-        <!-- Hero -->
-        <section
-            class="py-24 lg:py-32 bg-gradient-to-b from-[#0A0A0A] via-[#111111] to-[#0A0A0A] relative overflow-hidden">
-            <!-- Background Effects -->
-            <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none"
-                style="background-image: radial-gradient(#FFFFFF 1px, transparent 1px); background-size: 30px 30px;">
+    <main>
+      <!-- Breadcrumb Navigation -->
+      <nav class="max-w-7xl mx-auto px-6 pt-20 mb-8">
+        <div class="flex items-center gap-2 text-sm">
+          <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-gray-600"></i>
+          <span class="text-white font-medium">Our Work</span>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section
+        class="min-h-[70vh] flex items-center justify-center relative overflow-hidden pt-20"
+      >
+        <div class="absolute inset-0 grid-bg pointer-events-none"></div>
+        <div
+          class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none"
+        ></div>
+
+        <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full mb-8"
+          >
+            <span
+              class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"
+            ></span>
+            <span class="text-sm text-emerald-300"
+              >150+ Successful Shipments</span
+            >
+          </div>
+          <h1
+            class="font-display font-bold text-5xl md:text-7xl lg:text-8xl mb-8 leading-tight"
+          >
+            Our
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500"
+              >Portfolio.</span
+            >
+          </h1>
+          <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+            Explore a selection of projects that showcase our expertise across
+            industries. Each solution is crafted with precision and built for
+            scale.
+          </p>
+
+          <!-- Filters -->
+          <div class="flex flex-wrap justify-center gap-3 mt-12">
+            <button class="filter-btn active" data-filter="all">
+              All Projects
+            </button>
+            <button class="filter-btn" data-filter="web">Web Apps</button>
+            <button class="filter-btn" data-filter="mobile">Mobile</button>
+            <button class="filter-btn" data-filter="ai">AI & Data</button>
+            <button class="filter-btn" data-filter="cloud">Cloud Infra</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Case Study -->
+      <section class="max-w-7xl mx-auto px-6 mb-32">
+        <div
+          class="glass-card rounded-[2.5rem] overflow-hidden grid lg:grid-cols-2 group gsap-fade-up"
+        >
+          <div class="p-10 md:p-16 flex flex-col justify-center">
+            <div class="flex items-center gap-3 mb-6">
+              <span
+                class="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-bold rounded-full uppercase tracking-wider"
+                >Spotlight Case</span
+              >
+              <span class="text-gray-500 text-sm font-medium"
+                >Fintech & AI</span
+              >
             </div>
-            <!-- Gradient Orbs -->
-            <div class="absolute top-20 left-1/4 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-10 right-1/4 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl"></div>
-
-            <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
-                <!-- Badge -->
-                <div
-                    class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full mb-8">
-                    <i data-lucide="trophy" class="w-4 h-4 text-yellow-400"></i>
-                    <span class="text-sm text-gray-300">150+ Successful Projects Delivered</span>
+            <h2
+              class="font-display font-bold text-4xl md:text-5xl text-white mb-6"
+            >
+              Aura Financial AI
+            </h2>
+            <p class="text-gray-400 mb-10 leading-relaxed text-lg">
+              We partnered with Aura to build a real-time risk analysis
+              dashboard that processes millions of transactions per second.
+              Using custom ML models, we helped them reduce fraud by 60% in the
+              first quarter.
+            </p>
+            <div
+              class="grid grid-cols-2 gap-8 mb-10 border-t border-white/5 pt-8"
+            >
+              <div>
+                <div class="text-3xl font-bold text-white mb-1">60%</div>
+                <div class="text-xs text-gray-500 uppercase tracking-wide">
+                  Fraud Reduction
                 </div>
-
-                <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
-                    Our <span
-                        class="bg-gradient-to-r from-gray-400 to-gray-600 bg-clip-text text-transparent">Portfolio</span>
-                </h1>
-
-                <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-10">
-                    Explore a selection of projects that showcase our expertise across industries. Each solution is
-                    crafted with precision, built for scale.
-                </p>
-
-                <!-- Category Pills -->
-                <div class="flex flex-wrap justify-center gap-3">
-                    <span class="px-4 py-2 bg-blue-500/20 text-blue-400 text-sm font-medium rounded-full">Web
-                        Apps</span>
-                    <span
-                        class="px-4 py-2 bg-purple-500/20 text-purple-400 text-sm font-medium rounded-full">Mobile</span>
-                    <span class="px-4 py-2 bg-green-500/20 text-green-400 text-sm font-medium rounded-full">AI &
-                        Data</span>
-                    <span
-                        class="px-4 py-2 bg-orange-500/20 text-orange-400 text-sm font-medium rounded-full">Cloud</span>
+              </div>
+              <div>
+                <div class="text-3xl font-bold text-white mb-1">12ms</div>
+                <div class="text-xs text-gray-500 uppercase tracking-wide">
+                  Processing Latency
                 </div>
+              </div>
             </div>
-        </section>
+            <a
+              href="#"
+              class="inline-flex items-center gap-2 text-white font-bold bg-white/10 px-6 py-3 rounded-full hover:bg-white/20 transition-all w-max"
+            >
+              Read Case Study <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+          <div
+            class="relative min-h-[400px] lg:h-auto bg-[#0a0a0a] overflow-hidden"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10 lg:hidden"
+            ></div>
+            <img
+              src="https://placehold.co/800x1000/064e3b/FFFFFF?text=Aura+Dashboard"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+              alt="Aura Dashboard"
+            />
+          </div>
+        </div>
+      </section>
 
-        <!-- Filter Tabs -->
-        <section class="pb-8">
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="flex flex-wrap justify-center gap-3">
-                    <button
-                        class="filter-btn active px-5 py-2 text-sm font-medium rounded-full border border-gray-600 transition hover:bg-white hover:text-gray-900"
-                        data-filter="all">All Projects</button>
-                    <button
-                        class="filter-btn px-5 py-2 text-sm font-medium rounded-full border border-gray-600 text-gray-400 transition hover:bg-white hover:text-gray-900"
-                        data-filter="web">Web Apps</button>
-                    <button
-                        class="filter-btn px-5 py-2 text-sm font-medium rounded-full border border-gray-600 text-gray-400 transition hover:bg-white hover:text-gray-900"
-                        data-filter="mobile">Mobile</button>
-                    <button
-                        class="filter-btn px-5 py-2 text-sm font-medium rounded-full border border-gray-600 text-gray-400 transition hover:bg-white hover:text-gray-900"
-                        data-filter="ai">AI & Data</button>
-                    <button
-                        class="filter-btn px-5 py-2 text-sm font-medium rounded-full border border-gray-600 text-gray-400 transition hover:bg-white hover:text-gray-900"
-                        data-filter="cloud">Cloud</button>
-                </div>
+      <!-- Project Grid -->
+      <section class="max-w-7xl mx-auto px-6 mb-32">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          id="projects-grid"
+        >
+          <!-- Card 1 -->
+          <div
+            class="glass-card rounded-2xl overflow-hidden group project-item cursor-pointer h-full flex flex-col"
+            data-category="web"
+          >
+            <div class="aspect-video overflow-hidden relative">
+              <img
+                data-src="https://placehold.co/600x400/1E293B/E2E8F0?text=Nexus+Retail"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
+              >
+                <span
+                  class="border border-white/20 bg-white/10 text-white px-5 py-2 rounded-full text-sm font-bold backdrop-blur-md"
+                  >View</span
+                >
+              </div>
             </div>
-        </section>
-
-        <!-- Projects Grid -->
-        <section class="py-12 bg-[#111111]">
-            <div class="max-w-7xl mx-auto px-4">
-                <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                    <!-- Project 1 -->
-                    <div class="project-card group relative overflow-hidden rounded-2xl bg-[#1A1A1A] border border-gray-800 transition duration-300 hover:border-white/30"
-                        data-category="web">
-                        <div class="overflow-hidden">
-                            <img src="https://placehold.co/600x400/1E293B/E2E8F0?text=Nexus+Retail" alt="Nexus Retail"
-                                class="w-full h-56 object-cover transition duration-500">
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-3">
-                                <span
-                                    class="px-3 py-1 text-xs font-medium bg-blue-500/20 text-blue-400 rounded-full">E-Commerce</span>
-                                <span
-                                    class="px-3 py-1 text-xs font-medium bg-purple-500/20 text-purple-400 rounded-full">React</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2">Nexus Retail Cloud</h3>
-                            <p class="text-gray-400 text-sm mb-4">A fully scalable headless e-commerce platform with
-                                integrated inventory management and AI-powered recommendation engines.</p>
-                            <div class="flex items-center justify-between">
-                                <span class="text-xs text-gray-500">Retail & E-Commerce</span>
-                                <a href="#"
-                                    class="flex items-center text-white text-sm font-medium hover:text-gray-400 transition">
-                                    View Case Study <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 2 -->
-                    <div class="project-card group relative overflow-hidden rounded-2xl bg-[#1A1A1A] border border-gray-800 transition duration-300 hover:border-white/30"
-                        data-category="ai">
-                        <div class="overflow-hidden">
-                            <img src="https://placehold.co/600x400/1E293B/E2E8F0?text=Aura+Financial"
-                                alt="Aura Financial" class="w-full h-56 object-cover transition duration-500">
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-3">
-                                <span
-                                    class="px-3 py-1 text-xs font-medium bg-green-500/20 text-green-400 rounded-full">FinTech</span>
-                                <span
-                                    class="px-3 py-1 text-xs font-medium bg-yellow-500/20 text-yellow-400 rounded-full">ML</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2">Aura Financial AI</h3>
-                            <p class="text-gray-400 text-sm mb-4">Real-time risk analysis dashboard using machine
-                                learning to predict market volatility. Improved compliance reporting by 40%.</p>
-                            <div class="flex items-center justify-between">
-                                <span class="text-xs text-gray-500">Financial Services</span>
-                                <a href="#"
-                                    class="flex items-center text-white text-sm font-medium hover:text-gray-400 transition">
-                                    View Case Study <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 3 -->
-                    <div class="project-card group relative overflow-hidden rounded-2xl bg-[#1A1A1A] border border-gray-800 transition duration-300 hover:border-white/30"
-                        data-category="mobile">
-                        <div class="overflow-hidden">
-                            <img src="https://placehold.co/600x400/1E293B/E2E8F0?text=MediLink+Portal" alt="MediLink"
-                                class="w-full h-56 object-cover transition duration-500">
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-3">
-                                <span
-                                    class="px-3 py-1 text-xs font-medium bg-red-500/20 text-red-400 rounded-full">Healthcare</span>
-                                <span
-                                    class="px-3 py-1 text-xs font-medium bg-cyan-500/20 text-cyan-400 rounded-full">Flutter</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2">MediLink Patient Portal</h3>
-                            <p class="text-gray-400 text-sm mb-4">HIPAA-compliant mobile application for patient
-                                scheduling, telehealth calls, and secure electronic health record access.</p>
-                            <div class="flex items-center justify-between">
-                                <span class="text-xs text-gray-500">Healthcare</span>
-                                <a href="#"
-                                    class="flex items-center text-white text-sm font-medium hover:text-gray-400 transition">
-                                    View Case Study <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 4 -->
-                    <div class="project-card group relative overflow-hidden rounded-2xl bg-[#1A1A1A] border border-gray-800 transition duration-300 hover:border-white/30"
-                        data-category="cloud">
-                        <div class="overflow-hidden">
-                            <img src="https://placehold.co/600x400/1E293B/E2E8F0?text=CloudScale+Infra" alt="CloudScale"
-                                class="w-full h-56 object-cover transition duration-500">
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-3">
-                                <span
-                                    class="px-3 py-1 text-xs font-medium bg-orange-500/20 text-orange-400 rounded-full">Infrastructure</span>
-                                <span
-                                    class="px-3 py-1 text-xs font-medium bg-blue-500/20 text-blue-400 rounded-full">AWS</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2">CloudScale Infrastructure</h3>
-                            <p class="text-gray-400 text-sm mb-4">Migrated legacy on-premise systems to AWS with
-                                auto-scaling, reducing operational costs by 60% and improving uptime to 99.99%.</p>
-                            <div class="flex items-center justify-between">
-                                <span class="text-xs text-gray-500">Enterprise</span>
-                                <a href="#"
-                                    class="flex items-center text-white text-sm font-medium hover:text-gray-400 transition">
-                                    View Case Study <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 5 -->
-                    <div class="project-card group relative overflow-hidden rounded-2xl bg-[#1A1A1A] border border-gray-800 transition duration-300 hover:border-white/30"
-                        data-category="web">
-                        <div class="overflow-hidden">
-                            <img src="https://placehold.co/600x400/1E293B/E2E8F0?text=EduSpark+LMS" alt="EduSpark"
-                                class="w-full h-56 object-cover transition duration-500">
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-3">
-                                <span
-                                    class="px-3 py-1 text-xs font-medium bg-indigo-500/20 text-indigo-400 rounded-full">EdTech</span>
-                                <span
-                                    class="px-3 py-1 text-xs font-medium bg-green-500/20 text-green-400 rounded-full">Node.js</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2">EduSpark LMS</h3>
-                            <p class="text-gray-400 text-sm mb-4">A comprehensive learning management system with live
-                                classes, progress tracking, gamification, and certifications for 50K+ users.</p>
-                            <div class="flex items-center justify-between">
-                                <span class="text-xs text-gray-500">Education</span>
-                                <a href="#"
-                                    class="flex items-center text-white text-sm font-medium hover:text-gray-400 transition">
-                                    View Case Study <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 6 -->
-                    <div class="project-card group relative overflow-hidden rounded-2xl bg-[#1A1A1A] border border-gray-800 transition duration-300 hover:border-white/30"
-                        data-category="ai">
-                        <div class="overflow-hidden">
-                            <img src="https://placehold.co/600x400/1E293B/E2E8F0?text=Vision+Analytics"
-                                alt="Vision Analytics" class="w-full h-56 object-cover transition duration-500">
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-3">
-                                <span
-                                    class="px-3 py-1 text-xs font-medium bg-pink-500/20 text-pink-400 rounded-full">Manufacturing</span>
-                                <span
-                                    class="px-3 py-1 text-xs font-medium bg-yellow-500/20 text-yellow-400 rounded-full">Computer
-                                    Vision</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2">Vision Analytics</h3>
-                            <p class="text-gray-400 text-sm mb-4">AI-powered quality control system using computer
-                                vision to detect defects in real-time, reducing waste by 35%.</p>
-                            <div class="flex items-center justify-between">
-                                <span class="text-xs text-gray-500">Manufacturing</span>
-                                <a href="#"
-                                    class="flex items-center text-white text-sm font-medium hover:text-gray-400 transition">
-                                    View Case Study <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
+            <div class="p-6 flex-1 flex flex-col">
+              <div class="flex justify-between items-start mb-4">
+                <span
+                  class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs font-bold rounded-full"
+                  >E-Commerce</span
+                >
+              </div>
+              <h3
+                class="font-display font-bold text-lg mb-2 text-white group-hover:text-primary transition-colors"
+              >
+                Nexus Retail Cloud
+              </h3>
+              <p class="text-sm text-gray-400 mb-4 flex-grow">
+                Headless e-commerce platform with AI recommendations and
+                inventory management.
+              </p>
+              <div class="grid grid-cols-3 gap-2 pt-4 border-t border-white/10">
+                <div class="text-center">
+                  <p class="text-lg font-bold text-primary">40%</p>
+                  <p class="text-xs text-gray-500">Conversion Lift</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- Stats Section -->
-        <section class="py-20 bg-[#0A0A0A]">
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                    <div class="p-8 bg-[#111111] rounded-2xl border border-gray-800">
-                        <i data-lucide="briefcase" class="w-8 h-8 mx-auto mb-4 text-white"></i>
-                        <p class="text-4xl font-extrabold text-white mb-2">150+</p>
-                        <p class="text-sm text-gray-400">Projects Delivered</p>
-                    </div>
-                    <div class="p-8 bg-[#111111] rounded-2xl border border-gray-800">
-                        <i data-lucide="globe" class="w-8 h-8 mx-auto mb-4 text-white"></i>
-                        <p class="text-4xl font-extrabold text-white mb-2">25+</p>
-                        <p class="text-sm text-gray-400">Countries Served</p>
-                    </div>
-                    <div class="p-8 bg-[#111111] rounded-2xl border border-gray-800">
-                        <i data-lucide="trophy" class="w-8 h-8 mx-auto mb-4 text-white"></i>
-                        <p class="text-4xl font-extrabold text-white mb-2">12</p>
-                        <p class="text-sm text-gray-400">Industry Awards</p>
-                    </div>
-                    <div class="p-8 bg-[#111111] rounded-2xl border border-gray-800">
-                        <i data-lucide="heart" class="w-8 h-8 mx-auto mb-4 text-white"></i>
-                        <p class="text-4xl font-extrabold text-white mb-2">99%</p>
-                        <p class="text-sm text-gray-400">Client Satisfaction</p>
-                    </div>
+                <div class="text-center">
+                  <p class="text-lg font-bold text-primary">$2.5M</p>
+                  <p class="text-xs text-gray-500">Revenue Impact</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="py-20 bg-[#111111]">
-            <div class="max-w-4xl mx-auto px-4 text-center">
-                <h2 class="text-4xl font-bold text-white mb-6">Have a Project in Mind?</h2>
-                <p class="text-xl text-gray-400 mb-10">Let's discuss how ZenByte can bring your vision to life with
-                    cutting-edge technology.</p>
-                <a href="contact.html"
-                    class="inline-flex items-center px-8 py-4 bg-white text-gray-900 font-bold rounded-xl text-lg shadow-xl shadow-white/20 transform hover:scale-[1.02] transition duration-300">
-                    Start a Conversation <i data-lucide="arrow-right" class="w-5 h-5 ml-3"></i>
-                </a>
-            </div>
-        </section>
-
-        <!-- FOOTER SECTION -->
-        <footer class="bg-black border-t border-gray-800 pt-16 pb-12">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                    <div class="col-span-2 md:col-span-1">
-                        <a href="index.html" class="text-3xl font-extrabold text-white tracking-widest mb-4 block">
-                            ZEN<span class="text-[#B0B0B0]">BYTE</span>
-                        </a>
-                        <p class="text-gray-400 text-sm mt-4">
-                            Intelligent Software Solutions, Engineered with Precision.
-                        </p>
-                        <div class="flex space-x-3 mt-4">
-                            <a href="#" class="text-gray-500 hover:text-white transition"><i data-lucide="linkedin"
-                                    class="w-5 h-5"></i></a>
-                            <a href="#" class="text-gray-500 hover:text-white transition"><i data-lucide="twitter"
-                                    class="w-5 h-5"></i></a>
-                            <a href="#" class="text-gray-500 hover:text-white transition"><i data-lucide="github"
-                                    class="w-5 h-5"></i></a>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h3 class="text-lg font-semibold text-white mb-4">Services</h3>
-                        <ul class="space-y-3 text-sm">
-                            <li><a href="services.html" class="text-gray-400 hover:text-white transition">Custom
-                                    Development</a></li>
-                            <li><a href="services.html" class="text-gray-400 hover:text-white transition">Cloud &
-                                    DevOps</a></li>
-                            <li><a href="services.html" class="text-gray-400 hover:text-white transition">Data & AI</a>
-                            </li>
-                            <li><a href="services.html" class="text-gray-400 hover:text-white transition">UI/UX
-                                    Design</a></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 class="text-lg font-semibold text-white mb-4">Company</h3>
-                        <ul class="space-y-3 text-sm">
-                            <li><a href="about.html" class="text-gray-400 hover:text-white transition">About Us</a></li>
-                            <li><a href="projects.html" class="text-gray-400 hover:text-white transition">Projects</a>
-                            </li>
-                            <li><a href="contact.html" class="text-gray-400 hover:text-white transition">Contact</a>
-                            </li>
-                            <li><a href="privacy.html" class="text-gray-400 hover:text-white transition">Privacy
-                                    Policy</a></li>
-                            <li><a href="terms.html" class="text-gray-400 hover:text-white transition">Terms of
-                                    Service</a></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 class="text-lg font-semibold text-white mb-4">Get in Touch</h3>
-                        <ul class="space-y-3 text-sm">
-                            <li class="flex items-start">
-                                <i data-lucide="map-pin" class="w-4 h-4 mr-3 text-white mt-1 flex-shrink-0"></i>
-                                <span class="text-gray-400">123 Tech Avenue, Silicon City, USA 10001</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i data-lucide="mail" class="w-4 h-4 mr-3 text-white flex-shrink-0"></i>
-                                <a href="mailto:hello@zenbyte.com"
-                                    class="text-gray-400 hover:text-white transition">hello@zenbyte.com</a>
-                            </li>
-                            <li class="flex items-center">
-                                <i data-lucide="phone" class="w-4 h-4 mr-3 text-white flex-shrink-0"></i>
-                                <span class="text-gray-400">+1 (555) 123-4567</span>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="text-center">
+                  <p class="text-lg font-bold text-primary">3 months</p>
+                  <p class="text-xs text-gray-500">Delivery</p>
                 </div>
-
-                <div
-                    class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p class="text-sm text-gray-500">&copy; 2025 ZenByte Software Solutions. All rights reserved.</p>
-                    <div class="flex gap-6 text-sm">
-                        <a href="privacy.html" class="text-gray-500 hover:text-white transition">Privacy</a>
-                        <a href="terms.html" class="text-gray-500 hover:text-white transition">Terms</a>
-                    </div>
-                </div>
+              </div>
             </div>
-        </footer>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="glass-card rounded-2xl overflow-hidden group project-item cursor-pointer h-full flex flex-col"
+            data-category="mobile"
+          >
+            <div class="aspect-video overflow-hidden relative">
+              <img
+                data-src="https://placehold.co/600x400/1e1b4b/FFFFFF?text=MediLink"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
+              >
+                <span
+                  class="border border-white/20 bg-white/10 text-white px-5 py-2 rounded-full text-sm font-bold backdrop-blur-md"
+                  >View</span
+                >
+              </div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col">
+              <div class="flex justify-between items-start mb-4">
+                <span
+                  class="px-3 py-1 bg-red-500/10 text-red-400 text-xs font-bold rounded-full"
+                  >Healthcare</span
+                >
+              </div>
+              <h3
+                class="font-display font-bold text-lg mb-2 text-white group-hover:text-primary transition-colors"
+              >
+                MediLink Portal
+              </h3>
+              <p class="text-sm text-gray-400 mb-4 flex-grow">
+                HIPAA-compliant mobile app for patient scheduling and secure
+                records.
+              </p>
+              <div class="grid grid-cols-3 gap-2 pt-4 border-t border-white/10">
+                <div class="text-center">
+                  <p class="text-lg font-bold text-primary">95%</p>
+                  <p class="text-xs text-gray-500">Adoption Rate</p>
+                </div>
+                <div class="text-center">
+                  <p class="text-lg font-bold text-primary">50K+</p>
+                  <p class="text-xs text-gray-500">Active Users</p>
+                </div>
+                <div class="text-center">
+                  <p class="text-lg font-bold text-primary">4 months</p>
+                  <p class="text-xs text-gray-500">Delivery</p>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="glass-card rounded-2xl overflow-hidden group project-item cursor-pointer h-full flex flex-col"
+            data-category="cloud"
+          >
+            <div class="aspect-video overflow-hidden relative">
+              <img
+                data-src="https://placehold.co/600x400/374151/FFFFFF?text=CloudScale"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
+              >
+                <span
+                  class="border border-white/20 bg-white/10 text-white px-5 py-2 rounded-full text-sm font-bold backdrop-blur-md"
+                  >View</span
+                >
+              </div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col">
+              <div class="flex justify-between items-start mb-4">
+                <span
+                  class="px-3 py-1 bg-orange-500/10 text-orange-400 text-xs font-bold rounded-full"
+                  >DevOps</span
+                >
+              </div>
+              <h3
+                class="font-display font-bold text-lg mb-2 text-white group-hover:text-primary transition-colors"
+              >
+                CloudScale Infra
+              </h3>
+              <p class="text-sm text-gray-400 mb-4 flex-grow">
+                AWS migration with auto-scaling and CI/CD.
+              </p>
+              <div class="grid grid-cols-3 gap-2 pt-4 border-t border-white/10">
+                <div class="text-center">
+                  <p class="text-lg font-bold text-primary">60%</p>
+                  <p class="text-xs text-gray-500">Cost Savings</p>
+                </div>
+                <div class="text-center">
+                  <p class="text-lg font-bold text-primary">99.9%</p>
+                  <p class="text-xs text-gray-500">Uptime</p>
+                </div>
+                <div class="text-center">
+                  <p class="text-lg font-bold text-primary">6 weeks</p>
+                  <p class="text-xs text-gray-500">Delivery</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="glass-card rounded-2xl overflow-hidden group project-item cursor-pointer h-full flex flex-col"
+            data-category="web"
+          >
+            <div class="aspect-video overflow-hidden relative">
+              <img
+                data-src="https://placehold.co/600x400/4c1d95/FFFFFF?text=EduSpark"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
+              >
+                <span
+                  class="border border-white/20 bg-white/10 text-white px-5 py-2 rounded-full text-sm font-bold backdrop-blur-md"
+                  >View</span
+                >
+              </div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col">
+              <div class="flex justify-between items-start mb-4">
+                <span
+                  class="px-3 py-1 bg-purple-500/10 text-purple-400 text-xs font-bold rounded-full"
+                  >EdTech</span
+                >
+              </div>
+              <h3
+                class="font-display font-bold text-lg mb-2 text-white group-hover:text-primary transition-colors"
+              >
+                EduSpark LMS
+              </h3>
+              <p class="text-sm text-gray-400 mb-4 flex-grow">
+                Learning platform with video classrooms and gamification.
+              </p>
+              <div class="grid grid-cols-3 gap-2 pt-4 border-t border-white/10">
+                <div class="text-center">
+                  <p class="text-lg font-bold text-primary">85%</p>
+                  <p class="text-xs text-gray-500">Engagement</p>
+                </div>
+                <div class="text-center">
+                  <p class="text-lg font-bold text-primary">10K+</p>
+                  <p class="text-xs text-gray-500">Students</p>
+                </div>
+                <div class="text-center">
+                  <p class="text-lg font-bold text-primary">8 weeks</p>
+                  <p class="text-xs text-gray-500">Delivery</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div
+            class="glass-card rounded-2xl overflow-hidden group project-item cursor-pointer h-full flex flex-col"
+            data-category="ai"
+          >
+            <div class="aspect-video overflow-hidden relative">
+              <img
+                src="https://placehold.co/600x400/0f172a/FFFFFF?text=Vision+QC"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
+              >
+                <span
+                  class="border border-white/20 bg-white/10 text-white px-5 py-2 rounded-full text-sm font-bold backdrop-blur-md"
+                  >View</span
+                >
+              </div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col">
+              <div class="flex justify-between items-start mb-4">
+                <span
+                  class="px-3 py-1 bg-yellow-500/10 text-yellow-400 text-xs font-bold rounded-full"
+                  >Manufacturing</span
+                >
+              </div>
+              <h3
+                class="font-display font-bold text-lg mb-2 text-white group-hover:text-primary transition-colors"
+              >
+                Vision Analytics
+              </h3>
+              <p class="text-sm text-gray-400 mb-4 flex-grow">
+                Computer vision for real-time defect detection.
+              </p>
+              <div class="grid grid-cols-3 gap-2 pt-4 border-t border-white/10">
+                <div class="text-center">
+                  <p class="text-lg font-bold text-primary">99%</p>
+                  <p class="text-xs text-gray-500">Accuracy</p>
+                </div>
+                <div class="text-center">
+                  <p class="text-lg font-bold text-primary">45ms</p>
+                  <p class="text-xs text-gray-500">Detection Time</p>
+                </div>
+                <div class="text-center">
+                  <p class="text-lg font-bold text-primary">10 weeks</p>
+                  <p class="text-xs text-gray-500">Delivery</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div
+            class="glass-card rounded-2xl overflow-hidden group project-item cursor-pointer h-full flex flex-col"
+            data-category="web"
+          >
+            <div class="aspect-video overflow-hidden relative">
+              <img
+                src="https://placehold.co/600x400/14532d/FFFFFF?text=EcoStream"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
+              >
+                <span
+                  class="border border-white/20 bg-white/10 text-white px-5 py-2 rounded-full text-sm font-bold backdrop-blur-md"
+                  >View</span
+                >
+              </div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col">
+              <div class="flex justify-between items-start mb-4">
+                <span
+                  class="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-bold rounded-full"
+                  >IoT</span
+                >
+              </div>
+              <h3
+                class="font-display font-bold text-lg mb-2 text-white group-hover:text-primary transition-colors"
+              >
+                EcoStream
+              </h3>
+              <p class="text-sm text-gray-400 mb-4 flex-grow">
+                Real-time energy monitoring for smart grid infrastructure.
+              </p>
+              <div class="grid grid-cols-3 gap-2 pt-4 border-t border-white/10">
+                <div class="text-center">
+                  <p class="text-lg font-bold text-primary">35%</p>
+                  <p class="text-xs text-gray-500">Energy Reduction</p>
+                </div>
+                <div class="text-center">
+                  <p class="text-lg font-bold text-primary">1000+</p>
+                  <p class="text-xs text-gray-500">Sites Monitored</p>
+                </div>
+                <div class="text-center">
+                  <p class="text-lg font-bold text-primary">12 weeks</p>
+                  <p class="text-xs text-gray-500">Delivery</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="max-w-7xl mx-auto px-6 pb-20">
+        <div
+          class="bg-gradient-to-br from-primary to-purple-600 rounded-[2rem] p-12 md:p-24 text-center relative overflow-hidden group cursor-pointer hover:shadow-2xl hover:shadow-primary/50 transition-shadow"
+        >
+          <div
+            class="absolute inset-0 grid-bg opacity-20 mix-blend-overlay"
+          ></div>
+          <div
+            class="absolute -top-24 -right-24 w-64 h-64 bg-white/20 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"
+          ></div>
+
+          <h2
+            class="relative z-10 font-display font-bold text-4xl md:text-5xl text-white mb-6"
+          >
+            Have an idea?
+          </h2>
+          <p
+            class="relative z-10 text-white/90 text-xl mb-10 max-w-2xl mx-auto"
+          >
+            Let's turn your vision into a scalable, market-ready product.
+          </p>
+          <a
+            href="contact.html"
+            class="relative z-10 inline-flex items-center gap-2 bg-white text-primary font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors"
+          >
+            Start Your Project <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </a>
+        </div>
+      </section>
     </main>
 
-    <script>
-        lucide.createIcons();
+    <footer class="bg-surface border-t border-white/5 pt-20 pb-10">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-5 gap-12 mb-16">
+          <!-- Brand & Social -->
+          <div class="md:col-span-2">
+            <h3 class="text-xl font-bold text-white mb-4">Zenbyte</h3>
+            <p class="text-muted text-sm leading-relaxed mb-6">Digital engineering solutions for modern businesses. We build scalable, innovative products.</p>
+            <div class="flex gap-4">
+              <a href="https://linkedin.com" target="_blank" class="w-10 h-10 rounded-full bg-surface/80 hover:bg-primary/20 flex items-center justify-center transition-colors">
+                <i data-lucide="linkedin" class="w-5 h-5"></i>
+              </a>
+              <a href="https://twitter.com" target="_blank" class="w-10 h-10 rounded-full bg-surface/80 hover:bg-primary/20 flex items-center justify-center transition-colors">
+                <i data-lucide="twitter" class="w-5 h-5"></i>
+              </a>
+              <a href="https://github.com" target="_blank" class="w-10 h-10 rounded-full bg-surface/80 hover:bg-primary/20 flex items-center justify-center transition-colors">
+                <i data-lucide="github" class="w-5 h-5"></i>
+              </a>
+              <a href="https://instagram.com" target="_blank" class="w-10 h-10 rounded-full bg-surface/80 hover:bg-primary/20 flex items-center justify-center transition-colors">
+                <i data-lucide="instagram" class="w-5 h-5"></i>
+              </a>
+            </div>
+          </div>
 
-        // Mobile menu toggle
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+          <!-- Services -->
+          <div>
+            <h4 class="text-white font-semibold mb-6">Services</h4>
+            <ul class="space-y-3">
+              <li><a href="services.html#web-dev" class="text-muted hover:text-white transition-colors text-sm">Web Development</a></li>
+              <li><a href="services.html#mobile-apps" class="text-muted hover:text-white transition-colors text-sm">Mobile Apps</a></li>
+              <li><a href="services.html#devops" class="text-muted hover:text-white transition-colors text-sm">DevOps & Cloud</a></li>
+              <li><a href="services.html#consulting" class="text-muted hover:text-white transition-colors text-sm">Consulting</a></li>
+            </ul>
+          </div>
 
-        // Filter functionality
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
+          <!-- Company -->
+          <div>
+            <h4 class="text-white font-semibold mb-6">Company</h4>
+            <ul class="space-y-3">
+              <li><a href="about.html" class="text-muted hover:text-white transition-colors text-sm">About Us</a></li>
+              <li><a href="projects.html" class="text-muted hover:text-white transition-colors text-sm">Projects</a></li>
+              <li><a href="contact.html" class="text-muted hover:text-white transition-colors text-sm">Contact</a></li>
+              <li><a href="javascript:void(0)" class="text-muted hover:text-white transition-colors text-sm">Careers</a></li>
+            </ul>
+          </div>
 
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Update active button
-                filterBtns.forEach(b => b.classList.remove('active', 'bg-white', 'text-gray-900'));
-                filterBtns.forEach(b => b.classList.add('text-gray-400'));
-                btn.classList.add('active');
-                btn.classList.remove('text-gray-400');
+          <!-- Legal -->
+          <div>
+            <h4 class="text-white font-semibold mb-6">Legal</h4>
+            <ul class="space-y-3">
+              <li><a href="privacy.html" class="text-muted hover:text-white transition-colors text-sm">Privacy Policy</a></li>
+              <li><a href="terms.html" class="text-muted hover:text-white transition-colors text-sm">Terms of Service</a></li>
+              <li><a href="javascript:void(0)" class="text-muted hover:text-white transition-colors text-sm">Cookie Policy</a></li>
+            </ul>
+          </div>
+        </div>
 
-                const filter = btn.dataset.filter;
+        <!-- Divider -->
+        <div class="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8"></div>
 
-                projectCards.forEach(card => {
-                    if (filter === 'all' || card.dataset.category === filter) {
-                        card.style.display = 'block';
-                        gsap.fromTo(card, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4 });
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
+        <!-- Bottom Footer -->
+        <div class="flex flex-col md:flex-row justify-between items-center text-xs text-muted">
+          <p>&copy; 2025 Zenbyte Digital Engineering. All rights reserved.</p>
+          <div class="flex gap-6 mt-4 md:mt-0">
+            <a href="privacy.html" class="hover:text-white transition-colors">Privacy</a>
+            <a href="terms.html" class="hover:text-white transition-colors">Terms</a>
+            <a href="javascript:void(0)" class="hover:text-white transition-colors">Cookies</a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-        // Initial animation - ensure all cards are visible
-        gsap.registerPlugin(ScrollTrigger);
 
-        // Set initial state and animate (reusing projectCards from filter section)
-        gsap.set(projectCards, { opacity: 0, y: 30 });
+      // Simple Filter Logic
+      const btns = document.querySelectorAll(".filter-btn");
+      const items = document.querySelectorAll(".project-item");
 
-        gsap.to(projectCards, {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            stagger: 0.1,
-            ease: 'power2.out',
-            delay: 0.2,
-            onComplete: function () {
-                // Ensure all cards are fully visible after animation
-                projectCards.forEach(card => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                });
+      btns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          btns.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          const filter = btn.dataset.filter;
+
+          items.forEach((item) => {
+            const shouldShow =
+              filter === "all" || item.dataset.category === filter;
+            if (shouldShow) {
+              item.style.display = "flex";
+              gsap.fromTo(
+                item,
+                { opacity: 0, scale: 0.95 },
+                { opacity: 1, scale: 1, duration: 0.4 }
+              );
+            } else {
+              item.style.display = "none";
             }
+          });
         });
-
-        // Fallback: ensure visibility after timeout
-        setTimeout(() => {
-            projectCards.forEach(card => {
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            });
-        }, 2000);
+      });
     </script>
-</body>
+    <script src="js/features.js"></script>
+  </body>
 
 </html>

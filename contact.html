@@ -1,543 +1,744 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | ZenByte</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/config.js"></script>
+    <link rel="stylesheet" href="css/features.css" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - ZenByte Software Solutions</title>
-    <meta name="description"
-        content="Get in touch with ZenByte for your next software project. Free consultation, quick response within 24 hours. Let's discuss custom development, cloud, and AI solutions.">
-    <meta name="keywords" content="contact ZenByte, software consultation, project inquiry, get quote, hire developers">
-    <meta name="author" content="ZenByte Software Solutions">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="canonical" href="https://zenbyte.com/contact">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://zenbyte.com/contact">
-    <meta property="og:title" content="Contact Us - ZenByte Software Solutions">
-    <meta property="og:description"
-        content="Have a project in mind? We respond within 24 hours. Free consultation available.">
-    <meta property="og:image" content="https://zenbyte.com/og-image.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Contact ZenByte">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+  </head>
+  <body class="antialiased">
+    <!-- Page Loader -->
+    <div id="pageLoader" class="page-loader">
+      <div class="loader-spinner"></div>
+    </div>
 
-        .contact-card:hover {
-            border-color: rgba(255, 255, 255, 0.3);
-            transform: translateY(-4px);
-        }
-
-        .input-field:focus {
-            border-color: white;
-            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
-        }
-    </style>
-</head>
-
-<body class="font-['Inter'] bg-[#0A0A0A] text-gray-100 scroll-smooth">
-
+    <!-- Custom Cursor -->
+    <div id="customCursor" class="custom-cursor"></div>
     <!-- Header -->
-    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-[#0A0A0A]/90 border-b border-[#1F2937]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <a href="index.html" class="text-2xl font-extrabold text-white tracking-widest">
-                    ZEN<span class="text-[#B0B0B0]">BYTE</span>
-                </a>
-                <nav class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-sm font-medium text-gray-400 hover:text-white transition">Home</a>
-                    <a href="about.html" class="text-sm font-medium text-gray-400 hover:text-white transition">About</a>
-                    <a href="services.html"
-                        class="text-sm font-medium text-gray-400 hover:text-white transition">Services</a>
-                    <a href="projects.html"
-                        class="text-sm font-medium text-gray-400 hover:text-white transition">Projects</a>
-                    <a href="contact.html"
-                        class="px-4 py-2 text-sm font-semibold rounded-lg bg-white text-gray-900 hover:bg-opacity-90 transition">Contact
-                        Us</a>
-                </nav>
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-[#111111] border-b border-gray-800 absolute w-full">
-            <div class="px-4 pt-2 pb-6 space-y-2">
-                <a href="index.html" class="block px-3 py-2 text-gray-300 hover:text-white">Home</a>
-                <a href="about.html" class="block px-3 py-2 text-gray-300 hover:text-white">About</a>
-                <a href="services.html" class="block px-3 py-2 text-gray-300 hover:text-white">Services</a>
-                <a href="projects.html" class="block px-3 py-2 text-gray-300 hover:text-white">Projects</a>
-                <a href="contact.html"
-                    class="block mt-4 px-3 py-2 text-center text-base font-bold bg-white text-gray-900 rounded-md">Contact
-                    Us</a>
-            </div>
-        </div>
+    <header
+      class="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50 transition-all duration-300"
+    >
+      <div
+        class="absolute inset-0 bg-surface/40 backdrop-blur-2xl rounded-full border border-white/10 shadow-2xl shadow-primary/10"
+      ></div>
+      <div
+        class="relative px-8 h-16 flex items-center justify-between rounded-full"
+      >
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div
+            class="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors"
+          >
+            <i data-lucide="zap" class="w-5 h-5"></i>
+          </div>
+          <span class="font-display font-bold text-xl tracking-tight"
+            >Zen<span class="text-primary">byte</span></span
+          >
+        </a>
+        <nav class="hidden md:flex items-center gap-8">
+          <a
+            href="index.html"
+            class="text-sm font-medium text-gray-400 hover:text-primary transition-colors"
+            >Home</a
+          >
+          <a
+            href="services.html"
+            class="text-sm font-medium text-gray-400 hover:text-primary transition-colors"
+            >Services</a
+          >
+          <a
+            href="projects.html"
+            class="text-sm font-medium text-gray-400 hover:text-primary transition-colors"
+            >Work</a
+          >
+          <a
+            href="about.html"
+            class="text-sm font-medium text-gray-400 hover:text-primary transition-colors"
+            >About</a
+          >
+        </nav>
+        <a
+          href="contact.html"
+          class="hidden md:flex bg-primary text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-primary/90 transition-all shadow-lg shadow-primary/25"
+          >Start Project</a
+        >
+        <button
+          id="themeToggle"
+          class="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors ml-4"
+        >
+          <i data-lucide="sun" class="theme-icon-sun w-5 h-5"></i>
+          <i data-lucide="moon" class="theme-icon-moon w-5 h-5 hidden"></i>
+        </button>
+      </div>
     </header>
 
-    <main class="pt-24">
-        <!-- Hero -->
-        <section
-            class="py-20 lg:py-28 bg-gradient-to-b from-[#0A0A0A] via-[#111111] to-[#0A0A0A] relative overflow-hidden">
-            <!-- Background Effects -->
-            <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none"
-                style="background-image: radial-gradient(#FFFFFF 1px, transparent 1px); background-size: 30px 30px;">
+    <main class="pt-32 pb-20 relative overflow-hidden bg-background">
+      <div class="glow-blob"></div>
+
+      <!-- Breadcrumb Navigation -->
+      <nav class="max-w-7xl mx-auto px-6 mb-8">
+        <div class="flex items-center gap-2 text-sm">
+          <a
+            href="index.html"
+            class="text-gray-400 hover:text-white transition-colors"
+            >Home</a
+          >
+          <i data-lucide="chevron-right" class="w-4 h-4 text-gray-600"></i>
+          <span class="text-white font-medium">Contact</span>
+        </div>
+      </nav>
+
+      <!-- Original Hero Section -->
+      <section class="py-20 lg:py-28 relative overflow-hidden">
+        <!-- Gradient Orbs -->
+        <div
+          class="absolute top-10 left-10 w-64 h-64 bg-pink-500/15 rounded-full blur-3xl pointer-events-none"
+        ></div>
+        <div
+          class="absolute bottom-10 right-10 w-72 h-72 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"
+        ></div>
+
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+          <!-- Badge -->
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full mb-8"
+          >
+            <span
+              class="w-2 h-2 bg-green-400 rounded-full animate-pulse"
+            ></span>
+            <span class="text-sm text-gray-300"
+              >We typically respond within 24 hours</span
+            >
+          </div>
+
+          <h1
+            class="text-5xl md:text-7xl font-display font-extrabold text-white mb-6 leading-tight"
+          >
+            Let's
+            <span
+              class="bg-gradient-to-r from-gray-400 to-gray-600 bg-clip-text text-transparent"
+              >Connect</span
+            >
+          </h1>
+
+          <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-10">
+            Have a project in mind? Questions about our services? We'd love to
+            hear from you and explore how we can help.
+          </p>
+
+          <!-- Quick Contact Info -->
+          <div class="flex flex-wrap justify-center gap-6 md:gap-10">
+            <a
+              href="mailto:hello@zenbyte.com"
+              class="flex items-center gap-2 text-gray-300 hover:text-white transition"
+            >
+              <i data-lucide="mail" class="w-5 h-5"></i>
+              <span>hello@zenbyte.com</span>
+            </a>
+            <span class="text-gray-600 hidden md:block">|</span>
+            <a
+              href="tel:+15551234567"
+              class="flex items-center gap-2 text-gray-300 hover:text-white transition"
+            >
+              <i data-lucide="phone" class="w-5 h-5"></i>
+              <span>+1 (555) 123-4567</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Form Section -->
+      <section class="max-w-7xl mx-auto px-6 mb-32">
+        <div class="grid md:grid-cols-3 gap-12 mb-12">
+          <!-- Contact Info Cards -->
+          <div class="glass-card p-8 rounded-2xl">
+            <div
+              class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center text-primary mb-4"
+            >
+              <i data-lucide="mail" class="w-6 h-6"></i>
             </div>
-            <!-- Gradient Orbs -->
-            <div class="absolute top-10 left-10 w-64 h-64 bg-pink-500/15 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-10 right-10 w-72 h-72 bg-indigo-500/10 rounded-full blur-3xl"></div>
+            <h3 class="font-display font-bold text-xl mb-2">Email</h3>
+            <p class="text-gray-400 mb-2">hello@zenbyte.com</p>
+            <p class="text-xs text-gray-500">
+              Typically replies within 24 hours
+            </p>
+          </div>
 
-            <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
-                <!-- Badge -->
+          <div class="glass-card p-8 rounded-2xl">
+            <div
+              class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center text-primary mb-4"
+            >
+              <i data-lucide="phone" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display font-bold text-xl mb-2">Phone</h3>
+            <p class="text-gray-400 mb-2">+1 (555) 123-4567</p>
+            <p class="text-xs text-gray-500">Mon - Fri, 9am - 6pm EST</p>
+          </div>
+
+          <div class="glass-card p-8 rounded-2xl">
+            <div
+              class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center text-primary mb-4"
+            >
+              <i data-lucide="map-pin" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-display font-bold text-xl mb-2">Location</h3>
+            <p class="text-gray-400 mb-2">San Francisco, CA</p>
+            <p class="text-xs text-gray-500">
+              Remote-first, globally distributed
+            </p>
+          </div>
+        </div>
+
+        <div class="glass-card p-8 md:p-12 rounded-[2rem] relative z-10">
+          <h2 class="font-display font-bold text-3xl mb-8">
+            Send us a message
+          </h2>
+          <form
+            class="space-y-8"
+            onsubmit="event.preventDefault(); alert('Message Sent! We will be in touch shortly.');"
+          >
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <label
+                  class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-3"
+                  >First Name <span class="text-primary">*</span></label
+                >
+                <input
+                  type="text"
+                  required
+                  class="input-field w-full rounded-xl px-5 py-4"
+                  placeholder="John"
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-3"
+                  >Last Name <span class="text-primary">*</span></label
+                >
+                <input
+                  type="text"
+                  required
+                  class="input-field w-full rounded-xl px-5 py-4"
+                  placeholder="Doe"
+                />
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <label
+                  class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-3"
+                  >Email <span class="text-primary">*</span></label
+                >
+                <input
+                  type="email"
+                  required
+                  class="input-field w-full rounded-xl px-5 py-4"
+                  placeholder="john@company.com"
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-3"
+                  >Service <span class="text-primary">*</span></label
+                >
+                <select
+                  required
+                  class="input-field w-full rounded-xl px-5 py-4 cursor-pointer"
+                >
+                  <option value="">Select a service</option>
+                  <option>Web Development</option>
+                  <option>Mobile App</option>
+                  <option>Cloud/DevOps</option>
+                  <option>AI Solutions</option>
+                  <option>Consulting</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label
+                class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-3"
+                >Budget Range</label
+              >
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <label
+                  class="flex items-center gap-2 cursor-pointer p-3 rounded-lg border border-white/5 hover:border-primary/30 hover:bg-white/5 transition-all"
+                >
+                  <input
+                    type="radio"
+                    name="budget"
+                    value="<25k"
+                    class="w-4 h-4"
+                  />
+                  <span class="text-sm">< $25K</span>
+                </label>
+                <label
+                  class="flex items-center gap-2 cursor-pointer p-3 rounded-lg border border-white/5 hover:border-primary/30 hover:bg-white/5 transition-all"
+                >
+                  <input
+                    type="radio"
+                    name="budget"
+                    value="25-50k"
+                    class="w-4 h-4"
+                  />
+                  <span class="text-sm">$25K - $50K</span>
+                </label>
+                <label
+                  class="flex items-center gap-2 cursor-pointer p-3 rounded-lg border border-white/5 hover:border-primary/30 hover:bg-white/5 transition-all"
+                >
+                  <input
+                    type="radio"
+                    name="budget"
+                    value="50-100k"
+                    class="w-4 h-4"
+                  />
+                  <span class="text-sm">$50K - $100K</span>
+                </label>
+                <label
+                  class="flex items-center gap-2 cursor-pointer p-3 rounded-lg border border-white/5 hover:border-primary/30 hover:bg-white/5 transition-all"
+                >
+                  <input
+                    type="radio"
+                    name="budget"
+                    value=">100k"
+                    class="w-4 h-4"
+                  />
+                  <span class="text-sm">> $100K</span>
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <label
+                class="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-3"
+                >Message <span class="text-primary">*</span></label
+              >
+              <textarea
+                required
+                class="input-field w-full rounded-xl px-5 py-4 h-40 resize-none"
+                placeholder="Tell us about your project, timeline, and goals..."
+              ></textarea>
+            </div>
+
+            <div
+              class="flex items-center gap-3 bg-white/5 p-4 rounded-xl border border-white/10"
+            >
+              <i
+                data-lucide="info"
+                class="w-5 h-5 text-primary flex-shrink-0"
+              ></i>
+              <p class="text-sm text-gray-400">
+                We typically respond to inquiries within 24 hours during
+                business days.
+              </p>
+            </div>
+
+            <div class="flex justify-end">
+              <button
+                type="submit"
+                class="bg-primary text-white font-bold px-10 py-4 rounded-xl hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 flex items-center gap-2 cursor-none-target"
+              >
+                Send Message <i data-lucide="send" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- MAP SECTION -->
+      <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-display font-bold text-white mb-4">
+              Visit Our Office
+            </h2>
+            <p class="text-gray-400">
+              We're located in the heart of Silicon City's tech district
+            </p>
+          </div>
+          <div
+            class="relative rounded-2xl overflow-hidden border border-gray-800 h-[500px]"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent z-10 pointer-events-none"
+            ></div>
+            <!-- Map Frame -->
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343008!2d-74.00425878428698!3d40.74076454379132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259bf5c1654f3%3A0xc80f9cfce5383d5d!2sGoogle!5e0!3m2!1sen!2sus!4v1629380000000!5m2!1sen!2sus"
+              width="100%"
+              height="100%"
+              style="
+                border: 0;
+                filter: invert(90%) hue-rotate(180deg) grayscale(80%)
+                  contrast(1.2);
+              "
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              class="w-full h-full"
+            >
+            </iframe>
+
+            <!-- Overlay Card -->
+            <div
+              class="absolute bottom-6 left-6 right-6 md:left-auto md:right-6 md:w-96 bg-[#111111]/95 backdrop-blur-md rounded-xl p-6 border border-gray-700 z-20 shadow-2xl"
+            >
+              <div class="flex items-start gap-4 mb-6">
                 <div
-                    class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full mb-8">
-                    <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                    <span class="text-sm text-gray-300">We typically respond within 24 hours</span>
+                  class="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-purple-500 flex items-center justify-center shrink-0"
+                >
+                  <i data-lucide="map-pin" class="w-6 h-6 text-white"></i>
                 </div>
+                <div>
+                  <h3 class="text-white font-semibold mb-1">
+                    ZenByte Headquarters
+                  </h3>
+                  <p class="text-gray-400 text-sm leading-relaxed">
+                    123 Tech Avenue,<br />Silicon City, USA 10001
+                  </p>
+                </div>
+              </div>
+              <a
+                href="https://maps.google.com"
+                target="_blank"
+                class="flex items-center justify-center gap-2 w-full px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-200 transition"
+              >
+                <i data-lucide="navigation" class="w-4 h-4"></i>
+                Get Directions
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
-                    Let's <span
-                        class="bg-gradient-to-r from-gray-400 to-gray-600 bg-clip-text text-transparent">Connect</span>
-                </h1>
+      <!-- FAQ Section -->
+      <section class="py-20 bg-surface border-t border-white/5">
+        <div class="max-w-3xl mx-auto px-6">
+          <h2
+            class="font-display font-bold text-3xl md:text-4xl text-center mb-12"
+          >
+            Frequently Asked Questions
+          </h2>
 
-                <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-10">
-                    Have a project in mind? Questions about our services? We'd love to hear from you and explore how we
-                    can help.
+          <div class="space-y-4">
+            <div
+              class="faq-item rounded-xl overflow-hidden border border-white/5"
+            >
+              <button onclick="toggleFaq(this)">
+                <span class="font-medium text-lg"
+                  >How long does a typical project take?</span
+                >
+                <i
+                  data-lucide="chevron-down"
+                  class="w-5 h-5 text-gray-400 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="faq-content">
+                <p class="text-gray-400 leading-relaxed pt-2">
+                  Project timelines vary based on scope and complexity. A simple
+                  web application might take 4-8 weeks, while enterprise
+                  solutions can take 3-6 months. We'll provide a detailed
+                  timeline during our initial consultation.
                 </p>
-
-                <!-- Quick Contact Info -->
-                <div class="flex flex-wrap justify-center gap-6 md:gap-10">
-                    <a href="mailto:hello@zenbyte.com"
-                        class="flex items-center gap-2 text-gray-300 hover:text-white transition">
-                        <i data-lucide="mail" class="w-5 h-5"></i>
-                        <span>hello@zenbyte.com</span>
-                    </a>
-                    <span class="text-gray-600 hidden md:block">|</span>
-                    <a href="tel:+15551234567"
-                        class="flex items-center gap-2 text-gray-300 hover:text-white transition">
-                        <i data-lucide="phone" class="w-5 h-5"></i>
-                        <span>+1 (555) 123-4567</span>
-                    </a>
-                </div>
+              </div>
             </div>
-        </section>
 
-        <!-- Contact Cards -->
-        <section class="py-12">
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Email Card -->
-                    <div
-                        class="contact-card p-8 bg-[#111111] rounded-2xl border border-gray-800 transition duration-300 text-center">
-                        <div class="w-14 h-14 mx-auto mb-6 rounded-full bg-white flex items-center justify-center">
-                            <i data-lucide="mail" class="w-6 h-6 text-gray-900"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Email Us</h3>
-                        <p class="text-gray-400 text-sm mb-4">For general inquiries and project discussions</p>
-                        <a href="mailto:hello@zenbyte.com"
-                            class="text-white font-medium hover:text-gray-400 transition">hello@zenbyte.com</a>
-                    </div>
-
-                    <!-- Call Card -->
-                    <div
-                        class="contact-card p-8 bg-[#111111] rounded-2xl border border-gray-800 transition duration-300 text-center">
-                        <div class="w-14 h-14 mx-auto mb-6 rounded-full bg-white flex items-center justify-center">
-                            <i data-lucide="phone" class="w-6 h-6 text-gray-900"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Call Us</h3>
-                        <p class="text-gray-400 text-sm mb-4">Mon-Fri from 9am to 6pm (EST)</p>
-                        <a href="tel:+15551234567" class="text-white font-medium hover:text-gray-400 transition">+1
-                            (555) 123-4567</a>
-                    </div>
-
-                    <!-- Location Card -->
-                    <div
-                        class="contact-card p-8 bg-[#111111] rounded-2xl border border-gray-800 transition duration-300 text-center">
-                        <div class="w-14 h-14 mx-auto mb-6 rounded-full bg-white flex items-center justify-center">
-                            <i data-lucide="map-pin" class="w-6 h-6 text-gray-900"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2">Visit Us</h3>
-                        <p class="text-gray-400 text-sm mb-4">Our headquarters location</p>
-                        <span class="text-white font-medium">123 Tech Avenue, Silicon City</span>
-                    </div>
-                </div>
+            <div
+              class="faq-item rounded-xl overflow-hidden border border-white/5"
+            >
+              <button onclick="toggleFaq(this)">
+                <span class="font-medium text-lg"
+                  >What technologies do you use?</span
+                >
+                <i
+                  data-lucide="chevron-down"
+                  class="w-5 h-5 text-gray-400 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="faq-content">
+                <p class="text-gray-400 leading-relaxed pt-2">
+                  We specialize in modern stacks: React, Next.js, Node.js,
+                  Python, Flutter for mobile, and AWS/Azure for cloud
+                  infrastructure. We choose the best tools for your specific
+                  needs.
+                </p>
+              </div>
             </div>
-        </section>
 
-        <!-- Contact Form Section -->
-        <section class="py-16 bg-[#111111]">
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-
-                    <!-- Left Side - Info -->
-                    <div>
-                        <h2 class="text-3xl font-bold text-white mb-6">Start Your Project</h2>
-                        <p class="text-gray-400 mb-8">Fill out the form and a solution architect will get back to you
-                            within 24 hours to discuss your project requirements.</p>
-
-                        <div class="space-y-6">
-                            <div class="flex items-start gap-4">
-                                <div
-                                    class="w-10 h-10 rounded-lg bg-[#1A1A1A] flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="check-circle" class="w-5 h-5 text-green-400"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-white font-semibold mb-1">Free Consultation</h4>
-                                    <p class="text-gray-400 text-sm">No obligations. Let's explore how we can help your
-                                        business grow.</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-4">
-                                <div
-                                    class="w-10 h-10 rounded-lg bg-[#1A1A1A] flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="clock" class="w-5 h-5 text-blue-400"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-white font-semibold mb-1">Quick Response</h4>
-                                    <p class="text-gray-400 text-sm">We respond to all inquiries within 24 business
-                                        hours.</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-4">
-                                <div
-                                    class="w-10 h-10 rounded-lg bg-[#1A1A1A] flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="shield-check" class="w-5 h-5 text-purple-400"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-white font-semibold mb-1">Confidential</h4>
-                                    <p class="text-gray-400 text-sm">Your information is secure and will only be used to
-                                        discuss your project.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Social Links -->
-                        <div class="mt-12">
-                            <p class="text-sm text-gray-500 mb-4">Or connect with us on social media:</p>
-                            <div class="flex gap-4">
-                                <a href="#"
-                                    class="w-12 h-12 rounded-lg bg-[#1A1A1A] border border-gray-700 flex items-center justify-center hover:border-white transition">
-                                    <i data-lucide="linkedin" class="w-5 h-5 text-gray-400 hover:text-white"></i>
-                                </a>
-                                <a href="#"
-                                    class="w-12 h-12 rounded-lg bg-[#1A1A1A] border border-gray-700 flex items-center justify-center hover:border-white transition">
-                                    <i data-lucide="twitter" class="w-5 h-5 text-gray-400 hover:text-white"></i>
-                                </a>
-                                <a href="#"
-                                    class="w-12 h-12 rounded-lg bg-[#1A1A1A] border border-gray-700 flex items-center justify-center hover:border-white transition">
-                                    <i data-lucide="github" class="w-5 h-5 text-gray-400 hover:text-white"></i>
-                                </a>
-                                <a href="#"
-                                    class="w-12 h-12 rounded-lg bg-[#1A1A1A] border border-gray-700 flex items-center justify-center hover:border-white transition">
-                                    <i data-lucide="instagram" class="w-5 h-5 text-gray-400 hover:text-white"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right Side - Form -->
-                    <div class="bg-[#0A0A0A] p-8 md:p-10 rounded-2xl border border-gray-800">
-                        <!-- Formspree Integration - Replace YOUR_FORM_ID with actual Formspree form ID -->
-                        <form id="contact-form" class="space-y-6" action="https://formspree.io/f/YOUR_FORM_ID"
-                            method="POST">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <label for="firstName" class="block text-sm font-medium text-gray-300 mb-2">First
-                                        Name *</label>
-                                    <input type="text" id="firstName" name="firstName" placeholder="John" required
-                                        class="input-field w-full p-3 rounded-lg bg-[#111111] border border-gray-700 text-white placeholder-gray-500 focus:outline-none transition">
-                                </div>
-                                <div>
-                                    <label for="lastName" class="block text-sm font-medium text-gray-300 mb-2">Last Name
-                                        *</label>
-                                    <input type="text" id="lastName" name="lastName" placeholder="Doe" required
-                                        class="input-field w-full p-3 rounded-lg bg-[#111111] border border-gray-700 text-white placeholder-gray-500 focus:outline-none transition">
-                                </div>
-                            </div>
-
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Work Email
-                                    *</label>
-                                <input type="email" id="email" name="email" placeholder="john@company.com" required
-                                    class="input-field w-full p-3 rounded-lg bg-[#111111] border border-gray-700 text-white placeholder-gray-500 focus:outline-none transition">
-                            </div>
-
-                            <div>
-                                <label for="company" class="block text-sm font-medium text-gray-300 mb-2">Company
-                                    Name</label>
-                                <input type="text" id="company" name="company" placeholder="Your Company Inc."
-                                    class="input-field w-full p-3 rounded-lg bg-[#111111] border border-gray-700 text-white placeholder-gray-500 focus:outline-none transition">
-                            </div>
-
-                            <div>
-                                <label for="service" class="block text-sm font-medium text-gray-300 mb-2">Service
-                                    Interested In</label>
-                                <select id="service" name="service"
-                                    class="input-field w-full p-3 rounded-lg bg-[#111111] border border-gray-700 text-white focus:outline-none transition appearance-none cursor-pointer">
-                                    <option value="" class="bg-[#111111]">Select a service...</option>
-                                    <option value="web" class="bg-[#111111]">Custom Web Development</option>
-                                    <option value="mobile" class="bg-[#111111]">Mobile App Development</option>
-                                    <option value="cloud" class="bg-[#111111]">Cloud & DevOps</option>
-                                    <option value="ai" class="bg-[#111111]">AI & Data Solutions</option>
-                                    <option value="consulting" class="bg-[#111111]">Technical Consulting</option>
-                                    <option value="other" class="bg-[#111111]">Other</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label for="budget" class="block text-sm font-medium text-gray-300 mb-2">Estimated
-                                    Budget</label>
-                                <select id="budget" name="budget"
-                                    class="input-field w-full p-3 rounded-lg bg-[#111111] border border-gray-700 text-white focus:outline-none transition appearance-none cursor-pointer">
-                                    <option value="" class="bg-[#111111]">Select budget range...</option>
-                                    <option value="10k-25k" class="bg-[#111111]">$10,000 - $25,000</option>
-                                    <option value="25k-50k" class="bg-[#111111]">$25,000 - $50,000</option>
-                                    <option value="50k-100k" class="bg-[#111111]">$50,000 - $100,000</option>
-                                    <option value="100k+" class="bg-[#111111]">$100,000+</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Project
-                                    Details *</label>
-                                <textarea id="message" name="message" rows="5" required
-                                    placeholder="Tell us about your project, goals, and timeline..."
-                                    class="input-field w-full p-3 rounded-lg bg-[#111111] border border-gray-700 text-white placeholder-gray-500 focus:outline-none transition resize-none"></textarea>
-                            </div>
-
-                            <button type="submit"
-                                class="w-full px-8 py-4 bg-white text-gray-900 font-bold rounded-xl text-lg shadow-xl shadow-white/20 transform hover:scale-[1.01] transition duration-300">
-                                Send Message
-                            </button>
-
-                            <p id="success-message"
-                                class="hidden text-center py-4 rounded-xl bg-green-500/20 text-green-400 font-semibold">
-                                <span class="flex items-center justify-center gap-2">
-                                    <i data-lucide="check-circle" class="w-5 h-5"></i>
-                                    Thank you! We'll be in touch within 24 hours.
-                                </span>
-                            </p>
-                        </form>
-                    </div>
-                </div>
+            <div
+              class="faq-item rounded-xl overflow-hidden border border-white/5"
+            >
+              <button onclick="toggleFaq(this)">
+                <span class="font-medium text-lg"
+                  >Do you provide post-launch support?</span
+                >
+                <i
+                  data-lucide="chevron-down"
+                  class="w-5 h-5 text-gray-400 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="faq-content">
+                <p class="text-gray-400 leading-relaxed pt-2">
+                  Yes! We offer various maintenance and support packages
+                  including bug fixes, security updates, performance monitoring,
+                  and feature enhancements to ensure your product grows with
+                  you.
+                </p>
+              </div>
             </div>
-        </section>
 
-        <!-- FAQ Section -->
-        <section class="py-20 bg-[#0A0A0A]">
-            <div class="max-w-4xl mx-auto px-4">
-                <h2 class="text-3xl font-bold text-white text-center mb-12">Frequently Asked Questions</h2>
-                <div class="space-y-4">
-                    <div class="faq-item border border-gray-800 rounded-xl overflow-hidden">
-                        <button
-                            class="faq-btn w-full p-6 text-left flex items-center justify-between bg-[#111111] hover:bg-[#1A1A1A] transition">
-                            <span class="text-white font-semibold">How long does a typical project take?</span>
-                            <i data-lucide="chevron-down"
-                                class="w-5 h-5 text-gray-400 faq-icon transition-transform"></i>
-                        </button>
-                        <div class="faq-content hidden p-6 bg-[#0A0A0A]">
-                            <p class="text-gray-400">Project timelines vary based on scope and complexity. A simple web
-                                application might take 4-8 weeks, while enterprise solutions can take 3-6 months. We'll
-                                provide a detailed timeline during our initial consultation.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item border border-gray-800 rounded-xl overflow-hidden">
-                        <button
-                            class="faq-btn w-full p-6 text-left flex items-center justify-between bg-[#111111] hover:bg-[#1A1A1A] transition">
-                            <span class="text-white font-semibold">What technologies do you work with?</span>
-                            <i data-lucide="chevron-down"
-                                class="w-5 h-5 text-gray-400 faq-icon transition-transform"></i>
-                        </button>
-                        <div class="faq-content hidden p-6 bg-[#0A0A0A]">
-                            <p class="text-gray-400">We specialize in React, Next.js, Node.js, Python, Flutter, AWS,
-                                Azure, and various AI/ML frameworks. We choose the best technology stack based on your
-                                specific project requirements.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item border border-gray-800 rounded-xl overflow-hidden">
-                        <button
-                            class="faq-btn w-full p-6 text-left flex items-center justify-between bg-[#111111] hover:bg-[#1A1A1A] transition">
-                            <span class="text-white font-semibold">Do you offer ongoing support after launch?</span>
-                            <i data-lucide="chevron-down"
-                                class="w-5 h-5 text-gray-400 faq-icon transition-transform"></i>
-                        </button>
-                        <div class="faq-content hidden p-6 bg-[#0A0A0A]">
-                            <p class="text-gray-400">Yes! We offer various maintenance and support packages including
-                                bug fixes, security updates, performance monitoring, and feature enhancements. We
-                                believe in long-term partnerships with our clients.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item border border-gray-800 rounded-xl overflow-hidden">
-                        <button
-                            class="faq-btn w-full p-6 text-left flex items-center justify-between bg-[#111111] hover:bg-[#1A1A1A] transition">
-                            <span class="text-white font-semibold">How do you handle project communication?</span>
-                            <i data-lucide="chevron-down"
-                                class="w-5 h-5 text-gray-400 faq-icon transition-transform"></i>
-                        </button>
-                        <div class="faq-content hidden p-6 bg-[#0A0A0A]">
-                            <p class="text-gray-400">We use agile methodology with regular sprint reviews, daily
-                                standups (if needed), and dedicated project management tools. You'll have a dedicated
-                                project manager and direct access to the development team.</p>
-                        </div>
-                    </div>
-                </div>
+            <div
+              class="faq-item rounded-xl overflow-hidden border border-white/5"
+            >
+              <button onclick="toggleFaq(this)">
+                <span class="font-medium text-lg"
+                  >How do we communicate during the project?</span
+                >
+                <i
+                  data-lucide="chevron-down"
+                  class="w-5 h-5 text-gray-400 transition-transform duration-300"
+                ></i>
+              </button>
+              <div class="faq-content">
+                <p class="text-gray-400 leading-relaxed pt-2">
+                  We use Slack for daily comms, Trello/Jira for task management,
+                  and weekly video calls for sprint reviews. You'll have direct
+                  access to your project manager and lead developer.
+                </p>
+              </div>
             </div>
-        </section>
-
-        <!-- FOOTER SECTION -->
-        <footer class="bg-black border-t border-gray-800 pt-16 pb-12">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                    <div class="col-span-2 md:col-span-1">
-                        <a href="index.html" class="text-3xl font-extrabold text-white tracking-widest mb-4 block">
-                            ZEN<span class="text-[#B0B0B0]">BYTE</span>
-                        </a>
-                        <p class="text-gray-400 text-sm mt-4">
-                            Intelligent Software Solutions, Engineered with Precision.
-                        </p>
-                        <div class="flex space-x-3 mt-4">
-                            <a href="#" class="text-gray-500 hover:text-white transition"><i data-lucide="linkedin"
-                                    class="w-5 h-5"></i></a>
-                            <a href="#" class="text-gray-500 hover:text-white transition"><i data-lucide="twitter"
-                                    class="w-5 h-5"></i></a>
-                            <a href="#" class="text-gray-500 hover:text-white transition"><i data-lucide="github"
-                                    class="w-5 h-5"></i></a>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h3 class="text-lg font-semibold text-white mb-4">Services</h3>
-                        <ul class="space-y-3 text-sm">
-                            <li><a href="services.html" class="text-gray-400 hover:text-white transition">Custom
-                                    Development</a></li>
-                            <li><a href="services.html" class="text-gray-400 hover:text-white transition">Cloud &
-                                    DevOps</a></li>
-                            <li><a href="services.html" class="text-gray-400 hover:text-white transition">Data & AI</a>
-                            </li>
-                            <li><a href="services.html" class="text-gray-400 hover:text-white transition">UI/UX
-                                    Design</a></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 class="text-lg font-semibold text-white mb-4">Company</h3>
-                        <ul class="space-y-3 text-sm">
-                            <li><a href="about.html" class="text-gray-400 hover:text-white transition">About Us</a></li>
-                            <li><a href="projects.html" class="text-gray-400 hover:text-white transition">Projects</a>
-                            </li>
-                            <li><a href="contact.html" class="text-gray-400 hover:text-white transition">Contact</a>
-                            </li>
-                            <li><a href="privacy.html" class="text-gray-400 hover:text-white transition">Privacy
-                                    Policy</a></li>
-                            <li><a href="terms.html" class="text-gray-400 hover:text-white transition">Terms of
-                                    Service</a></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 class="text-lg font-semibold text-white mb-4">Get in Touch</h3>
-                        <ul class="space-y-3 text-sm">
-                            <li class="flex items-start">
-                                <i data-lucide="map-pin" class="w-4 h-4 mr-3 text-white mt-1 flex-shrink-0"></i>
-                                <span class="text-gray-400">123 Tech Avenue, Silicon City, USA 10001</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i data-lucide="mail" class="w-4 h-4 mr-3 text-white flex-shrink-0"></i>
-                                <a href="mailto:hello@zenbyte.com"
-                                    class="text-gray-400 hover:text-white transition">hello@zenbyte.com</a>
-                            </li>
-                            <li class="flex items-center">
-                                <i data-lucide="phone" class="w-4 h-4 mr-3 text-white flex-shrink-0"></i>
-                                <span class="text-gray-400">+1 (555) 123-4567</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div
-                    class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p class="text-sm text-gray-500">&copy; 2025 ZenByte Software Solutions. All rights reserved.</p>
-                    <div class="flex gap-6 text-sm">
-                        <a href="privacy.html" class="text-gray-500 hover:text-white transition">Privacy</a>
-                        <a href="terms.html" class="text-gray-500 hover:text-white transition">Terms</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+          </div>
+        </div>
+      </section>
     </main>
 
+    <!-- CTA Banner -->
+    <section
+      class="py-16 bg-gradient-to-r from-primary/10 via-background to-purple-500/10 border-t border-b border-white/10"
+    >
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 class="font-display font-bold text-3xl md:text-4xl mb-4">
+          Need more information?
+        </h2>
+        <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
+          Check out our detailed service offerings, recent projects, and learn
+          more about how we approach digital transformation.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="services.html"
+            class="px-8 py-3 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all"
+          >
+            Our Services
+          </a>
+          <a
+            href="projects.html"
+            class="px-8 py-3 border border-white/20 text-white font-bold rounded-xl hover:bg-white/5 transition-all"
+          >
+            View Our Work
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-surface border-t border-white/5 pt-20 pb-10">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-5 gap-12 mb-16">
+          <!-- Brand & Social -->
+          <div class="md:col-span-2">
+            <h3 class="text-xl font-bold text-white mb-4">Zenbyte</h3>
+            <p class="text-muted text-sm leading-relaxed mb-6">
+              Digital engineering solutions for modern businesses. We build
+              scalable, innovative products.
+            </p>
+            <div class="flex gap-4">
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                class="w-10 h-10 rounded-full bg-surface/80 hover:bg-primary/20 flex items-center justify-center transition-colors"
+              >
+                <i data-lucide="linkedin" class="w-5 h-5"></i>
+              </a>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                class="w-10 h-10 rounded-full bg-surface/80 hover:bg-primary/20 flex items-center justify-center transition-colors"
+              >
+                <i data-lucide="twitter" class="w-5 h-5"></i>
+              </a>
+              <a
+                href="https://github.com"
+                target="_blank"
+                class="w-10 h-10 rounded-full bg-surface/80 hover:bg-primary/20 flex items-center justify-center transition-colors"
+              >
+                <i data-lucide="github" class="w-5 h-5"></i>
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                class="w-10 h-10 rounded-full bg-surface/80 hover:bg-primary/20 flex items-center justify-center transition-colors"
+              >
+                <i data-lucide="instagram" class="w-5 h-5"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Services -->
+          <div>
+            <h4 class="text-white font-semibold mb-6">Services</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="services.html#web-dev"
+                  class="text-muted hover:text-white transition-colors text-sm"
+                  >Web Development</a
+                >
+              </li>
+              <li>
+                <a
+                  href="services.html#mobile-apps"
+                  class="text-muted hover:text-white transition-colors text-sm"
+                  >Mobile Apps</a
+                >
+              </li>
+              <li>
+                <a
+                  href="services.html#devops"
+                  class="text-muted hover:text-white transition-colors text-sm"
+                  >DevOps & Cloud</a
+                >
+              </li>
+              <li>
+                <a
+                  href="services.html#consulting"
+                  class="text-muted hover:text-white transition-colors text-sm"
+                  >Consulting</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div>
+            <h4 class="text-white font-semibold mb-6">Company</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="about.html"
+                  class="text-muted hover:text-white transition-colors text-sm"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="projects.html"
+                  class="text-muted hover:text-white transition-colors text-sm"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-muted hover:text-white transition-colors text-sm"
+                  >Contact</a
+                >
+              </li>
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  class="text-muted hover:text-white transition-colors text-sm"
+                  >Careers</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Legal -->
+          <div>
+            <h4 class="text-white font-semibold mb-6">Legal</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="privacy.html"
+                  class="text-muted hover:text-white transition-colors text-sm"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="terms.html"
+                  class="text-muted hover:text-white transition-colors text-sm"
+                  >Terms of Service</a
+                >
+              </li>
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  class="text-muted hover:text-white transition-colors text-sm"
+                  >Cookie Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div
+          class="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8"
+        ></div>
+
+        <!-- Bottom Footer -->
+        <div
+          class="flex flex-col md:flex-row justify-between items-center text-xs text-muted"
+        >
+          <p>&copy; 2025 Zenbyte Digital Engineering. All rights reserved.</p>
+          <div class="flex gap-6 mt-4 md:mt-0">
+            <a href="privacy.html" class="hover:text-white transition-colors"
+              >Privacy</a
+            >
+            <a href="terms.html" class="hover:text-white transition-colors"
+              >Terms</a
+            >
+            <a
+              href="javascript:void(0)"
+              class="hover:text-white transition-colors"
+              >Cookies</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <script>
-        lucide.createIcons();
+      lucide.createIcons();
 
-        // Mobile menu toggle
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+      function toggleFaq(btn) {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector("svg");
 
-        // Form submission handler
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            const form = event.target;
-
-            if (form.checkValidity()) {
-                form.reset();
-                const successMsg = document.getElementById('success-message');
-                successMsg.classList.remove('hidden');
-                lucide.createIcons();
-
-                setTimeout(() => {
-                    successMsg.classList.add('hidden');
-                }, 5000);
-            }
-        }
-
-        // FAQ accordion
-        const faqBtns = document.querySelectorAll('.faq-btn');
-        faqBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const content = btn.nextElementSibling;
-                const icon = btn.querySelector('.faq-icon');
-
-                content.classList.toggle('hidden');
-                icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
-            });
+        // Close others
+        document.querySelectorAll(".faq-content").forEach((el) => {
+          if (el !== content) el.classList.remove("open");
+        });
+        document.querySelectorAll(".faq-item svg").forEach((el) => {
+          if (el !== icon) el.style.transform = "rotate(0deg)";
         });
 
-        // Animations - ensure all cards are visible
-        const contactCards = document.querySelectorAll('.contact-card');
-        gsap.set(contactCards, { opacity: 0, y: 30 });
-
-        gsap.to(contactCards, {
-            opacity: 1,
-            y: 0,
-            duration: 0.6,
-            stagger: 0.15,
-            ease: 'power2.out',
-            delay: 0.2,
-            onComplete: function () {
-                contactCards.forEach(card => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                });
-            }
-        });
-
-        // Fallback: ensure visibility
-        setTimeout(() => {
-            contactCards.forEach(card => {
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            });
-        }, 2000);
+        // Toggle current
+        icon.style.transform = content.classList.contains("open")
+          ? "rotate(180deg)"
+          : "rotate(0deg)";
+      }
     </script>
-</body>
-
+    <script src="js/features.js"></script>
+  </body>
 </html>

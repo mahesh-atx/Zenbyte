@@ -1,396 +1,580 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services | ZenByte</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/config.js"></script>
+    <link rel="stylesheet" href="css/features.css" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - ZenByte Software Solutions</title>
-    <meta name="description"
-        content="Explore ZenByte's full-stack digital services: custom web & mobile development, cloud architecture, DevOps, AI & data solutions, and UI/UX design.">
-    <meta name="keywords"
-        content="software services, web development, mobile apps, cloud DevOps, AI solutions, UI UX design">
-    <meta name="author" content="ZenByte Software Solutions">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="canonical" href="https://zenbyte.com/services">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://zenbyte.com/services">
-    <meta property="og:title" content="Services - ZenByte Software Solutions">
-    <meta property="og:description"
-        content="End-to-end engineering services. We don't just write code — we architect solutions that solve real business problems.">
-    <meta property="og:image" content="https://zenbyte.com/og-image.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ZenByte Services">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-    </style>
-</head>
+  </head>
 
-<body class="font-['Inter'] bg-[#0A0A0A] text-gray-100 scroll-smooth">
+  <body class="antialiased">
+    <!-- Page Loader -->
+    <div id="pageLoader" class="page-loader">
+      <div class="loader-spinner"></div>
+    </div>
 
+    <!-- Custom Cursor -->
+    <div id="customCursor" class="custom-cursor"></div>
     <!-- Header -->
-    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-[#0A0A0A]/90 border-b border-[#1F2937]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <a href="index.html" class="text-2xl font-extrabold text-white tracking-widest">
-                    ZEN<span class="text-[#B0B0B0]">BYTE</span>
-                </a>
-                <nav class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-sm font-medium text-gray-400 hover:text-white transition">Home</a>
-                    <a href="about.html" class="text-sm font-medium text-gray-400 hover:text-white transition">About</a>
-                    <a href="services.html" class="text-sm font-medium text-white transition">Services</a>
-                    <a href="projects.html"
-                        class="text-sm font-medium text-gray-400 hover:text-white transition">Projects</a>
-                    <a href="contact.html"
-                        class="px-4 py-2 text-sm font-semibold rounded-lg bg-white text-gray-900 hover:bg-opacity-90 transition">Contact
-                        Us</a>
-                </nav>
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-[#111111] border-b border-gray-800 absolute w-full">
-            <div class="px-4 pt-2 pb-6 space-y-2">
-                <a href="index.html" class="block px-3 py-2 text-gray-300 hover:text-white">Home</a>
-                <a href="about.html" class="block px-3 py-2 text-gray-300 hover:text-white">About</a>
-                <a href="services.html" class="block px-3 py-2 text-white bg-gray-800 rounded-md">Services</a>
-                <a href="projects.html" class="block px-3 py-2 text-gray-300 hover:text-white">Projects</a>
-            </div>
-        </div>
+    <header
+      class="fixed top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50"
+    >
+      <div
+        class="absolute inset-0 bg-surface/60 backdrop-blur-2xl rounded-full border border-white/10 shadow-2xl shadow-primary/5"
+      ></div>
+      <div
+        class="relative px-8 h-16 flex items-center justify-between rounded-full"
+      >
+        <a href="index.html" class="flex items-center gap-2 group">
+          <div
+            class="w-9 h-9 bg-primary/20 rounded-xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-background transition-all"
+          >
+            <i data-lucide="zap" class="w-5 h-5"></i>
+          </div>
+          <span class="font-display font-bold text-xl text-text"
+            >Zen<span class="text-primary">byte</span></span
+          >
+        </a>
+        <nav class="hidden md:flex items-center gap-8">
+          <a
+            href="index.html"
+            class="text-sm font-medium text-text-muted hover:text-primary transition-colors"
+            >Home</a
+          >
+          <a href="services.html" class="text-sm font-medium text-primary"
+            >Services</a
+          >
+          <a
+            href="projects.html"
+            class="text-sm font-medium text-text-muted hover:text-primary transition-colors"
+            >Work</a
+          >
+          <a
+            href="about.html"
+            class="text-sm font-medium text-text-muted hover:text-primary transition-colors"
+            >About</a
+          >
+        </nav>
+        <a
+          href="contact.html"
+          class="hidden md:flex bg-primary text-background px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-dark transition-all shadow-lg shadow-primary/25"
+        >
+          Start Project
+        </a>
+        <button
+          id="themeToggle"
+          class="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors ml-4"
+        >
+          <i data-lucide="sun" class="theme-icon-sun w-5 h-5"></i>
+          <i data-lucide="moon" class="theme-icon-moon w-5 h-5 hidden"></i>
+        </button>
+      </div>
     </header>
 
-    <main class="pt-24">
-        <!-- Hero -->
-        <section
-            class="py-24 lg:py-32 bg-gradient-to-b from-[#0A0A0A] via-[#111111] to-[#0A0A0A] relative overflow-hidden">
-            <!-- Background Effects -->
-            <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none"
-                style="background-image: radial-gradient(#FFFFFF 1px, transparent 1px); background-size: 30px 30px;">
+    <main>
+      <!-- Breadcrumb -->
+      <nav class="max-w-7xl mx-auto px-6 pt-28 mb-8">
+        <div class="flex items-center gap-2 text-sm">
+          <a
+            href="index.html"
+            class="text-text-muted hover:text-text transition-colors"
+            >Home</a
+          >
+          <i data-lucide="chevron-right" class="w-4 h-4 text-text-muted"></i>
+          <span class="text-text font-medium">Services</span>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section
+        class="min-h-[70vh] flex items-center justify-center relative overflow-hidden"
+      >
+        <div class="mesh-gradient"></div>
+
+        <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+          <h1
+            class="font-display font-bold text-5xl md:text-7xl lg:text-8xl mb-8 leading-tight text-text"
+          >
+            End-to-End<br />
+            <span class="text-gradient">Engineering.</span>
+          </h1>
+          <p
+            class="text-xl md:text-2xl text-text-muted max-w-3xl mx-auto mb-12"
+          >
+            We don't just write code. We architect solutions that solve real
+            business problems and drive measurable growth at scale.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <div
+              class="glass-card px-6 py-3 rounded-full flex items-center gap-3"
+            >
+              <i data-lucide="code-2" class="w-5 h-5 icon-cyan icon-glow"></i>
+              <span class="text-text">Full Stack</span>
             </div>
-            <!-- Gradient Orbs -->
-            <div class="absolute top-10 right-20 w-80 h-80 bg-cyan-500/15 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-10 left-20 w-64 h-64 bg-violet-500/10 rounded-full blur-3xl"></div>
+            <div
+              class="glass-card px-6 py-3 rounded-full flex items-center gap-3"
+            >
+              <i data-lucide="cloud" class="w-5 h-5 icon-blue icon-glow"></i>
+              <span class="text-text">Cloud Native</span>
+            </div>
+            <div
+              class="glass-card px-6 py-3 rounded-full flex items-center gap-3"
+            >
+              <i
+                data-lucide="brain-circuit"
+                class="w-5 h-5 icon-purple icon-glow"
+              ></i>
+              <span class="text-text">AI Driven</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
-                <!-- Badge -->
+      <!-- Detailed Services -->
+      <section class="max-w-7xl mx-auto px-6 space-y-24 py-24">
+        <!-- Service 1: Product Engineering -->
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="gsap-fade-up">
+            <div
+              class="w-16 h-16 bg-cyan-500/10 rounded-2xl flex items-center justify-center mb-8"
+            >
+              <i
+                data-lucide="smartphone"
+                class="w-8 h-8 icon-cyan icon-glow"
+              ></i>
+            </div>
+            <h2 class="font-display font-bold text-4xl text-text mb-6">
+              Product Engineering
+            </h2>
+            <p class="text-text-muted mb-8 text-lg leading-relaxed">
+              We build high-performance web applications and native mobile
+              experiences. Our focus is on speed, accessibility, and creating
+              interfaces that users genuinely love to use.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-8">
+              <span class="tech-pill">React</span>
+              <span class="tech-pill">Next.js</span>
+              <span class="tech-pill">TypeScript</span>
+              <span class="tech-pill">Flutter</span>
+              <span class="tech-pill">React Native</span>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-4">
                 <div
-                    class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full mb-8">
-                    <i data-lucide="zap" class="w-4 h-4 text-yellow-400"></i>
-                    <span class="text-sm text-gray-300">Full-Stack Digital Solutions</span>
+                  class="mt-1 w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center shrink-0"
+                >
+                  <i data-lucide="check" class="w-3 h-3 icon-green"></i>
                 </div>
-
-                <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
-                    End-to-End <br class="hidden sm:block">
-                    <span
-                        class="bg-gradient-to-r from-gray-400 to-gray-600 bg-clip-text text-transparent">Engineering</span>
-                </h1>
-
-                <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-10">
-                    We don't just write code. We architect solutions that solve real business problems and drive
-                    measurable growth.
+                <div>
+                  <h4 class="text-text font-bold">Progressive Web Apps</h4>
+                  <p class="text-sm text-text-muted">
+                    Offline-capable, app-like experiences on the web.
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <div
+                  class="mt-1 w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center shrink-0"
+                >
+                  <i data-lucide="check" class="w-3 h-3 icon-green"></i>
+                </div>
+                <div>
+                  <h4 class="text-text font-bold">Cross-Platform Mobile</h4>
+                  <p class="text-sm text-text-muted">
+                    Single codebase for iOS and Android without compromise.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="relative h-[400px] bg-surface rounded-3xl border border-text/10 overflow-hidden gsap-fade-up"
+          >
+            <!-- Code Editor Mockup -->
+            <div class="absolute inset-0 p-6 font-mono text-sm">
+              <div class="flex gap-2 mb-6 border-b border-text/5 pb-4">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+              </div>
+              <div class="space-y-2 text-text-muted">
+                <p>
+                  <span class="icon-purple">import</span> {
+                  <span class="icon-blue">ZenByte</span> }
+                  <span class="icon-purple">from</span>
+                  <span class="icon-green">'@core/engine'</span>;
                 </p>
-
-                <!-- Service Icons -->
-                <div class="flex flex-wrap justify-center gap-4 md:gap-6">
-                    <div class="flex items-center gap-2 px-4 py-2 bg-[#1A1A1A] border border-gray-700 rounded-full">
-                        <i data-lucide="code-2" class="w-4 h-4 text-blue-400"></i>
-                        <span class="text-sm text-gray-300">Web & Mobile</span>
-                    </div>
-                    <div class="flex items-center gap-2 px-4 py-2 bg-[#1A1A1A] border border-gray-700 rounded-full">
-                        <i data-lucide="cloud" class="w-4 h-4 text-cyan-400"></i>
-                        <span class="text-sm text-gray-300">Cloud & DevOps</span>
-                    </div>
-                    <div class="flex items-center gap-2 px-4 py-2 bg-[#1A1A1A] border border-gray-700 rounded-full">
-                        <i data-lucide="brain" class="w-4 h-4 text-purple-400"></i>
-                        <span class="text-sm text-gray-300">AI & Data</span>
-                    </div>
-                </div>
+                <p>&nbsp;</p>
+                <p>
+                  <span class="icon-purple">export const</span>
+                  <span class="icon-yellow">App</span> = () => {
+                </p>
+                <p class="pl-4">
+                  <span class="text-text-muted/50"
+                    >// High-performance render</span
+                  >
+                </p>
+                <p class="pl-4"><span class="icon-purple">return</span> (</p>
+                <p class="pl-8 icon-blue">&lt;ZenByte.Provider&gt;</p>
+                <p class="pl-12 icon-blue">&lt;ScalableUI /&gt;</p>
+                <p class="pl-8 icon-blue">&lt;/ZenByte.Provider&gt;</p>
+                <p class="pl-4">);</p>
+                <p>}</p>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
 
-        <!-- Detailed Services -->
-        <section class="py-16 bg-[#111111]">
-            <div class="max-w-7xl mx-auto px-4 space-y-24">
-
-                <!-- Service 1 -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <div class="p-3 inline-block bg-white text-gray-900 rounded-lg mb-4"><i data-lucide="code-2"
-                                class="w-6 h-6"></i></div>
-                        <h2 class="text-3xl font-bold text-white mb-4">Custom Web & Mobile Development</h2>
-                        <p class="text-gray-400 mb-6">
-                            We build high-performance web applications using React, Vue, and Angular, coupled with
-                            robust Node.js or Python backends. Our mobile solutions (React Native, Flutter) ensure a
-                            seamless native experience on iOS and Android.
-                        </p>
-                        <ul class="space-y-3 text-gray-300">
-                            <li class="flex items-center"><i data-lucide="check"
-                                    class="w-4 h-4 text-green-500 mr-2"></i> Progressive Web Apps (PWA)</li>
-                            <li class="flex items-center"><i data-lucide="check"
-                                    class="w-4 h-4 text-green-500 mr-2"></i> Enterprise SAAS Platforms</li>
-                            <li class="flex items-center"><i data-lucide="check"
-                                    class="w-4 h-4 text-green-500 mr-2"></i> API Design & Integration</li>
-                        </ul>
-                    </div>
-                    <div class="bg-[#1A1A1A] p-4 rounded-xl border border-gray-700">
-                        <!-- Code Snippet Mockup -->
-                        <div class="bg-black rounded-lg p-4 font-mono text-xs text-green-400 border border-gray-800">
-                            <div class="flex space-x-2 mb-4">
-                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                            </div>
-                            <p><span class="text-purple-400">const</span> <span class="text-blue-400">deployApp</span> =
-                                <span class="text-purple-400">async</span> () => {
-                            </p>
-                            <p class="pl-4"><span class="text-gray-500">// Initializing secure connection...</span></p>
-                            <p class="pl-4"><span class="text-purple-400">await</span> ZenByte.scale({ <span
-                                    class="text-orange-400">efficiency</span>: <span
-                                    class="text-yellow-300">"100%"</span> });</p>
-                            <p class="pl-4"><span class="text-purple-400">return</span> <span
-                                    class="text-yellow-300">"Success"</span>;</p>
-                            <p>}</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:flex-row-reverse">
-                    <div class="lg:order-2">
-                        <div class="p-3 inline-block bg-white text-gray-900 rounded-lg mb-4"><i data-lucide="cloud-cog"
-                                class="w-6 h-6"></i></div>
-                        <h2 class="text-3xl font-bold text-white mb-4">Cloud Architecture & DevOps</h2>
-                        <p class="text-gray-400 mb-6">
-                            Scalability is not an afterthought. We design cloud-native architectures on AWS, Azure, and
-                            Google Cloud. Our DevOps practices ensure automated testing, continuous integration, and
-                            zero-downtime deployments.
-                        </p>
-                        <ul class="space-y-3 text-gray-300">
-                            <li class="flex items-center"><i data-lucide="check"
-                                    class="w-4 h-4 text-green-500 mr-2"></i> Kubernetes & Docker Containerization</li>
-                            <li class="flex items-center"><i data-lucide="check"
-                                    class="w-4 h-4 text-green-500 mr-2"></i> Serverless Architecture</li>
-                            <li class="flex items-center"><i data-lucide="check"
-                                    class="w-4 h-4 text-green-500 mr-2"></i> Infrastructure as Code (Terraform)</li>
-                        </ul>
-                    </div>
-                    <div
-                        class="lg:order-1 bg-[#1A1A1A] p-4 rounded-xl border border-gray-700 flex items-center justify-center">
-                        <img src="https://placehold.co/500x300/1A1A1A/FFF?text=Cloud+Diagram" alt="Cloud Architecture"
-                            class="rounded opacity-80">
-                    </div>
-                </div>
-
-                <!-- Service 3 - Data & AI -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <div class="p-3 inline-block bg-white text-gray-900 rounded-lg mb-4"><i data-lucide="brain"
-                                class="w-6 h-6"></i></div>
-                        <h2 class="text-3xl font-bold text-white mb-4">Data & AI Solutions</h2>
-                        <p class="text-gray-400 mb-6">
-                            Transform raw data into actionable intelligence. We build machine learning models,
-                            data pipelines, and analytics dashboards that give you a competitive edge with
-                            predictive insights and automation.
-                        </p>
-                        <ul class="space-y-3 text-gray-300">
-                            <li class="flex items-center"><i data-lucide="check"
-                                    class="w-4 h-4 text-green-500 mr-2"></i> Machine Learning & Deep Learning</li>
-                            <li class="flex items-center"><i data-lucide="check"
-                                    class="w-4 h-4 text-green-500 mr-2"></i> Natural Language Processing (NLP)</li>
-                            <li class="flex items-center"><i data-lucide="check"
-                                    class="w-4 h-4 text-green-500 mr-2"></i> Computer Vision & Image Recognition</li>
-                            <li class="flex items-center"><i data-lucide="check"
-                                    class="w-4 h-4 text-green-500 mr-2"></i> Data Warehousing & ETL Pipelines</li>
-                        </ul>
-                    </div>
-                    <div class="bg-[#1A1A1A] p-4 rounded-xl border border-gray-700">
-                        <!-- AI Visualization Mockup -->
-                        <div class="bg-black rounded-lg p-6 border border-gray-800">
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="text-sm text-gray-500">Model Accuracy</span>
-                                <span class="text-green-400 font-bold">98.7%</span>
-                            </div>
-                            <div class="h-2 bg-gray-800 rounded-full overflow-hidden mb-6">
-                                <div class="h-full bg-gradient-to-r from-purple-500 to-blue-500 w-[98%]"></div>
-                            </div>
-                            <div class="grid grid-cols-3 gap-4 text-center">
-                                <div class="p-3 bg-[#1A1A1A] rounded-lg">
-                                    <p class="text-2xl font-bold text-white">2.5M</p>
-                                    <p class="text-xs text-gray-500">Data Points</p>
-                                </div>
-                                <div class="p-3 bg-[#1A1A1A] rounded-lg">
-                                    <p class="text-2xl font-bold text-white">150ms</p>
-                                    <p class="text-xs text-gray-500">Inference</p>
-                                </div>
-                                <div class="p-3 bg-[#1A1A1A] rounded-lg">
-                                    <p class="text-2xl font-bold text-white">24/7</p>
-                                    <p class="text-xs text-gray-500">Uptime</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service 4 - UI/UX Design -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center lg:flex-row-reverse">
-                    <div class="lg:order-2">
-                        <div class="p-3 inline-block bg-white text-gray-900 rounded-lg mb-4"><i data-lucide="palette"
-                                class="w-6 h-6"></i></div>
-                        <h2 class="text-3xl font-bold text-white mb-4">UI/UX Design</h2>
-                        <p class="text-gray-400 mb-6">
-                            Beautiful interfaces that users love. We combine research-driven design thinking with
-                            pixel-perfect execution to create intuitive, accessible, and engaging digital experiences
-                            that drive conversions.
-                        </p>
-                        <ul class="space-y-3 text-gray-300">
-                            <li class="flex items-center"><i data-lucide="check"
-                                    class="w-4 h-4 text-green-500 mr-2"></i> User Research & Persona Development</li>
-                            <li class="flex items-center"><i data-lucide="check"
-                                    class="w-4 h-4 text-green-500 mr-2"></i> Wireframing & Interactive Prototypes</li>
-                            <li class="flex items-center"><i data-lucide="check"
-                                    class="w-4 h-4 text-green-500 mr-2"></i> Design Systems & Component Libraries</li>
-                            <li class="flex items-center"><i data-lucide="check"
-                                    class="w-4 h-4 text-green-500 mr-2"></i> Usability Testing & Iteration</li>
-                        </ul>
-                    </div>
-                    <div
-                        class="lg:order-1 bg-[#1A1A1A] p-4 rounded-xl border border-gray-700 flex items-center justify-center">
-                        <img src="https://placehold.co/500x300/1A1A1A/FFF?text=UI+Design+Preview" alt="UI/UX Design"
-                            class="rounded opacity-80">
-                    </div>
-                </div>
+        <!-- Service 2: Cloud & DevOps -->
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div
+            class="order-2 lg:order-1 relative h-[400px] bg-surface rounded-3xl border border-text/10 flex items-center justify-center gsap-fade-up"
+          >
+            <div class="text-center">
+              <div
+                class="w-32 h-32 mx-auto bg-blue-500/10 rounded-full flex items-center justify-center mb-6 animate-pulse"
+              >
+                <i
+                  data-lucide="server"
+                  class="w-16 h-16 icon-blue icon-glow"
+                ></i>
+              </div>
+              <h3
+                class="text-4xl font-bold text-text mb-2 counter-value"
+                data-target="99.99"
+                data-decimal="true"
+                data-suffix="%"
+              >
+                0%
+              </h3>
+              <p class="icon-blue font-mono">Uptime Guaranteed</p>
             </div>
-        </section>
-
-        <!-- Tech Stack Grid -->
-        <section class="py-20 bg-[#0A0A0A]">
-            <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center text-white mb-12">Technologies We Master</h2>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                    <div class="p-6 border border-gray-800 rounded-xl hover:bg-[#111111] transition"><i
-                            data-lucide="file-code" class="mx-auto mb-2 text-blue-400"></i><span
-                            class="text-gray-300">React / Next.js</span></div>
-                    <div class="p-6 border border-gray-800 rounded-xl hover:bg-[#111111] transition"><i
-                            data-lucide="database" class="mx-auto mb-2 text-green-400"></i><span
-                            class="text-gray-300">Node.js</span></div>
-                    <div class="p-6 border border-gray-800 rounded-xl hover:bg-[#111111] transition"><i
-                            data-lucide="smartphone" class="mx-auto mb-2 text-purple-400"></i><span
-                            class="text-gray-300">Flutter</span></div>
-                    <div class="p-6 border border-gray-800 rounded-xl hover:bg-[#111111] transition"><i
-                            data-lucide="cloud" class="mx-auto mb-2 text-orange-400"></i><span
-                            class="text-gray-300">AWS</span></div>
-                    <div class="p-6 border border-gray-800 rounded-xl hover:bg-[#111111] transition"><i
-                            data-lucide="box" class="mx-auto mb-2 text-blue-300"></i><span
-                            class="text-gray-300">Docker</span></div>
-                    <div class="p-6 border border-gray-800 rounded-xl hover:bg-[#111111] transition"><i
-                            data-lucide="brain-circuit" class="mx-auto mb-2 text-yellow-400"></i><span
-                            class="text-gray-300">TensorFlow</span></div>
-                    <div class="p-6 border border-gray-800 rounded-xl hover:bg-[#111111] transition"><i
-                            data-lucide="lock" class="mx-auto mb-2 text-red-400"></i><span
-                            class="text-gray-300">Cybersecurity</span></div>
-                    <div class="p-6 border border-gray-800 rounded-xl hover:bg-[#111111] transition"><i
-                            data-lucide="bar-chart" class="mx-auto mb-2 text-teal-400"></i><span
-                            class="text-gray-300">PowerBI</span></div>
-                </div>
+          </div>
+          <div class="order-1 lg:order-2 gsap-fade-up">
+            <div
+              class="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-8"
+            >
+              <i data-lucide="cloud" class="w-8 h-8 icon-blue icon-glow"></i>
             </div>
-        </section>
-
-        <!-- FOOTER SECTION -->
-        <footer class="bg-black border-t border-gray-800 pt-16 pb-12">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                    <div class="col-span-2 md:col-span-1">
-                        <a href="index.html" class="text-3xl font-extrabold text-white tracking-widest mb-4 block">
-                            ZEN<span class="text-[#B0B0B0]">BYTE</span>
-                        </a>
-                        <p class="text-gray-400 text-sm mt-4">
-                            Intelligent Software Solutions, Engineered with Precision.
-                        </p>
-                        <div class="flex space-x-3 mt-4">
-                            <a href="#" class="text-gray-500 hover:text-white transition"><i data-lucide="linkedin"
-                                    class="w-5 h-5"></i></a>
-                            <a href="#" class="text-gray-500 hover:text-white transition"><i data-lucide="twitter"
-                                    class="w-5 h-5"></i></a>
-                            <a href="#" class="text-gray-500 hover:text-white transition"><i data-lucide="github"
-                                    class="w-5 h-5"></i></a>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h3 class="text-lg font-semibold text-white mb-4">Services</h3>
-                        <ul class="space-y-3 text-sm">
-                            <li><a href="services.html" class="text-gray-400 hover:text-white transition">Custom
-                                    Development</a></li>
-                            <li><a href="services.html" class="text-gray-400 hover:text-white transition">Cloud &
-                                    DevOps</a></li>
-                            <li><a href="services.html" class="text-gray-400 hover:text-white transition">Data & AI</a>
-                            </li>
-                            <li><a href="services.html" class="text-gray-400 hover:text-white transition">UI/UX
-                                    Design</a></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 class="text-lg font-semibold text-white mb-4">Company</h3>
-                        <ul class="space-y-3 text-sm">
-                            <li><a href="about.html" class="text-gray-400 hover:text-white transition">About Us</a></li>
-                            <li><a href="projects.html" class="text-gray-400 hover:text-white transition">Projects</a>
-                            </li>
-                            <li><a href="contact.html" class="text-gray-400 hover:text-white transition">Contact</a>
-                            </li>
-                            <li><a href="privacy.html" class="text-gray-400 hover:text-white transition">Privacy
-                                    Policy</a></li>
-                            <li><a href="terms.html" class="text-gray-400 hover:text-white transition">Terms of
-                                    Service</a></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 class="text-lg font-semibold text-white mb-4">Get in Touch</h3>
-                        <ul class="space-y-3 text-sm">
-                            <li class="flex items-start">
-                                <i data-lucide="map-pin" class="w-4 h-4 mr-3 text-white mt-1 flex-shrink-0"></i>
-                                <span class="text-gray-400">123 Tech Avenue, Silicon City, USA 10001</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i data-lucide="mail" class="w-4 h-4 mr-3 text-white flex-shrink-0"></i>
-                                <a href="mailto:hello@zenbyte.com"
-                                    class="text-gray-400 hover:text-white transition">hello@zenbyte.com</a>
-                            </li>
-                            <li class="flex items-center">
-                                <i data-lucide="phone" class="w-4 h-4 mr-3 text-white flex-shrink-0"></i>
-                                <span class="text-gray-400">+1 (555) 123-4567</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
+            <h2 class="font-display font-bold text-4xl text-text mb-6">
+              Cloud & DevOps
+            </h2>
+            <p class="text-text-muted mb-8 text-lg leading-relaxed">
+              Scalability is not an afterthought. We design cloud-native
+              architectures on AWS and Azure with zero-downtime deployments.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-8">
+              <span class="tech-pill">AWS</span>
+              <span class="tech-pill">Azure</span>
+              <span class="tech-pill">Docker</span>
+              <span class="tech-pill">Kubernetes</span>
+              <span class="tech-pill">Terraform</span>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-4">
                 <div
-                    class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p class="text-sm text-gray-500">&copy; 2025 ZenByte Software Solutions. All rights reserved.</p>
-                    <div class="flex gap-6 text-sm">
-                        <a href="privacy.html" class="text-gray-500 hover:text-white transition">Privacy</a>
-                        <a href="terms.html" class="text-gray-500 hover:text-white transition">Terms</a>
-                    </div>
+                  class="mt-1 w-6 h-6 rounded-full bg-blue-500/10 flex items-center justify-center shrink-0"
+                >
+                  <i data-lucide="check" class="w-3 h-3 icon-blue"></i>
                 </div>
+                <div>
+                  <h4 class="text-text font-bold">Infrastructure as Code</h4>
+                  <p class="text-sm text-text-muted">
+                    Reproducible, version-controlled environments.
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <div
+                  class="mt-1 w-6 h-6 rounded-full bg-blue-500/10 flex items-center justify-center shrink-0"
+                >
+                  <i data-lucide="check" class="w-3 h-3 icon-blue"></i>
+                </div>
+                <div>
+                  <h4 class="text-text font-bold">CI/CD Pipelines</h4>
+                  <p class="text-sm text-text-muted">
+                    Automated testing and deployment workflows.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Service 3: AI & Data -->
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="gsap-fade-up">
+            <div
+              class="w-16 h-16 bg-purple-500/10 rounded-2xl flex items-center justify-center mb-8"
+            >
+              <i
+                data-lucide="brain-circuit"
+                class="w-8 h-8 icon-purple icon-glow"
+              ></i>
             </div>
-        </footer>
+            <h2 class="font-display font-bold text-4xl text-text mb-6">
+              Data & Intelligence
+            </h2>
+            <p class="text-text-muted mb-8 text-lg leading-relaxed">
+              Transform raw data into actionable intelligence. We build ML
+              models, predictive analytics, and LLM integrations.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-8">
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">TensorFlow</span>
+              <span class="tech-pill">OpenAI</span>
+              <span class="tech-pill">Pinecone</span>
+              <span class="tech-pill">LangChain</span>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-4">
+                <div
+                  class="mt-1 w-6 h-6 rounded-full bg-purple-500/10 flex items-center justify-center shrink-0"
+                >
+                  <i data-lucide="check" class="w-3 h-3 icon-purple"></i>
+                </div>
+                <div>
+                  <h4 class="text-text font-bold">Predictive Analytics</h4>
+                  <p class="text-sm text-text-muted">
+                    Forecast trends and behaviors with high accuracy.
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-start gap-4">
+                <div
+                  class="mt-1 w-6 h-6 rounded-full bg-purple-500/10 flex items-center justify-center shrink-0"
+                >
+                  <i data-lucide="check" class="w-3 h-3 icon-purple"></i>
+                </div>
+                <div>
+                  <h4 class="text-text font-bold">Generative AI</h4>
+                  <p class="text-sm text-text-muted">
+                    Custom LLM integration for automated workflows.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="relative h-[400px] bg-surface rounded-3xl border border-text/10 p-8 flex flex-col justify-center gsap-fade-up"
+          >
+            <!-- Data Viz Mockup -->
+            <div class="space-y-6">
+              <div
+                class="h-24 bg-gradient-to-r from-purple-600/20 to-transparent rounded-lg flex items-end justify-between px-6 gap-2"
+              >
+                <div class="w-8 bg-purple-500/50 rounded-t h-8"></div>
+                <div class="w-8 bg-purple-500 rounded-t h-20"></div>
+                <div class="w-8 bg-purple-500/70 rounded-t h-14"></div>
+                <div class="w-8 bg-purple-500/40 rounded-t h-10"></div>
+                <div class="w-8 bg-purple-500/60 rounded-t h-16"></div>
+              </div>
+              <div class="text-center">
+                <p class="text-sm text-text-muted">Predictive Model Accuracy</p>
+                <p
+                  class="text-3xl font-bold text-text mt-2 counter-value"
+                  data-target="94.7"
+                  data-decimal="true"
+                  data-suffix="%"
+                >
+                  0%
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="py-24 bg-surface/30">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+          <h2
+            class="font-display font-bold text-4xl md:text-5xl text-text mb-6"
+          >
+            Ready to Transform?
+          </h2>
+          <p class="text-text-muted mb-10 text-lg max-w-2xl mx-auto">
+            Let's discuss how our expertise can solve your toughest technical
+            challenges.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="contact.html"
+              class="px-8 py-4 bg-primary text-background font-bold rounded-full hover:bg-primary-dark transition-all shadow-lg shadow-primary/30"
+            >
+              Start a Project
+            </a>
+            <a
+              href="about.html"
+              class="px-8 py-4 border border-text/20 text-text rounded-full hover:bg-surface transition-all"
+            >
+              About Our Team
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <script>
-        lucide.createIcons();
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+    <!-- Footer -->
+    <footer class="bg-surface border-t border-text/5 pt-20 pb-10">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-5 gap-12 mb-16">
+          <div class="md:col-span-2">
+            <a href="index.html" class="flex items-center gap-2 mb-6">
+              <div
+                class="w-9 h-9 bg-primary/20 rounded-xl flex items-center justify-center text-primary"
+              >
+                <i data-lucide="zap" class="w-5 h-5"></i>
+              </div>
+              <span class="font-display font-bold text-xl text-text"
+                >Zen<span class="text-primary">byte</span></span
+              >
+            </a>
+            <p class="text-text-muted max-w-sm leading-relaxed mb-6">
+              Digital engineering solutions for modern businesses.
+            </p>
+            <div class="flex gap-4">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-xl bg-background hover:bg-primary/20 flex items-center justify-center text-text-muted hover:text-primary transition-colors"
+              >
+                <i data-lucide="linkedin" class="w-5 h-5"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-xl bg-background hover:bg-primary/20 flex items-center justify-center text-text-muted hover:text-primary transition-colors"
+              >
+                <i data-lucide="twitter" class="w-5 h-5"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-xl bg-background hover:bg-primary/20 flex items-center justify-center text-text-muted hover:text-primary transition-colors"
+              >
+                <i data-lucide="github" class="w-5 h-5"></i>
+              </a>
+            </div>
+          </div>
 
-        gsap.from("h1", { opacity: 0, y: 30, duration: 1, delay: 0.2 });
-    </script>
-</body>
+          <div>
+            <h4 class="font-bold mb-6 text-text">Services</h4>
+            <ul class="space-y-3 text-sm">
+              <li>
+                <a
+                  href="services.html"
+                  class="text-text-muted hover:text-primary transition-colors"
+                  >Web Development</a
+                >
+              </li>
+              <li>
+                <a
+                  href="services.html"
+                  class="text-text-muted hover:text-primary transition-colors"
+                  >Mobile Apps</a
+                >
+              </li>
+              <li>
+                <a
+                  href="services.html"
+                  class="text-text-muted hover:text-primary transition-colors"
+                  >DevOps & Cloud</a
+                >
+              </li>
+              <li>
+                <a
+                  href="services.html"
+                  class="text-text-muted hover:text-primary transition-colors"
+                  >Consulting</a
+                >
+              </li>
+            </ul>
+          </div>
 
+          <div>
+            <h4 class="font-bold mb-6 text-text">Company</h4>
+            <ul class="space-y-3 text-sm">
+              <li>
+                <a
+                  href="about.html"
+                  class="text-text-muted hover:text-primary transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="projects.html"
+                  class="text-text-muted hover:text-primary transition-colors"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-text-muted hover:text-primary transition-colors"
+                  >Contact</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-text-muted hover:text-primary transition-colors"
+                  >Careers</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold mb-6 text-text">Legal</h4>
+            <ul class="space-y-3 text-sm">
+              <li>
+                <a
+                  href="privacy.html"
+                  class="text-text-muted hover:text-primary transition-colors"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="terms.html"
+                  class="text-text-muted hover:text-primary transition-colors"
+                  >Terms of Service</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="h-px bg-gradient-to-r from-transparent via-text/10 to-transparent mb-8"
+        ></div>
+
+        <div
+          class="flex flex-col md:flex-row justify-between items-center text-xs text-text-muted"
+        >
+          <p>&copy; 2025 Zenbyte Digital Engineering. All rights reserved.</p>
+          <div class="flex gap-6 mt-4 md:mt-0">
+            <a href="privacy.html" class="hover:text-primary transition-colors"
+              >Privacy</a
+            >
+            <a href="terms.html" class="hover:text-primary transition-colors"
+              >Terms</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/features.js"></script>
+  </body>
 </html>
