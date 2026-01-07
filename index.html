@@ -9,25 +9,52 @@
       content="ZenByte builds scalable, robust, and data-driven software solutions."
     />
 
-    <!-- Fonts -->
+    <!-- SEO Meta Tags -->
+    <meta name="author" content="ZenByte" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#6366F1" />
+    <link rel="canonical" href="https://zenbyte.tech" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://zenbyte.tech/" />
+    <meta
+      property="og:title"
+      content="ZenByte | Future-Ready Digital Solutions"
+    />
+    <meta
+      property="og:description"
+      content="ZenByte builds scalable, robust, and data-driven software solutions. Design-led. Data-driven. Engineering-perfect."
+    />
+    <meta property="og:image" content="https://zenbyte.tech/og-image.jpg" />
+    <meta property="og:site_name" content="ZenByte" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://zenbyte.tech/" />
+    <meta
+      name="twitter:title"
+      content="ZenByte | Future-Ready Digital Solutions"
+    />
+    <meta
+      name="twitter:description"
+      content="ZenByte builds scalable, robust, and data-driven software solutions. Design-led. Data-driven. Engineering-perfect."
+    />
+    <meta name="twitter:image" content="https://zenbyte.tech/og-image.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/config.js"></script>
     <link rel="stylesheet" href="css/features.css" />
-
-    <!-- Icons & Animation -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   </head>
-
   <body class="antialiased selection:bg-primary selection:text-white">
     <!-- Page Loader -->
     <div
@@ -42,6 +69,58 @@
 
     <!-- Custom Cursor -->
     <div id="customCursor" class="custom-cursor hidden md:block"></div>
+
+    <!-- Floating Section Nav -->
+    <nav
+      id="sectionNav"
+      class="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-3"
+    >
+      <a
+        href="#hero-section"
+        class="section-dot active"
+        data-section="hero-section"
+        title="Home"
+      >
+        <span class="dot"></span>
+        <span class="label">Home</span>
+      </a>
+      <a
+        href="#services"
+        class="section-dot"
+        data-section="services"
+        title="Services"
+      >
+        <span class="dot"></span>
+        <span class="label">Services</span>
+      </a>
+      <a
+        href="#industries"
+        class="section-dot"
+        data-section="industries"
+        title="Industries"
+      >
+        <span class="dot"></span>
+        <span class="label">Industries</span>
+      </a>
+      <a
+        href="#why-zenbyte"
+        class="section-dot"
+        data-section="why-zenbyte"
+        title="Philosophy"
+      >
+        <span class="dot"></span>
+        <span class="label">Philosophy</span>
+      </a>
+      <a
+        href="#contact"
+        class="section-dot"
+        data-section="contact"
+        title="Contact"
+      >
+        <span class="dot"></span>
+        <span class="label">Contact</span>
+      </a>
+    </nav>
 
     <!-- Header -->
     <header
@@ -64,37 +143,29 @@
             >Zen<span class="text-primary">byte</span></span
           >
         </a>
-
         <nav class="hidden md:flex items-center gap-8">
           <a
-            href="services.html"
+            href="#services"
             class="text-sm font-medium text-gray-400 hover:text-primary transition-colors"
             >Services</a
           >
           <a
-            href="projects.html"
-            class="text-sm font-medium text-gray-400 hover:text-primary transition-colors"
-            >Work</a
-          >
-          <a
-            href="#process"
-            class="text-sm font-medium text-gray-400 hover:text-primary transition-colors"
-            >Process</a
-          >
-          <a
-            href="about.html"
+            href="#about"
             class="text-sm font-medium text-gray-400 hover:text-primary transition-colors"
             >About</a
           >
+          <a
+            href="#contact"
+            class="text-sm font-medium text-gray-400 hover:text-primary transition-colors"
+            >Contact</a
+          >
         </nav>
-
         <div class="flex items-center gap-4">
           <a
-            href="contact.html"
+            href="#contact"
             class="hidden md:flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-primary-dark transition-all shadow-lg shadow-primary/25"
+            >Start Project</a
           >
-            Start Project
-          </a>
           <button class="md:hidden text-gray-300" id="mobile-menu-btn">
             <i data-lucide="menu" class="w-6 h-6"></i>
           </button>
@@ -107,19 +178,15 @@
           </button>
         </div>
       </div>
-
       <!-- Mobile Menu -->
       <div
         id="mobile-menu"
         class="fixed inset-0 bg-background z-40 transform translate-x-full transition-transform duration-300 flex flex-col pt-24 px-6 gap-6 md:hidden"
       >
-        <a href="services.html" class="text-2xl font-display font-bold"
-          >Services</a
-        >
-        <a href="projects.html" class="text-2xl font-display font-bold">Work</a>
-        <a href="about.html" class="text-2xl font-display font-bold">About</a>
+        <a href="#services" class="text-2xl font-display font-bold">Services</a>
+        <a href="#about" class="text-2xl font-display font-bold">About</a>
         <a
-          href="contact.html"
+          href="#contact"
           class="bg-primary text-white text-center py-4 rounded-xl font-bold mt-4"
           >Get Started</a
         >
@@ -138,634 +205,2094 @@
       </div>
     </header>
 
-    <main class="pt-20">
+    <main>
       <!-- HERO SECTION -->
       <section
-        class="relative min-h-screen flex items-center justify-center overflow-hidden"
+        id="hero-section"
+        class="relative min-h-screen flex items-center pt-20 overflow-hidden"
       >
+        <div class="mesh-gradient opacity-40"></div>
+        <div class="noise-overlay"></div>
+
+        <!-- Background Glowing Blobs -->
         <div
-          class="glow-blob"
-          style="top: -200px; left: 50%; transform: translateX(-50%)"
+          class="absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 blur-[120px] rounded-full"
+        ></div>
+        <div
+          class="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-500/10 blur-[120px] rounded-full"
         ></div>
 
-        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center py-20">
-          <div
-            class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider mb-8"
-          >
-            <span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
-            The Future of Digital
-          </div>
-
-          <h1
-            class="font-display font-bold text-5xl md:text-7xl lg:text-8xl leading-[1.1] mb-8 tracking-tight"
-          >
-            Design-driven<br />
-            <span class="text-gradient">Engineering.</span>
-          </h1>
-
-          <p
-            class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed"
-          >
-            Zenbyte blends creative vision with technical precision. We build
-            immersive web experiences and scalable systems for ambitious brands.
-          </p>
-
-          <div
-            class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
-          >
-            <a
-              href="projects.html"
-              class="w-full sm:w-auto px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-all"
-            >
-              View Our Work
-            </a>
-            <a
-              href="contact.html"
-              class="w-full sm:w-auto px-8 py-4 border border-gray-700 rounded-full hover:bg-white/5 transition-all"
-            >
-              Contact Us
-            </a>
-          </div>
-
-          <!-- Stats -->
-          <div
-            class="flex flex-wrap items-center justify-center gap-8 md:gap-16"
-          >
-            <div class="text-center gsap-counter">
-              <div class="font-display font-bold text-4xl md:text-5xl mb-1">
-                <span class="stat-number" data-target="50">0</span>+
-              </div>
-              <div class="text-sm text-gray-500">Projects Completed</div>
-            </div>
-            <div class="hidden sm:block w-px h-12 bg-gray-700"></div>
-            <div class="text-center gsap-counter">
-              <div class="font-display font-bold text-4xl md:text-5xl mb-1">
-                <span class="counter-value" data-target="30">0</span>+
-              </div>
-              <div class="text-sm text-gray-500">Happy Clients</div>
-            </div>
-            <div class="hidden sm:block w-px h-12 bg-gray-700"></div>
-            <div class="text-center gsap-counter">
-              <div class="font-display font-bold text-4xl md:text-5xl mb-1">
-                <span class="counter-value" data-target="8">0</span>+
-              </div>
-              <div class="text-sm text-gray-500">Years Experience</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- TRUSTED BY MARQUEE -->
-      <section class="py-12 border-y border-white/5 overflow-hidden">
-        <div class="marquee-mask relative w-full">
-          <div class="marquee-content flex items-center gap-16 w-max px-4">
-            <div
-              class="flex items-center gap-3 text-gray-500 font-display font-bold text-xl"
-            >
-              <i data-lucide="box"></i> React
-            </div>
-            <div
-              class="flex items-center gap-3 text-gray-500 font-display font-bold text-xl"
-            >
-              <i data-lucide="cpu"></i> Node.js
-            </div>
-            <div
-              class="flex items-center gap-3 text-gray-500 font-display font-bold text-xl"
-            >
-              <i data-lucide="layers"></i> Next.js
-            </div>
-            <div
-              class="flex items-center gap-3 text-gray-500 font-display font-bold text-xl"
-            >
-              <i data-lucide="database"></i> PostgreSQL
-            </div>
-            <div
-              class="flex items-center gap-3 text-gray-500 font-display font-bold text-xl"
-            >
-              <i data-lucide="cloud"></i> AWS
-            </div>
-            <div
-              class="flex items-center gap-3 text-gray-500 font-display font-bold text-xl"
-            >
-              <i data-lucide="code"></i> TypeScript
-            </div>
-            <div
-              class="flex items-center gap-3 text-gray-500 font-display font-bold text-xl"
-            >
-              <i data-lucide="box"></i> React
-            </div>
-            <div
-              class="flex items-center gap-3 text-gray-500 font-display font-bold text-xl"
-            >
-              <i data-lucide="cpu"></i> Node.js
-            </div>
-            <div
-              class="flex items-center gap-3 text-gray-500 font-display font-bold text-xl"
-            >
-              <i data-lucide="layers"></i> Next.js
-            </div>
-            <div
-              class="flex items-center gap-3 text-gray-500 font-display font-bold text-xl"
-            >
-              <i data-lucide="database"></i> PostgreSQL
-            </div>
-            <div
-              class="flex items-center gap-3 text-gray-500 font-display font-bold text-xl"
-            >
-              <i data-lucide="cloud"></i> AWS
-            </div>
-            <div
-              class="flex items-center gap-3 text-gray-500 font-display font-bold text-xl"
-            >
-              <i data-lucide="code"></i> TypeScript
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SERVICES SECTION -->
-      <section id="services" class="py-32 relative">
         <div
-          class="absolute top-1/2 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] pointer-events-none"
-        ></div>
-
-        <div class="max-w-7xl mx-auto px-6">
-          <div class="mb-16">
-            <h2
-              class="font-display font-bold text-4xl md:text-5xl mb-6 gsap-fade-up"
+          class="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center"
+        >
+          <!-- Left Column: Content -->
+          <div class="hero-content-left gsap-fade-up">
+            <h1
+              class="font-display font-bold text-6xl md:text-7xl lg:text-8xl leading-[0.95] mb-8 tracking-tighter"
             >
-              Our Expertise.
-            </h2>
-            <p class="text-xl text-gray-400 max-w-2xl gsap-fade-up">
-              We don't just build software; we engineer digital ecosystems that
-              drive growth.
+              Design-driven<br />
+              <span class="text-gradient">Engineering.</span>
+            </h1>
+
+            <p
+              class="text-lg md:text-xl text-gray-400 max-w-xl mb-10 leading-relaxed"
+            >
+              We architect high-performance digital products by blending
+              creative vision with technical precision. Immersive web
+              experiences built for ambitious brands.
             </p>
+
+            <div class="flex flex-col sm:flex-row items-center gap-5 mb-16">
+              <a
+                href="#contact"
+                class="group relative inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-bold rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-lg shadow-primary/25 w-full sm:w-auto"
+              >
+                <span class="relative z-10 flex items-center gap-2">
+                  Start a Project
+                  <i
+                    data-lucide="arrow-right"
+                    class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                  ></i>
+                </span>
+              </a>
+            </div>
+
+            <!-- Stats Ticker / Floating Cards -->
+            <div
+              class="hero-stats flex flex-wrap gap-8 items-center border-t border-white/5 pt-10"
+            >
+              <div class="stat-item">
+                <div class="text-3xl font-bold font-display">
+                  <span class="counter-value" data-target="50">0</span>+
+                </div>
+                <div
+                  class="text-xs text-gray-500 uppercase tracking-widest mt-1"
+                >
+                  Projects
+                </div>
+              </div>
+              <div class="w-px h-8 bg-white/5"></div>
+              <div class="stat-item">
+                <div class="text-3xl font-bold font-display">
+                  <span class="counter-value" data-target="30">0</span>+
+                </div>
+                <div
+                  class="text-xs text-gray-500 uppercase tracking-widest mt-1"
+                >
+                  Clients
+                </div>
+              </div>
+              <div class="w-px h-8 bg-white/5"></div>
+              <div class="stat-item">
+                <div class="text-3xl font-bold font-display">
+                  <span class="counter-value" data-target="8">0</span>+
+                </div>
+                <div
+                  class="text-xs text-gray-500 uppercase tracking-widest mt-1"
+                >
+                  Exp Years
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="grid md:grid-cols-3 gap-6">
-            <!-- Service 1 -->
-            <div class="glass-card p-10 rounded-3xl gsap-fade-up group">
-              <div
-                class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-primary mb-8 group-hover:bg-primary/20 transition-colors"
-              >
-                <i data-lucide="layout" class="w-6 h-6"></i>
-              </div>
-              <h3 class="font-display font-bold text-2xl mb-4">
-                Product Design
-              </h3>
-              <p class="text-gray-400 mb-6 leading-relaxed">
-                User-centric UI/UX design focusing on conversion, accessibility,
-                and visual storytelling.
-              </p>
-              <ul class="text-sm text-gray-500 space-y-2">
-                <li class="flex items-center gap-2">
-                  <div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                  Design Systems
-                </li>
-                <li class="flex items-center gap-2">
-                  <div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                  Prototyping & Testing
-                </li>
-                <li class="flex items-center gap-2">
-                  <div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                  Accessibility Audits
-                </li>
-              </ul>
-            </div>
+          <!-- Right Column: Digital Core Visual -->
+          <div
+            class="hero-visual-right relative h-[500px] lg:h-[700px] flex items-center justify-center perspective-1000"
+          >
+            <div
+              id="digitalCore"
+              class="relative w-full h-full flex items-center justify-center pointer-events-none"
+            >
+              <!-- Visual Elements via CSS/JS -->
+              <div class="core-sphere"></div>
+              <div class="orbit-ring ring-1"></div>
+              <div class="orbit-ring ring-2"></div>
+              <div class="orbit-ring ring-3"></div>
 
-            <!-- Service 2 -->
-            <div class="glass-card p-10 rounded-3xl gsap-fade-up group">
+              <!-- Floating UI Components -->
               <div
-                class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-primary mb-8 group-hover:bg-primary/20 transition-colors"
+                class="absolute top-[20%] left-[10%] glass-card p-4 rounded-2xl animate-float"
+                style="animation-delay: 0s"
               >
-                <i data-lucide="code-2" class="w-6 h-6"></i>
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400"
+                  >
+                    <i data-lucide="shield-check" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <div class="text-[10px] text-gray-500 uppercase font-bold">
+                      Security
+                    </div>
+                    <div class="text-xs font-bold">100% Secure</div>
+                  </div>
+                </div>
               </div>
-              <h3 class="font-display font-bold text-2xl mb-4">Development</h3>
-              <p class="text-gray-400 mb-6 leading-relaxed">
-                Scalable frontend and backend architectures using React,
-                Node.js, and modern cloud infrastructure.
-              </p>
-              <ul class="text-sm text-gray-500 space-y-2">
-                <li class="flex items-center gap-2">
-                  <div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                  Full Stack Web Apps
-                </li>
-                <li class="flex items-center gap-2">
-                  <div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                  Mobile Apps
-                </li>
-                <li class="flex items-center gap-2">
-                  <div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                  Cloud Deployment
-                </li>
-              </ul>
-            </div>
 
-            <!-- Service 3 -->
-            <div class="glass-card p-10 rounded-3xl gsap-fade-up group">
               <div
-                class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-primary mb-8 group-hover:bg-primary/20 transition-colors"
+                class="absolute bottom-[30%] right-[10%] glass-card p-4 rounded-2xl animate-float"
+                style="animation-delay: -2s"
               >
-                <i data-lucide="brain-circuit" class="w-6 h-6"></i>
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400"
+                  >
+                    <i data-lucide="zap" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <div class="text-[10px] text-gray-500 uppercase font-bold">
+                      Performance
+                    </div>
+                    <div class="text-xs font-bold">99+ Google Score</div>
+                  </div>
+                </div>
               </div>
-              <h3 class="font-display font-bold text-2xl mb-4">AI Solutions</h3>
-              <p class="text-gray-400 mb-6 leading-relaxed">
-                Leverage your data for predictive insights and automate complex
-                decision-making processes.
-              </p>
-              <ul class="text-sm text-gray-500 space-y-2">
-                <li class="flex items-center gap-2">
-                  <div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                  Machine Learning Models
-                </li>
-                <li class="flex items-center gap-2">
-                  <div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                  Data Analytics
-                </li>
-                <li class="flex items-center gap-2">
-                  <div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                  Intelligent Automation
-                </li>
-              </ul>
+
+              <div
+                class="absolute top-[60%] left-[5%] glass-card p-4 rounded-2xl animate-float"
+                style="animation-delay: -4s"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400"
+                  >
+                    <i data-lucide="code-2" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <div class="text-[10px] text-gray-500 uppercase font-bold">
+                      Scalability
+                    </div>
+                    <div class="text-xs font-bold">Cloud Native</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- PROCESS SECTION -->
+      <!-- TECH MARQUEE -->
+      <section class="py-20 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+          <div
+            class="relative glass-card rounded-3xl py-10 px-8 border border-white/5 overflow-hidden"
+          >
+            <div
+              class="absolute inset-0 bg-primary/5 pointer-events-none"
+            ></div>
+
+            <div class="marquee-mask relative w-full">
+              <div class="marquee-content flex items-center gap-20 w-max">
+                <!-- Tech Item 1 -->
+                <div class="flex items-center gap-4 group">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-gray-400 group-hover:text-primary group-hover:bg-primary/10 transition-all border border-white/5"
+                  >
+                    <i data-lucide="box" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <div class="text-sm font-bold">React</div>
+                    <div
+                      class="text-[10px] text-gray-500 uppercase tracking-widest"
+                    >
+                      Frontend
+                    </div>
+                  </div>
+                </div>
+                <!-- Tech Item 2 -->
+                <div class="flex items-center gap-4 group">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-gray-400 group-hover:text-primary group-hover:bg-primary/10 transition-all border border-white/5"
+                  >
+                    <i data-lucide="cpu" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <div class="text-sm font-bold">Node.js</div>
+                    <div
+                      class="text-[10px] text-gray-500 uppercase tracking-widest"
+                    >
+                      Backend
+                    </div>
+                  </div>
+                </div>
+                <!-- Tech Item 3 -->
+                <div class="flex items-center gap-4 group">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-gray-400 group-hover:text-primary group-hover:bg-primary/10 transition-all border border-white/5"
+                  >
+                    <i data-lucide="layers" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <div class="text-sm font-bold">Next.js</div>
+                    <div
+                      class="text-[10px] text-gray-500 uppercase tracking-widest"
+                    >
+                      Fullstack
+                    </div>
+                  </div>
+                </div>
+                <!-- Tech Item 4 -->
+                <div class="flex items-center gap-4 group">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-gray-400 group-hover:text-primary group-hover:bg-primary/10 transition-all border border-white/5"
+                  >
+                    <i data-lucide="database" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <div class="text-sm font-bold">PostgreSQL</div>
+                    <div
+                      class="text-[10px] text-gray-500 uppercase tracking-widest"
+                    >
+                      Database
+                    </div>
+                  </div>
+                </div>
+                <!-- Tech Item 5 -->
+                <div class="flex items-center gap-4 group">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-gray-400 group-hover:text-primary group-hover:bg-primary/10 transition-all border border-white/5"
+                  >
+                    <i data-lucide="cloud" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <div class="text-sm font-bold">AWS</div>
+                    <div
+                      class="text-[10px] text-gray-500 uppercase tracking-widest"
+                    >
+                      Infrastructure
+                    </div>
+                  </div>
+                </div>
+                <!-- Tech Item 6 -->
+                <div class="flex items-center gap-4 group">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-gray-400 group-hover:text-primary group-hover:bg-primary/10 transition-all border border-white/5"
+                  >
+                    <i data-lucide="code" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <div class="text-sm font-bold">TypeScript</div>
+                    <div
+                      class="text-[10px] text-gray-500 uppercase tracking-widest"
+                    >
+                      Language
+                    </div>
+                  </div>
+                </div>
+                <!-- Repeat for seamless loop -->
+                <div class="flex items-center gap-4 group">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-gray-400 group-hover:text-primary group-hover:bg-primary/10 transition-all border border-white/5"
+                  >
+                    <i data-lucide="box" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <div class="text-sm font-bold">React</div>
+                    <div
+                      class="text-[10px] text-gray-500 uppercase tracking-widest"
+                    >
+                      Frontend
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4 group">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-gray-400 group-hover:text-primary group-hover:bg-primary/10 transition-all border border-white/5"
+                  >
+                    <i data-lucide="cpu" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <div class="text-sm font-bold">Node.js</div>
+                    <div
+                      class="text-[10px] text-gray-500 uppercase tracking-widest"
+                    >
+                      Backend
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4 group">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-gray-400 group-hover:text-primary group-hover:bg-primary/10 transition-all border border-white/5"
+                  >
+                    <i data-lucide="layers" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <div class="text-sm font-bold">Next.js</div>
+                    <div
+                      class="text-[10px] text-gray-500 uppercase tracking-widest"
+                    >
+                      Fullstack
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4 group">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-gray-400 group-hover:text-primary group-hover:bg-primary/10 transition-all border border-white/5"
+                  >
+                    <i data-lucide="database" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <div class="text-sm font-bold">PostgreSQL</div>
+                    <div
+                      class="text-[10px] text-gray-500 uppercase tracking-widest"
+                    >
+                      Database
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4 group">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-gray-400 group-hover:text-primary group-hover:bg-primary/10 transition-all border border-white/5"
+                  >
+                    <i data-lucide="cloud" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <div class="text-sm font-bold">AWS</div>
+                    <div
+                      class="text-[10px] text-gray-500 uppercase tracking-widest"
+                    >
+                      Infrastructure
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4 group">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-gray-400 group-hover:text-primary group-hover:bg-primary/10 transition-all border border-white/5"
+                  >
+                    <i data-lucide="code" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <div class="text-sm font-bold">TypeScript</div>
+                    <div
+                      class="text-[10px] text-gray-500 uppercase tracking-widest"
+                    >
+                      Language
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT SECTION -->
+      <section id="about" class="py-32 relative overflow-hidden">
+        <div
+          class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full pointer-events-none"
+        ></div>
+
+        <div
+          class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-24 items-center"
+        >
+          <!-- Left Column: Glass Stack Visual -->
+          <div class="relative order-2 lg:order-1">
+            <div
+              class="relative z-10 glass-card aspect-square rounded-[2.5rem] flex items-center justify-center overflow-hidden border-white/10 group transform hover:scale-[1.02] transition-transform duration-700"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent"
+              ></div>
+              <div class="relative z-20 text-center p-12">
+                <div
+                  class="w-20 h-20 mx-auto bg-primary/20 rounded-2xl flex items-center justify-center text-primary mb-6 shadow-xl shadow-primary/20"
+                >
+                  <i data-lucide="sparkles" class="w-10 h-10"></i>
+                </div>
+                <h3 class="text-3xl font-display font-bold mb-4">
+                  Innovation First.
+                </h3>
+                <p class="text-gray-400 leading-relaxed">
+                  We don't just follow trends; we create the digital standards
+                  of tomorrow through rigorous engineering.
+                </p>
+              </div>
+            </div>
+
+            <!-- Background Stack Cards -->
+            <div
+              class="absolute -top-6 -right-6 w-full h-full bg-white/5 border border-white/10 rounded-[2.5rem] -z-10 transform rotate-3"
+            ></div>
+            <div
+              class="absolute -bottom-6 -left-6 w-full h-full bg-primary/5 border border-primary/10 rounded-[2.5rem] -z-20 transform -rotate-3"
+            ></div>
+
+            <!-- Floating Achievement -->
+            <div
+              class="absolute -bottom-10 -right-10 glass-card p-6 rounded-2xl max-w-[240px] shadow-2xl z-30 animate-float"
+            >
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 bg-amber-500/20 rounded-full flex items-center justify-center text-amber-500"
+                >
+                  <i data-lucide="award" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-gray-500 uppercase font-bold">
+                    Top Rated
+                  </div>
+                  <div class="text-sm font-bold text-white">
+                    Engineering Studio
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Content -->
+          <div class="order-1 lg:order-2 gsap-fade-up">
+            <div
+              class="inline-block text-primary font-bold text-sm tracking-[0.3em] uppercase mb-6"
+            >
+              Our Narrative
+            </div>
+            <h2
+              class="font-display font-bold text-5xl md:text-6xl mb-8 leading-tight"
+            >
+              Architecting the <br /><span class="text-gradient">Unknown.</span>
+            </h2>
+
+            <div class="space-y-6 text-gray-400 text-lg leading-relaxed mb-12">
+              <p>
+                ZenByte was founded on a singular conviction: that technology
+                should be an invisible bridge, not a friction point. Since 2018,
+                we've evolved from a small collective into a high-stakes
+                engineering partner for global innovators.
+              </p>
+              <p>
+                Our philosophy is simple:
+                <strong>Design-led. Data-driven. Engineering-perfect.</strong>
+                Every pixel and every line of code is intentional.
+              </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-6">
+              <div
+                class="glass-card p-6 rounded-2xl border-white/5 hover:border-primary/20 transition-colors"
+              >
+                <i data-lucide="target" class="w-6 h-6 text-primary mb-4"></i>
+                <h4 class="font-bold mb-2">Precision</h4>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                  Meticulous attention to detail in every system architecture we
+                  build.
+                </p>
+              </div>
+              <div
+                class="glass-card p-6 rounded-2xl border-white/5 hover:border-primary/20 transition-colors"
+              >
+                <i
+                  data-lucide="workflow"
+                  class="w-6 h-6 text-purple-500 mb-4"
+                ></i>
+                <h4 class="font-bold mb-2">Adaptability</h4>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                  Agile methodologies that scale as rapidly as your business
+                  objectives.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CAPABILITIES SECTION - BENTO GRID -->
       <section
-        id="process"
+        id="services"
         class="py-32 bg-surface/50 border-y border-white/5 relative overflow-hidden"
       >
+        <!-- Animated Background Elements -->
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] pointer-events-none animate-pulse"
+        ></div>
+        <div
+          class="absolute top-0 right-0 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[100px] pointer-events-none"
+        ></div>
+        <div
+          class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-cyan-500/5 rounded-full blur-[80px] pointer-events-none"
+        ></div>
+
         <div class="max-w-7xl mx-auto px-6 relative z-10">
-          <div class="text-center mb-20">
+          <div class="text-center mb-20 gsap-fade-up">
+            <div
+              class="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-6"
+            >
+              <span
+                class="w-2 h-2 bg-primary rounded-full animate-pulse"
+              ></span>
+              <span
+                class="text-xs font-bold uppercase tracking-widest text-primary"
+                >What ZenByte Builds</span
+              >
+            </div>
             <h2
-              class="font-display font-bold text-4xl md:text-5xl mb-6 gsap-fade-up"
+              class="font-display font-bold text-5xl md:text-6xl mb-8 leading-tight"
+            >
+              Our <span class="text-gradient">Capabilities</span>
+            </h2>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+              We engineer high-stakes digital infrastructure for the next
+              generation of global innovators.
+            </p>
+          </div>
+
+          <!-- BENTO GRID -->
+          <div class="bento-grid gsap-stagger">
+            <!-- LARGE CARD: Web Applications (spans 2 cols) -->
+            <div
+              class="bento-card bento-large group"
+              data-tilt
+              data-tilt-max="5"
+              data-tilt-speed="400"
+            >
+              <div class="bento-card-inner">
+                <!-- Gradient Border Effect -->
+                <div class="bento-glow bento-glow-blue"></div>
+
+                <!-- Content -->
+                <div class="relative z-10 h-full flex flex-col">
+                  <div class="flex items-start justify-between mb-8">
+                    <div class="bento-icon bento-icon-blue">
+                      <i data-lucide="layout" class="w-8 h-8"></i>
+                      <div class="bento-icon-ring"></div>
+                    </div>
+                    <div class="bento-badge">
+                      <span
+                        class="w-1.5 h-1.5 bg-blue-400 rounded-full animate-pulse"
+                      ></span>
+                      <span
+                        class="text-[10px] text-blue-400 font-bold uppercase tracking-wider"
+                        >Core</span
+                      >
+                    </div>
+                  </div>
+
+                  <h3
+                    class="text-3xl font-display font-bold mb-4 group-hover:text-blue-400 transition-colors"
+                  >
+                    Web Applications
+                  </h3>
+                  <p class="text-gray-400 leading-relaxed mb-6 flex-grow">
+                    High-performance, edge-optimized web experiences built with
+                    Next.js, React, and TypeScript. From landing pages to
+                    enterprise dashboards.
+                  </p>
+
+                  <!-- Tech Stack Pills -->
+                  <div class="flex flex-wrap gap-2 mt-auto">
+                    <span class="bento-pill">Next.js</span>
+                    <span class="bento-pill">React</span>
+                    <span class="bento-pill">TypeScript</span>
+                    <span class="bento-pill">Edge</span>
+                  </div>
+                </div>
+
+                <!-- Decorative Pattern -->
+                <div class="bento-pattern"></div>
+              </div>
+            </div>
+
+            <!-- MEDIUM CARD: Mobile Apps -->
+            <div
+              class="bento-card bento-medium group"
+              data-tilt
+              data-tilt-max="8"
+              data-tilt-speed="400"
+            >
+              <div class="bento-card-inner">
+                <div class="bento-glow bento-glow-cyan"></div>
+
+                <div class="relative z-10 h-full flex flex-col">
+                  <div class="bento-icon bento-icon-cyan mb-6">
+                    <i data-lucide="smartphone" class="w-7 h-7"></i>
+                    <div class="bento-icon-ring"></div>
+                  </div>
+
+                  <h3
+                    class="text-2xl font-display font-bold mb-3 group-hover:text-cyan-400 transition-colors"
+                  >
+                    Mobile Apps
+                  </h3>
+                  <p class="text-gray-500 leading-relaxed text-sm flex-grow">
+                    Native & cross-platform mobile solutions with uncompromising
+                    performance.
+                  </p>
+
+                  <div class="flex gap-2 mt-4">
+                    <span class="bento-pill-sm">iOS</span>
+                    <span class="bento-pill-sm">Android</span>
+                    <span class="bento-pill-sm">Flutter</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- FEATURED CARD: AI & Automation (tall card) -->
+            <div
+              class="bento-card bento-tall group"
+              data-tilt
+              data-tilt-max="6"
+              data-tilt-speed="400"
+            >
+              <div class="bento-card-inner bento-featured">
+                <div class="bento-glow bento-glow-purple"></div>
+
+                <!-- Featured Badge -->
+                <div class="absolute top-6 right-6 z-20">
+                  <div
+                    class="px-3 py-1.5 bg-purple-500/20 border border-purple-500/30 rounded-full flex items-center gap-2"
+                  >
+                    <i
+                      data-lucide="sparkles"
+                      class="w-3 h-3 text-purple-400"
+                    ></i>
+                    <span
+                      class="text-[10px] text-purple-300 font-bold uppercase tracking-wider"
+                      >Featured</span
+                    >
+                  </div>
+                </div>
+
+                <div class="relative z-10 h-full flex flex-col">
+                  <div class="bento-icon bento-icon-purple mb-8">
+                    <i data-lucide="brain-circuit" class="w-8 h-8"></i>
+                    <div class="bento-icon-ring bento-icon-ring-animated"></div>
+                  </div>
+
+                  <h3
+                    class="text-2xl font-display font-bold mb-4 group-hover:text-purple-400 transition-colors"
+                  >
+                    AI & Automation
+                  </h3>
+                  <p class="text-gray-400 leading-relaxed text-sm mb-6">
+                    Custom LLM integrations, predictive models, and intelligent
+                    workflow automation that transforms operational friction.
+                  </p>
+
+                  <!-- Feature List -->
+                  <ul class="space-y-3 mt-auto">
+                    <li class="flex items-center gap-3 text-sm text-gray-400">
+                      <div
+                        class="w-5 h-5 rounded-full bg-purple-500/20 flex items-center justify-center"
+                      >
+                        <i
+                          data-lucide="check"
+                          class="w-3 h-3 text-purple-400"
+                        ></i>
+                      </div>
+                      <span>Custom AI Agents</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-gray-400">
+                      <div
+                        class="w-5 h-5 rounded-full bg-purple-500/20 flex items-center justify-center"
+                      >
+                        <i
+                          data-lucide="check"
+                          class="w-3 h-3 text-purple-400"
+                        ></i>
+                      </div>
+                      <span>LLM Integrations</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-gray-400">
+                      <div
+                        class="w-5 h-5 rounded-full bg-purple-500/20 flex items-center justify-center"
+                      >
+                        <i
+                          data-lucide="check"
+                          class="w-3 h-3 text-purple-400"
+                        ></i>
+                      </div>
+                      <span>Workflow Automation</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Animated Neural Pattern -->
+                <div class="bento-neural-pattern"></div>
+              </div>
+            </div>
+
+            <!-- SMALL CARD: SaaS Platforms -->
+            <div
+              class="bento-card bento-small group"
+              data-tilt
+              data-tilt-max="10"
+              data-tilt-speed="400"
+            >
+              <div class="bento-card-inner">
+                <div class="bento-glow bento-glow-emerald"></div>
+
+                <div class="relative z-10 h-full flex flex-col">
+                  <div class="bento-icon bento-icon-emerald mb-4">
+                    <i data-lucide="layers" class="w-6 h-6"></i>
+                  </div>
+
+                  <h3
+                    class="text-xl font-display font-bold mb-2 group-hover:text-emerald-400 transition-colors"
+                  >
+                    SaaS Platforms
+                  </h3>
+                  <p class="text-gray-500 leading-relaxed text-xs">
+                    Multi-tenant architectures for massive scale.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- SMALL CARD: Cloud Systems -->
+            <div
+              class="bento-card bento-small group"
+              data-tilt
+              data-tilt-max="10"
+              data-tilt-speed="400"
+            >
+              <div class="bento-card-inner">
+                <div class="bento-glow bento-glow-amber"></div>
+
+                <div class="relative z-10 h-full flex flex-col">
+                  <div class="bento-icon bento-icon-amber mb-4">
+                    <i data-lucide="cloud" class="w-6 h-6"></i>
+                  </div>
+
+                  <h3
+                    class="text-xl font-display font-bold mb-2 group-hover:text-amber-400 transition-colors"
+                  >
+                    Cloud Systems
+                  </h3>
+                  <p class="text-gray-500 leading-relaxed text-xs">
+                    Serverless & DevOps excellence.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- WIDE CARD: API & Integrations -->
+            <div
+              class="bento-card bento-wide group"
+              data-tilt
+              data-tilt-max="5"
+              data-tilt-speed="400"
+            >
+              <div class="bento-card-inner">
+                <div class="bento-glow bento-glow-rose"></div>
+
+                <div class="relative z-10 h-full flex items-center gap-8">
+                  <div class="bento-icon bento-icon-rose">
+                    <i data-lucide="link" class="w-7 h-7"></i>
+                    <div class="bento-icon-ring"></div>
+                  </div>
+
+                  <div class="flex-grow">
+                    <h3
+                      class="text-2xl font-display font-bold mb-2 group-hover:text-rose-400 transition-colors"
+                    >
+                      API & Integrations
+                    </h3>
+                    <p class="text-gray-500 leading-relaxed text-sm">
+                      Secure, scalable API architectures and seamless
+                      third-party system integrations.
+                    </p>
+                  </div>
+
+                  <div class="hidden lg:flex items-center gap-4">
+                    <div class="bento-integration-icon">
+                      <i
+                        data-lucide="webhook"
+                        class="w-5 h-5 text-gray-400"
+                      ></i>
+                    </div>
+                    <div class="bento-integration-icon">
+                      <i
+                        data-lucide="database"
+                        class="w-5 h-5 text-gray-400"
+                      ></i>
+                    </div>
+                    <div class="bento-integration-icon">
+                      <i
+                        data-lucide="git-branch"
+                        class="w-5 h-5 text-gray-400"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI AGENTS & AUTOMATION SECTION (STANDOUT) -->
+      <section
+        id="ai-automation"
+        class="py-32 bg-ai-standout relative overflow-hidden"
+      >
+        <!-- Background Atmosphere -->
+        <div
+          class="absolute inset-0 noise-overlay opacity-5 pointer-events-none"
+        ></div>
+        <div
+          class="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-500/10 rounded-full blur-[150px] pointer-events-none"
+        ></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+          <div class="grid lg:grid-cols-2 gap-20 items-center">
+            <!-- Content Column -->
+            <div class="gsap-fade-up">
+              <div
+                class="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-8"
+              >
+                <span
+                  class="w-2 h-2 bg-primary rounded-full animate-ping"
+                ></span>
+                <span
+                  class="text-xs font-bold uppercase tracking-widest text-primary"
+                  >Core Specialty</span
+                >
+              </div>
+
+              <h2
+                class="font-display font-bold text-5xl md:text-7xl mb-8 leading-tight standout-text-gradient"
+              >
+                AI AGENTS & <br />AUTOMATION.
+              </h2>
+
+              <p class="text-xl text-gray-400 mb-12 leading-relaxed">
+                Beyond traditional code. We deploy autonomous intelligence that
+                transforms operational friction into competitive advantage.
+              </p>
+
+              <div class="grid sm:grid-cols-2 gap-6">
+                <!-- Highlight 1 -->
+                <div
+                  class="ai-node p-6 rounded-2xl group hover:border-primary/40 transition-all"
+                >
+                  <div
+                    class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform"
+                  >
+                    <i data-lucide="bot" class="w-6 h-6"></i>
+                  </div>
+                  <h4 class="font-bold text-white mb-2">AI Agents</h4>
+                  <p class="text-sm text-gray-500">
+                    Autonomous systems that think, decide, and execute complex
+                    business logic.
+                  </p>
+                </div>
+
+                <!-- Highlight 2 -->
+                <div
+                  class="ai-node p-6 rounded-2xl group hover:border-primary/40 transition-all"
+                >
+                  <div
+                    class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center text-purple-400 mb-4 group-hover:scale-110 transition-transform"
+                  >
+                    <i data-lucide="zap" class="w-6 h-6"></i>
+                  </div>
+                  <h4 class="font-bold text-white mb-2">Workflow Automation</h4>
+                  <p class="text-sm text-gray-500">
+                    Hyper-efficient pipelines that eliminate repetitive manual
+                    bottlenecking.
+                  </p>
+                </div>
+
+                <!-- Highlight 3 -->
+                <div
+                  class="ai-node p-6 rounded-2xl group hover:border-primary/40 transition-all"
+                >
+                  <div
+                    class="w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center text-indigo-400 mb-4 group-hover:scale-110 transition-transform"
+                  >
+                    <i data-lucide="terminal" class="w-6 h-6"></i>
+                  </div>
+                  <h4 class="font-bold text-white mb-2">Internal Tools</h4>
+                  <p class="text-sm text-gray-500">
+                    Custom software hubs that empower your team through
+                    AI-assisted decision making.
+                  </p>
+                </div>
+
+                <!-- Highlight 4 -->
+                <div
+                  class="ai-node p-6 rounded-2xl group hover:border-primary/40 transition-all"
+                >
+                  <div
+                    class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center text-blue-400 mb-4 group-hover:scale-110 transition-transform"
+                  >
+                    <i data-lucide="activity" class="w-6 h-6"></i>
+                  </div>
+                  <h4 class="font-bold text-white mb-2">Process Automation</h4>
+                  <p class="text-sm text-gray-500">
+                    End-to-end restructuring of business operations via
+                    intelligent engineering.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Visual Column: Neural Flow Diagram -->
+            <div class="relative gsap-fade-up flex justify-center py-12">
+              <div
+                class="relative w-full max-w-md aspect-square rounded-[3rem] border border-white/5 bg-white/5 backdrop-blur-3xl p-12 overflow-hidden"
+              >
+                <!-- SVG Neural Path -->
+                <svg
+                  class="absolute inset-0 w-full h-full opacity-30"
+                  viewBox="0 0 400 400"
+                >
+                  <path
+                    class="neural-line text-primary"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    fill="none"
+                    d="M100 200 Q 200 50 300 200 T 100 250"
+                  />
+                  <path
+                    class="neural-line text-purple-500"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    fill="none"
+                    d="M50 100 Q 250 150 350 300"
+                  />
+                  <path
+                    class="neural-line text-indigo-500"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    fill="none"
+                    d="M300 100 Q 150 250 50 350"
+                  />
+                </svg>
+
+                <!-- Floating Nodes -->
+                <div
+                  class="absolute top-1/4 left-1/4 w-16 h-16 ai-node rounded-2xl flex items-center justify-center text-primary shadow-2xl shadow-primary/20"
+                >
+                  <i data-lucide="cpu" class="w-8 h-8"></i>
+                </div>
+                <div
+                  class="absolute bottom-1/4 right-1/4 w-20 h-20 ai-node rounded-3xl flex items-center justify-center text-purple-400 shadow-2xl shadow-purple-500/20"
+                  style="animation-delay: -2s"
+                >
+                  <i data-lucide="brain" class="w-10 h-10"></i>
+                </div>
+                <div
+                  class="absolute top-1/2 right-12 w-12 h-12 ai-node rounded-xl flex items-center justify-center text-indigo-300 shadow-xl shadow-indigo-500/10"
+                  style="animation-delay: -4s"
+                >
+                  <i data-lucide="network" class="w-6 h-6"></i>
+                </div>
+
+                <!-- Center Core -->
+                <div
+                  class="absolute inset-0 flex items-center justify-center pointer-events-none"
+                >
+                  <div
+                    class="w-24 h-24 bg-primary/20 rounded-full blur-2xl animate-pulse"
+                  ></div>
+                  <div
+                    class="w-32 h-32 border border-primary/20 rounded-full animate-spin-slow"
+                  ></div>
+                </div>
+              </div>
+
+              <!-- Floating Badge -->
+              <div
+                class="absolute -bottom-4 -right-4 glass-card p-6 rounded-2xl border-primary/20 animate-bounce-subtle z-20"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary"
+                  >
+                    <i data-lucide="sparkles" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <div class="text-xs text-gray-500 uppercase font-bold">
+                      Zen Intelligence
+                    </div>
+                    <div class="text-sm font-bold">Agentic Deployment</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- THE ZEN METHOD SECTION -->
+      <section id="method" class="py-32 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+          <div class="text-center mb-20 gsap-fade-up">
+            <div
+              class="inline-block text-primary font-bold text-sm tracking-[0.3em] uppercase mb-6"
             >
               Our Process
-            </h2>
-            <p class="text-gray-400 max-w-2xl mx-auto gsap-fade-up">
-              Our agile methodology ensures transparency, adaptability, and
-              continuous collaboration.
-            </p>
-          </div>
-
-          <div class="grid md:grid-cols-4 gap-8">
-            <div class="glass-card p-8 rounded-2xl text-center gsap-fade-up">
-              <div
-                class="w-14 h-14 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-6"
-              >
-                <span class="font-display font-bold text-xl text-primary"
-                  >01</span
-                >
-              </div>
-              <h3 class="font-display font-bold text-xl mb-3">Discovery</h3>
-              <p class="text-gray-500 text-sm">
-                Understanding your goals, users, and technical requirements.
-              </p>
             </div>
-
-            <div class="glass-card p-8 rounded-2xl text-center gsap-fade-up">
-              <div
-                class="w-14 h-14 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-6"
-              >
-                <span class="font-display font-bold text-xl text-primary"
-                  >02</span
-                >
-              </div>
-              <h3 class="font-display font-bold text-xl mb-3">Design</h3>
-              <p class="text-gray-500 text-sm">
-                Creating wireframes, prototypes, and high-fidelity mockups.
-              </p>
-            </div>
-
-            <div class="glass-card p-8 rounded-2xl text-center gsap-fade-up">
-              <div
-                class="w-14 h-14 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-6"
-              >
-                <span class="font-display font-bold text-xl text-primary"
-                  >03</span
-                >
-              </div>
-              <h3 class="font-display font-bold text-xl mb-3">Develop</h3>
-              <p class="text-gray-500 text-sm">
-                Agile sprints with clean code, testing, and CI/CD.
-              </p>
-            </div>
-
-            <div class="glass-card p-8 rounded-2xl text-center gsap-fade-up">
-              <div
-                class="w-14 h-14 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-6"
-              >
-                <span class="font-display font-bold text-xl text-primary"
-                  >04</span
-                >
-              </div>
-              <h3 class="font-display font-bold text-xl mb-3">Launch</h3>
-              <p class="text-gray-500 text-sm">
-                Deployment, monitoring, and ongoing support.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- TESTIMONIALS SECTION -->
-      <section class="py-32">
-        <div class="max-w-7xl mx-auto px-6">
-          <div class="text-center mb-20">
             <h2
-              class="font-display font-bold text-4xl md:text-5xl mb-6 gsap-fade-up"
+              class="font-display font-bold text-5xl md:text-6xl mb-8 leading-tight"
             >
-              What Our Clients Say
+              THE ZEN METHOD.
             </h2>
-            <p class="text-gray-400 max-w-2xl mx-auto gsap-fade-up">
-              Don't take our word for it. Hear directly from the teams we've
-              partnered with.
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+              A high-precision engineering framework designed to move ideas from
+              concept to global scale with zero friction.
             </p>
           </div>
 
-          <div class="grid md:grid-cols-3 gap-8">
-            <div class="glass-card p-8 rounded-2xl gsap-fade-up">
-              <div class="flex items-center gap-1 mb-4">
-                <i
-                  data-lucide="star"
-                  class="w-5 h-5 fill-yellow-400 text-yellow-400"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-5 h-5 fill-yellow-400 text-yellow-400"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-5 h-5 fill-yellow-400 text-yellow-400"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-5 h-5 fill-yellow-400 text-yellow-400"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-5 h-5 fill-yellow-400 text-yellow-400"
-                ></i>
-              </div>
-              <p class="text-gray-300 mb-6 italic leading-relaxed">
-                "Zenbyte transformed our entire product roadmap. Their technical
-                expertise combined with user-centric design resulted in a 40%
-                increase in user engagement."
+          <div class="grid lg:grid-cols-4 gap-8 method-timeline gsap-stagger">
+            <!-- Step 1: Discovery -->
+            <div class="method-step relative">
+              <div class="step-number rounded-2xl mb-8 mx-auto lg:mx-0">01</div>
+              <h3 class="text-2xl font-display font-bold mb-4">Discovery</h3>
+              <p class="text-gray-500 leading-relaxed text-sm">
+                We dive deep into your business logic, identifying bottlenecks
+                and defining absolute technical requirements.
               </p>
-              <div class="flex items-center gap-3">
-                <div
-                  class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center"
-                >
-                  <i data-lucide="user-circle" class="w-8 h-8 text-primary"></i>
-                </div>
-                <div>
-                  <p class="font-semibold">Sarah Chen</p>
-                  <p class="text-xs text-gray-500">CEO, TechVenture Co.</p>
-                </div>
-              </div>
             </div>
 
-            <div class="glass-card p-8 rounded-2xl gsap-fade-up">
-              <div class="flex items-center gap-1 mb-4">
-                <i
-                  data-lucide="star"
-                  class="w-5 h-5 fill-yellow-400 text-yellow-400"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-5 h-5 fill-yellow-400 text-yellow-400"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-5 h-5 fill-yellow-400 text-yellow-400"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-5 h-5 fill-yellow-400 text-yellow-400"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-5 h-5 fill-yellow-400 text-yellow-400"
-                ></i>
-              </div>
-              <p class="text-gray-300 mb-6 italic leading-relaxed">
-                "Outstanding team. They understood our vision immediately and
-                delivered a scalable platform that grew from 1K to 100K users in
-                6 months."
+            <!-- Step 2: Design -->
+            <div class="method-step relative">
+              <div class="step-number rounded-2xl mb-8 mx-auto lg:mx-0">02</div>
+              <h3 class="text-2xl font-display font-bold mb-4">Design</h3>
+              <p class="text-gray-500 leading-relaxed text-sm">
+                Architecting blueprints for performance, security, and
+                scalability. We design the future infrastructure of your
+                product.
               </p>
-              <div class="flex items-center gap-3">
-                <div
-                  class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center"
-                >
-                  <i data-lucide="user-circle" class="w-8 h-8 text-primary"></i>
-                </div>
-                <div>
-                  <p class="font-semibold">Marcus Johnson</p>
-                  <p class="text-xs text-gray-500">Founder, DataFlow Inc.</p>
-                </div>
-              </div>
             </div>
 
-            <div class="glass-card p-8 rounded-2xl gsap-fade-up">
-              <div class="flex items-center gap-1 mb-4">
-                <i
-                  data-lucide="star"
-                  class="w-5 h-5 fill-yellow-400 text-yellow-400"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-5 h-5 fill-yellow-400 text-yellow-400"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-5 h-5 fill-yellow-400 text-yellow-400"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-5 h-5 fill-yellow-400 text-yellow-400"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-5 h-5 fill-yellow-400 text-yellow-400"
-                ></i>
-              </div>
-              <p class="text-gray-300 mb-6 italic leading-relaxed">
-                "Their DevOps expertise cut our infrastructure costs by 35%
-                while improving reliability. True partners, not just vendors."
+            <!-- Step 3: Build -->
+            <div class="method-step relative">
+              <div class="step-number rounded-2xl mb-8 mx-auto lg:mx-0">03</div>
+              <h3 class="text-2xl font-display font-bold mb-4">Build</h3>
+              <p class="text-gray-500 leading-relaxed text-sm">
+                Rapid, agile engineering cycles with daily commits and
+                continuous integration to ensure high-velocity delivery.
               </p>
-              <div class="flex items-center gap-3">
-                <div
-                  class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center"
-                >
-                  <i data-lucide="user-circle" class="w-8 h-8 text-primary"></i>
-                </div>
-                <div>
-                  <p class="font-semibold">Emma Rodriguez</p>
-                  <p class="text-xs text-gray-500">CTO, CloudScale Systems</p>
-                </div>
-              </div>
+            </div>
+
+            <!-- Step 4: Scale -->
+            <div class="method-step relative">
+              <div class="step-number rounded-2xl mb-8 mx-auto lg:mx-0">04</div>
+              <h3 class="text-2xl font-display font-bold mb-4">Scale</h3>
+              <p class="text-gray-500 leading-relaxed text-sm">
+                Beyond the launch. We optimize, monitor, and scale your
+                infrastructure to meet the demands of a global user base.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- FAQ SECTION -->
-      <section class="py-32 bg-surface/50 border-t border-white/5">
-        <div class="max-w-4xl mx-auto px-6">
-          <div class="text-center mb-20">
-            <h2
-              class="font-display font-bold text-4xl md:text-5xl mb-6 gsap-fade-up"
-            >
-              Frequently Asked Questions
-            </h2>
-            <p class="text-gray-400 gsap-fade-up">
-              Everything you need to know about working with Zenbyte.
-            </p>
-          </div>
+      <!-- INDUSTRIES WE SERVE SECTION - CREATIVE PREMIUM -->
+      <section id="industries" class="py-32 relative overflow-hidden">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 industries-bg"></div>
+        <div
+          class="absolute top-1/4 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] pointer-events-none"
+        ></div>
+        <div
+          class="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[120px] pointer-events-none"
+        ></div>
 
-          <div class="space-y-4">
-            <div class="glass-card rounded-2xl overflow-hidden gsap-fade-up">
-              <button
-                class="faq-btn w-full px-8 py-6 flex items-center justify-between hover:bg-white/5 transition-colors"
-                onclick="toggleFaq(this)"
-              >
-                <span class="text-left font-display font-bold text-xl"
-                  >What is your typical project timeline?</span
-                >
-                <i
-                  data-lucide="chevron-down"
-                  class="w-6 h-6 flex-shrink-0 transition-transform"
-                ></i>
-              </button>
-              <div class="faq-content px-8 pb-6">
-                <p class="text-gray-400 leading-relaxed">
-                  Projects typically range from 8-16 weeks depending on scope.
-                  Small MVPs can be completed in 4-6 weeks, while enterprise
-                  solutions may take 5-9 months.
-                </p>
-              </div>
-            </div>
-
-            <div class="glass-card rounded-2xl overflow-hidden gsap-fade-up">
-              <button
-                class="faq-btn w-full px-8 py-6 flex items-center justify-between hover:bg-white/5 transition-colors"
-                onclick="toggleFaq(this)"
-              >
-                <span class="text-left font-display font-bold text-xl"
-                  >Do you offer ongoing support after launch?</span
-                >
-                <i
-                  data-lucide="chevron-down"
-                  class="w-6 h-6 flex-shrink-0 transition-transform"
-                ></i>
-              </button>
-              <div class="faq-content px-8 pb-6">
-                <p class="text-gray-400 leading-relaxed">
-                  Absolutely. We provide a 30-day support period included with
-                  all projects. Beyond that, we offer flexible maintenance
-                  packages.
-                </p>
-              </div>
-            </div>
-
-            <div class="glass-card rounded-2xl overflow-hidden gsap-fade-up">
-              <button
-                class="faq-btn w-full px-8 py-6 flex items-center justify-between hover:bg-white/5 transition-colors"
-                onclick="toggleFaq(this)"
-              >
-                <span class="text-left font-display font-bold text-xl"
-                  >What technologies do you work with?</span
-                >
-                <i
-                  data-lucide="chevron-down"
-                  class="w-6 h-6 flex-shrink-0 transition-transform"
-                ></i>
-              </button>
-              <div class="faq-content px-8 pb-6">
-                <p class="text-gray-400 leading-relaxed mb-3">
-                  We specialize in modern web & mobile technologies:
-                </p>
-                <ul class="text-gray-400 text-sm space-y-1">
-                  <li>
-                    <strong>Frontend:</strong> React, Next.js, Vue.js, Tailwind
-                    CSS
-                  </li>
-                  <li>
-                    <strong>Backend:</strong> Node.js, Python, TypeScript,
-                    PostgreSQL
-                  </li>
-                  <li>
-                    <strong>Cloud:</strong> AWS, Google Cloud, Azure, Docker,
-                    Kubernetes
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="glass-card rounded-2xl overflow-hidden gsap-fade-up">
-              <button
-                class="faq-btn w-full px-8 py-6 flex items-center justify-between hover:bg-white/5 transition-colors"
-                onclick="toggleFaq(this)"
-              >
-                <span class="text-left font-display font-bold text-xl"
-                  >How do you structure project pricing?</span
-                >
-                <i
-                  data-lucide="chevron-down"
-                  class="w-6 h-6 flex-shrink-0 transition-transform"
-                ></i>
-              </button>
-              <div class="faq-content px-8 pb-6">
-                <p class="text-gray-400 leading-relaxed">
-                  We offer flexible engagement models: fixed-price projects for
-                  well-defined scopes, time & materials for evolving
-                  requirements, and retainer arrangements.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CTA SECTION -->
-      <section id="contact" class="py-32 relative overflow-hidden">
-        <div class="absolute inset-0">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+          <!-- Header -->
           <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/15 rounded-full blur-[120px]"
-          ></div>
-        </div>
-        <div class="max-w-4xl mx-auto px-6 relative z-10">
-          <div
-            class="glass-card p-12 rounded-[2rem] text-center border-primary/30 relative overflow-hidden"
+            class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16 gsap-fade-up"
           >
-            <div
-              class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent"
-            ></div>
-            <h2
-              class="font-display font-bold text-4xl md:text-5xl mb-6 relative z-10"
-            >
-              Ready to scale?
-            </h2>
-            <p class="text-gray-400 mb-10 text-lg relative z-10">
-              We are currently accepting new projects for Q1 2025.
+            <div>
+              <div
+                class="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full mb-6"
+              >
+                <i data-lucide="target" class="w-4 h-4 text-primary"></i>
+                <span class="text-sm font-medium text-gray-300"
+                  >Specialized Solutions</span
+                >
+              </div>
+              <h2
+                class="font-display font-bold text-5xl md:text-7xl leading-tight"
+              >
+                Industries we<br /><span class="text-gradient">serve.</span>
+              </h2>
+            </div>
+            <p class="text-lg text-gray-400 max-w-md lg:text-right">
+              We engineer precision solutions for sectors where performance and
+              security are non-negotiable.
             </p>
+          </div>
+
+          <!-- Stats Bar -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 gsap-fade-up">
+            <div class="industry-stat-card">
+              <div class="text-3xl md:text-4xl font-bold text-white mb-1">
+                50+
+              </div>
+              <div class="text-sm text-gray-500">Clients Served</div>
+            </div>
+            <div class="industry-stat-card">
+              <div class="text-3xl md:text-4xl font-bold text-white mb-1">
+                6
+              </div>
+              <div class="text-sm text-gray-500">Industries</div>
+            </div>
+            <div class="industry-stat-card">
+              <div class="text-3xl md:text-4xl font-bold text-white mb-1">
+                99%
+              </div>
+              <div class="text-sm text-gray-500">Delivery Rate</div>
+            </div>
+            <div class="industry-stat-card">
+              <div class="text-3xl md:text-4xl font-bold text-white mb-1">
+                24/7
+              </div>
+              <div class="text-sm text-gray-500">Support</div>
+            </div>
+          </div>
+
+          <!-- Creative Bento Grid -->
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 gsap-stagger">
+            <!-- Startups - Featured Large -->
             <div
-              class="flex flex-col sm:flex-row gap-4 justify-center relative z-10"
+              class="industry-creative-card group lg:col-span-2 lg:row-span-2"
             >
-              <a
-                href="contact.html"
-                class="px-8 py-4 bg-primary text-white font-bold rounded-full hover:bg-primary-dark transition-all shadow-lg shadow-primary/25"
+              <div class="industry-card-inner h-full flex flex-col">
+                <div class="industry-glow-border"></div>
+
+                <div class="relative z-10 flex flex-col h-full">
+                  <!-- Icon with animated ring -->
+                  <div class="industry-icon-wrapper mb-6">
+                    <div class="industry-icon-ring"></div>
+                    <div
+                      class="industry-icon bg-gradient-to-br from-primary to-violet-500"
+                    >
+                      <i data-lucide="rocket" class="w-8 h-8 text-white"></i>
+                    </div>
+                  </div>
+
+                  <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                    Startups
+                  </h3>
+                  <p
+                    class="text-gray-400 text-lg leading-relaxed mb-8 flex-grow"
+                  >
+                    Go from MVP to Series A with a codebase that's built for
+                    vertical scale, not just a launch. We've helped over 30
+                    startups raise their next round with rock-solid technology.
+                  </p>
+
+                  <!-- Tags -->
+                  <div class="flex flex-wrap gap-2">
+                    <span
+                      class="px-3 py-1.5 bg-primary/10 text-primary text-xs font-medium rounded-full"
+                      >MVP Development</span
+                    >
+                    <span
+                      class="px-3 py-1.5 bg-white/5 text-gray-400 text-xs font-medium rounded-full"
+                      >Rapid Scaling</span
+                    >
+                    <span
+                      class="px-3 py-1.5 bg-white/5 text-gray-400 text-xs font-medium rounded-full"
+                      >Series A Ready</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Enterprises -->
+            <div class="industry-creative-card group">
+              <div class="industry-card-inner">
+                <div class="industry-glow-border"></div>
+                <div class="relative z-10">
+                  <div
+                    class="industry-icon-sm bg-gradient-to-br from-blue-500 to-cyan-500 mb-5"
+                  >
+                    <i data-lucide="building-2" class="w-5 h-5 text-white"></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-white mb-3">Enterprises</h3>
+                  <p class="text-gray-500 text-sm leading-relaxed">
+                    Modernize legacy infrastructure with zero-downtime
+                    migrations and robust microservices.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- FinTech -->
+            <div class="industry-creative-card group">
+              <div class="industry-card-inner">
+                <div class="industry-glow-border"></div>
+                <div class="relative z-10">
+                  <div
+                    class="industry-icon-sm bg-gradient-to-br from-emerald-500 to-teal-500 mb-5"
+                  >
+                    <i data-lucide="landmark" class="w-5 h-5 text-white"></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-white mb-3">FinTech</h3>
+                  <p class="text-gray-500 text-sm leading-relaxed">
+                    High-security, low-latency architectures for massive
+                    transactional volume.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Healthcare -->
+            <div class="industry-creative-card group">
+              <div class="industry-card-inner">
+                <div class="industry-glow-border"></div>
+                <div class="relative z-10">
+                  <div
+                    class="industry-icon-sm bg-gradient-to-br from-rose-500 to-pink-500 mb-5"
+                  >
+                    <i data-lucide="heart-pulse" class="w-5 h-5 text-white"></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-white mb-3">Healthcare</h3>
+                  <p class="text-gray-500 text-sm leading-relaxed">
+                    HIPAA-compliant platforms prioritizing data privacy without
+                    sacrificing performance.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- EdTech -->
+            <div class="industry-creative-card group">
+              <div class="industry-card-inner">
+                <div class="industry-glow-border"></div>
+                <div class="relative z-10">
+                  <div
+                    class="industry-icon-sm bg-gradient-to-br from-amber-500 to-orange-500 mb-5"
+                  >
+                    <i
+                      data-lucide="graduation-cap"
+                      class="w-5 h-5 text-white"
+                    ></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-white mb-3">EdTech</h3>
+                  <p class="text-gray-500 text-sm leading-relaxed">
+                    Scalable learning environments for interactive engagement
+                    and global reach.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- SaaS -->
+            <div class="industry-creative-card group">
+              <div class="industry-card-inner">
+                <div class="industry-glow-border"></div>
+                <div class="relative z-10">
+                  <div
+                    class="industry-icon-sm bg-gradient-to-br from-purple-500 to-indigo-500 mb-5"
+                  >
+                    <i
+                      data-lucide="layout-template"
+                      class="w-5 h-5 text-white"
+                    ></i>
+                  </div>
+                  <h3 class="text-xl font-bold text-white mb-3">
+                    SaaS Founders
+                  </h3>
+                  <p class="text-gray-500 text-sm leading-relaxed">
+                    Multi-tenant systems with uncompromising performance and
+                    security.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PORTFOLIO / CASE STUDIES SECTION -->
+      <section id="portfolio" class="py-32 relative overflow-hidden">
+        <div
+          class="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full pointer-events-none"
+        ></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+          <div class="text-center mb-20 gsap-fade-up">
+            <div
+              class="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-6"
+            >
+              <span
+                class="w-2 h-2 bg-primary rounded-full animate-pulse"
+              ></span>
+              <span
+                class="text-xs font-bold uppercase tracking-widest text-primary"
+                >Our Work</span
               >
-                Start Conversation
-              </a>
-              <a
-                href="projects.html"
-                class="px-8 py-4 border border-gray-700 rounded-full hover:bg-white/5 transition-all"
+            </div>
+            <h2
+              class="font-display font-bold text-5xl md:text-6xl mb-8 leading-tight"
+            >
+              Featured <span class="text-gradient">Projects</span>
+            </h2>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+              A selection of high-impact solutions we've delivered for
+              innovative companies worldwide.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 gsap-stagger">
+            <!-- Project 1 -->
+            <div
+              class="group relative rounded-3xl overflow-hidden bg-surface border border-white/5 hover:border-primary/20 transition-all duration-500"
+            >
+              <div
+                class="aspect-[4/3] bg-gradient-to-br from-primary/20 to-purple-500/20 flex items-center justify-center"
               >
-                View Our Work
-              </a>
+                <div
+                  class="w-20 h-20 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-xl"
+                >
+                  <i data-lucide="layout" class="w-10 h-10 text-primary"></i>
+                </div>
+              </div>
+              <div class="p-8">
+                <div
+                  class="flex items-center gap-2 mb-4 text-xs uppercase tracking-widest text-gray-500"
+                >
+                  <span
+                    class="px-2 py-1 bg-primary/10 text-primary rounded-full"
+                    >SaaS Platform</span
+                  >
+                </div>
+                <h3
+                  class="text-xl font-display font-bold mb-3 group-hover:text-primary transition-colors"
+                >
+                  Enterprise Analytics Dashboard
+                </h3>
+                <p class="text-gray-500 text-sm leading-relaxed">
+                  Real-time data visualization platform handling 10M+ daily
+                  events for a Fortune 500 client.
+                </p>
+              </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div
+              class="group relative rounded-3xl overflow-hidden bg-surface border border-white/5 hover:border-primary/20 transition-all duration-500"
+            >
+              <div
+                class="aspect-[4/3] bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center"
+              >
+                <div
+                  class="w-20 h-20 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-xl"
+                >
+                  <i
+                    data-lucide="smartphone"
+                    class="w-10 h-10 text-cyan-400"
+                  ></i>
+                </div>
+              </div>
+              <div class="p-8">
+                <div
+                  class="flex items-center gap-2 mb-4 text-xs uppercase tracking-widest text-gray-500"
+                >
+                  <span
+                    class="px-2 py-1 bg-cyan-500/10 text-cyan-400 rounded-full"
+                    >Mobile App</span
+                  >
+                </div>
+                <h3
+                  class="text-xl font-display font-bold mb-3 group-hover:text-cyan-400 transition-colors"
+                >
+                  FinTech Payment Wallet
+                </h3>
+                <p class="text-gray-500 text-sm leading-relaxed">
+                  Cross-platform mobile solution with biometric auth and
+                  real-time transaction processing.
+                </p>
+              </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div
+              class="group relative rounded-3xl overflow-hidden bg-surface border border-white/5 hover:border-primary/20 transition-all duration-500"
+            >
+              <div
+                class="aspect-[4/3] bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center"
+              >
+                <div
+                  class="w-20 h-20 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-xl"
+                >
+                  <i
+                    data-lucide="brain-circuit"
+                    class="w-10 h-10 text-purple-400"
+                  ></i>
+                </div>
+              </div>
+              <div class="p-8">
+                <div
+                  class="flex items-center gap-2 mb-4 text-xs uppercase tracking-widest text-gray-500"
+                >
+                  <span
+                    class="px-2 py-1 bg-purple-500/10 text-purple-400 rounded-full"
+                    >AI & Automation</span
+                  >
+                </div>
+                <h3
+                  class="text-xl font-display font-bold mb-3 group-hover:text-purple-400 transition-colors"
+                >
+                  AI Customer Support Agent
+                </h3>
+                <p class="text-gray-500 text-sm leading-relaxed">
+                  Autonomous AI agent handling 80% of support tickets with
+                  human-level accuracy and 24/7 uptime.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-16 gsap-fade-up">
+            <a
+              href="#contact"
+              class="inline-flex items-center gap-2 px-8 py-4 bg-white/5 border border-white/10 rounded-full text-white font-medium hover:bg-white/10 hover:border-primary/30 transition-all group"
+            >
+              View All Projects
+              <i
+                data-lucide="arrow-right"
+                class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+              ></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS SECTION - CREATIVE PREMIUM DESIGN -->
+      <section id="testimonials" class="py-32 relative overflow-hidden">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 testimonial-bg-gradient"></div>
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px] pointer-events-none"
+        ></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+          <!-- Header -->
+          <div class="text-center mb-20 gsap-fade-up">
+            <div
+              class="inline-flex items-center gap-3 px-5 py-2.5 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full mb-8"
+            >
+              <div class="flex -space-x-2">
+                <img
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=32&h=32&fit=crop&crop=face"
+                  class="w-8 h-8 rounded-full border-2 border-background"
+                  alt=""
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&h=32&fit=crop&crop=face"
+                  class="w-8 h-8 rounded-full border-2 border-background"
+                  alt=""
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face"
+                  class="w-8 h-8 rounded-full border-2 border-background"
+                  alt=""
+                />
+              </div>
+              <span class="text-sm text-gray-400"
+                >Loved by
+                <span class="text-white font-semibold">50+</span> clients</span
+              >
+            </div>
+            <h2
+              class="font-display font-bold text-5xl md:text-7xl mb-6 leading-tight"
+            >
+              Client <span class="text-gradient">Love</span>
+            </h2>
+            <p class="text-xl text-gray-400 max-w-xl mx-auto">
+              Real stories from real partners who trusted us with their vision
+            </p>
+          </div>
+
+          <!-- Creative Card Layout -->
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 gsap-stagger">
+            <!-- Card 1 - Featured Large -->
+            <div class="testimonial-creative group lg:row-span-2">
+              <div class="testimonial-creative-inner h-full">
+                <!-- Animated Border -->
+                <div class="testimonial-border-glow"></div>
+
+                <div class="relative z-10 h-full flex flex-col">
+                  <!-- Quote Icon -->
+                  <div class="testimonial-quote-icon">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"
+                      />
+                    </svg>
+                  </div>
+
+                  <!-- Stars -->
+                  <div class="flex gap-1 mb-6">
+                    <i
+                      data-lucide="star"
+                      class="w-5 h-5 text-amber-400 fill-amber-400"
+                    ></i>
+                    <i
+                      data-lucide="star"
+                      class="w-5 h-5 text-amber-400 fill-amber-400"
+                    ></i>
+                    <i
+                      data-lucide="star"
+                      class="w-5 h-5 text-amber-400 fill-amber-400"
+                    ></i>
+                    <i
+                      data-lucide="star"
+                      class="w-5 h-5 text-amber-400 fill-amber-400"
+                    ></i>
+                    <i
+                      data-lucide="star"
+                      class="w-5 h-5 text-amber-400 fill-amber-400"
+                    ></i>
+                  </div>
+
+                  <!-- Testimonial -->
+                  <p
+                    class="text-xl md:text-2xl font-medium text-white leading-relaxed mb-8 flex-grow"
+                  >
+                    "ZenByte transformed our entire digital infrastructure. The
+                    team's attention to detail and deep technical expertise is
+                    unmatched. They didn't just build software—they built a
+                    foundation for our future growth."
+                  </p>
+
+                  <!-- Author -->
+                  <div class="flex items-center gap-4 mt-auto">
+                    <div class="relative">
+                      <img
+                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=80&h=80&fit=crop&crop=face"
+                        alt="Michael Chen"
+                        class="w-14 h-14 rounded-2xl object-cover"
+                      />
+                      <div
+                        class="absolute -bottom-1 -right-1 w-5 h-5 bg-emerald-500 rounded-full border-2 border-surface flex items-center justify-center"
+                      >
+                        <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="font-bold text-white">Michael Chen</div>
+                      <div class="text-sm text-gray-500">
+                        CTO, TechVentures Inc.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="testimonial-creative group">
+              <div class="testimonial-creative-inner">
+                <div class="testimonial-border-glow"></div>
+                <div class="relative z-10">
+                  <div class="flex gap-1 mb-4">
+                    <i
+                      data-lucide="star"
+                      class="w-4 h-4 text-amber-400 fill-amber-400"
+                    ></i>
+                    <i
+                      data-lucide="star"
+                      class="w-4 h-4 text-amber-400 fill-amber-400"
+                    ></i>
+                    <i
+                      data-lucide="star"
+                      class="w-4 h-4 text-amber-400 fill-amber-400"
+                    ></i>
+                    <i
+                      data-lucide="star"
+                      class="w-4 h-4 text-amber-400 fill-amber-400"
+                    ></i>
+                    <i
+                      data-lucide="star"
+                      class="w-4 h-4 text-amber-400 fill-amber-400"
+                    ></i>
+                  </div>
+                  <p class="text-gray-300 leading-relaxed mb-6">
+                    "Super fast, creative, and delivered beyond expectations.
+                    The website design was completed in just one week!"
+                  </p>
+                  <div class="flex items-center gap-3">
+                    <img
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=48&h=48&fit=crop&crop=face"
+                      alt="Sarah"
+                      class="w-10 h-10 rounded-xl object-cover"
+                    />
+                    <div>
+                      <div class="font-semibold text-white text-sm">
+                        Sarah Mitchell
+                      </div>
+                      <div class="text-xs text-primary">Kickflip</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="testimonial-creative group">
+              <div class="testimonial-creative-inner">
+                <div class="testimonial-border-glow"></div>
+                <div class="relative z-10">
+                  <div class="flex gap-1 mb-4">
+                    <i
+                      data-lucide="star"
+                      class="w-4 h-4 text-amber-400 fill-amber-400"
+                    ></i>
+                    <i
+                      data-lucide="star"
+                      class="w-4 h-4 text-amber-400 fill-amber-400"
+                    ></i>
+                    <i
+                      data-lucide="star"
+                      class="w-4 h-4 text-amber-400 fill-amber-400"
+                    ></i>
+                    <i
+                      data-lucide="star"
+                      class="w-4 h-4 text-amber-400 fill-amber-400"
+                    ></i>
+                    <i
+                      data-lucide="star"
+                      class="w-4 h-4 text-amber-400 fill-amber-400"
+                    ></i>
+                  </div>
+                  <p class="text-gray-300 leading-relaxed mb-6">
+                    "Professionalism and attention to detail in UI design that
+                    I've never seen before. Highly recommended!"
+                  </p>
+                  <div class="flex items-center gap-3">
+                    <img
+                      src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=48&h=48&fit=crop&crop=face"
+                      alt="Martha"
+                      class="w-10 h-10 rounded-xl object-cover"
+                    />
+                    <div>
+                      <div class="font-semibold text-white text-sm">
+                        Martha Johnson
+                      </div>
+                      <div class="text-xs text-primary">Unicell</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="testimonial-creative group">
+              <div class="testimonial-creative-inner">
+                <div class="testimonial-border-glow"></div>
+                <div class="relative z-10">
+                  <div class="flex gap-1 mb-4">
+                    <i
+                      data-lucide="star"
+                      class="w-4 h-4 text-amber-400 fill-amber-400"
+                    ></i>
+                    <i
+                      data-lucide="star"
+                      class="w-4 h-4 text-amber-400 fill-amber-400"
+                    ></i>
+                    <i
+                      data-lucide="star"
+                      class="w-4 h-4 text-amber-400 fill-amber-400"
+                    ></i>
+                    <i
+                      data-lucide="star"
+                      class="w-4 h-4 text-amber-400 fill-amber-400"
+                    ></i>
+                    <i
+                      data-lucide="star"
+                      class="w-4 h-4 text-amber-400 fill-amber-400"
+                    ></i>
+                  </div>
+                  <p class="text-gray-300 leading-relaxed mb-6">
+                    "Seamless experience from start to finish. Our app design
+                    exceeded all expectations!"
+                  </p>
+                  <div class="flex items-center gap-3">
+                    <img
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=48&h=48&fit=crop&crop=face"
+                      alt="Victor"
+                      class="w-10 h-10 rounded-xl object-cover"
+                    />
+                    <div>
+                      <div class="font-semibold text-white text-sm">
+                        Victor Ramirez
+                      </div>
+                      <div class="text-xs text-primary">Horizone</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="testimonial-creative group">
+              <div class="testimonial-creative-inner">
+                <div class="testimonial-border-glow"></div>
+                <div class="relative z-10">
+                  <div class="flex gap-1 mb-4">
+                    <i
+                      data-lucide="star"
+                      class="w-4 h-4 text-amber-400 fill-amber-400"
+                    ></i>
+                    <i
+                      data-lucide="star"
+                      class="w-4 h-4 text-amber-400 fill-amber-400"
+                    ></i>
+                    <i
+                      data-lucide="star"
+                      class="w-4 h-4 text-amber-400 fill-amber-400"
+                    ></i>
+                    <i
+                      data-lucide="star"
+                      class="w-4 h-4 text-amber-400 fill-amber-400"
+                    ></i>
+                    <i
+                      data-lucide="star"
+                      class="w-4 h-4 text-amber-400 fill-amber-400"
+                    ></i>
+                  </div>
+                  <p class="text-gray-300 leading-relaxed mb-6">
+                    "Their AI integration capabilities are next level. Automated
+                    70% of our manual processes."
+                  </p>
+                  <div class="flex items-center gap-3">
+                    <img
+                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=48&h=48&fit=crop&crop=face"
+                      alt="David"
+                      class="w-10 h-10 rounded-xl object-cover"
+                    />
+                    <div>
+                      <div class="font-semibold text-white text-sm">
+                        David Park
+                      </div>
+                      <div class="text-xs text-primary">AutoFlow AI</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="why-zenbyte"
+        class="py-32 bg-surface/20 border-y border-white/5 relative"
+      >
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+          <div class="grid lg:grid-cols-2 gap-20 items-center">
+            <div class="gsap-fade-up">
+              <div
+                class="inline-block text-primary font-bold text-sm tracking-[0.2em] uppercase mb-6"
+              >
+                Philosophy
+              </div>
+              <h2
+                class="font-display font-bold text-5xl md:text-6xl mb-8 leading-tight"
+              >
+                Engineering as a Philosophy.
+              </h2>
+              <p class="text-xl text-description mb-8 leading-relaxed">
+                We bring a state of "Calm Confidence" to every project. No
+                frantic fixes, just deliberate engineering, clean architecture,
+                and systems designed to thrive for decades.
+              </p>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div class="trust-pillar">
+                  <div
+                    class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0"
+                  >
+                    <i data-lucide="trending-up" class="w-5 h-5"></i>
+                  </div>
+                  <span class="font-medium">Built for scale</span>
+                </div>
+                <div class="trust-pillar">
+                  <div
+                    class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0"
+                  >
+                    <i data-lucide="layers" class="w-5 h-5"></i>
+                  </div>
+                  <span class="font-medium">Clean architecture</span>
+                </div>
+                <div class="trust-pillar">
+                  <div
+                    class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0"
+                  >
+                    <i data-lucide="brain-circuit" class="w-5 h-5"></i>
+                  </div>
+                  <span class="font-medium">AI-first mindset</span>
+                </div>
+                <div class="trust-pillar">
+                  <div
+                    class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary shrink-0"
+                  >
+                    <i data-lucide="award" class="w-5 h-5"></i>
+                  </div>
+                  <span class="font-medium">Engineering maturity</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="relative gsap-fade-up flex justify-center py-12">
+              <div class="relative w-full max-w-sm aspect-square">
+                <div
+                  class="absolute inset-0 bg-primary/5 rounded-[3rem] rotate-6 border border-white/5"
+                ></div>
+                <div
+                  class="absolute inset-0 bg-surface border border-white/10 rounded-[3rem] flex flex-col items-center justify-center p-12 text-center"
+                >
+                  <div
+                    class="w-20 h-20 bg-primary/10 rounded-3xl flex items-center justify-center text-primary mb-8 animate-float"
+                  >
+                    <i data-lucide="shield-check" class="w-10 h-10"></i>
+                  </div>
+                  <h4 class="text-2xl font-display font-bold mb-4">
+                    Quality Over Haste
+                  </h4>
+                  <p class="text-gray-500 text-sm">
+                    We don't ship "good enough". We ship systems that stand the
+                    test of time.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CALL TO ACTION SECTION -->
+      <section id="contact" class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+          <div
+            class="bg-cta-premium rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden"
+          >
+            <!-- Background Decoration -->
+            <div
+              class="absolute top-0 right-0 w-[600px] h-[600px] bg-white/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"
+            ></div>
+
+            <div class="relative z-10 max-w-3xl mx-auto gsap-fade-up">
+              <h2
+                class="font-display font-bold text-5xl md:text-7xl text-white mb-8 leading-tight"
+              >
+                Let’s build something that lasts.
+              </h2>
+              <p class="text-xl text-white/80 mb-12 leading-relaxed">
+                Whether you’re a founder ready to scale or an enterprise looking
+                to modernize, our team is ready to deliver engineering
+                excellence.
+              </p>
+              <div
+                class="flex flex-col sm:flex-row items-center justify-center gap-6"
+              >
+                <a
+                  href="#contact-form"
+                  class="px-10 py-5 bg-white text-indigo-600 rounded-full font-bold text-lg hover:shadow-2xl hover:shadow-white/20 transition-all hover:-translate-y-1"
+                >
+                  Start a Conversation
+                </a>
+                <a
+                  href="https://calendly.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-10 py-5 bg-indigo-500/20 border border-white/20 text-white rounded-full font-bold text-lg backdrop-blur-xl hover:bg-indigo-500/30 transition-all hover:-translate-y-1"
+                >
+                  Book a Call
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form Section -->
+          <div
+            id="contact-form"
+            class="grid lg:grid-cols-2 gap-16 items-start mt-20"
+          >
+            <!-- Left: Info -->
+            <div class="gsap-fade-up">
+              <div
+                class="inline-block text-primary font-bold text-sm tracking-[0.3em] uppercase mb-6"
+              >
+                Get In Touch
+              </div>
+              <h3
+                class="font-display font-bold text-4xl md:text-5xl mb-8 leading-tight"
+              >
+                Ready to start your <span class="text-gradient">project?</span>
+              </h3>
+              <p class="text-gray-400 text-lg leading-relaxed mb-10">
+                Fill out the form and our team will get back to you within 24
+                hours. We're excited to hear about your vision.
+              </p>
+
+              <div class="space-y-6">
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary"
+                  >
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <div class="text-sm text-gray-500">Email</div>
+                    <a
+                      href="mailto:hello@zenbyte.tech"
+                      class="text-white hover:text-primary transition-colors"
+                      >hello@zenbyte.tech</a
+                    >
+                  </div>
+                </div>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary"
+                  >
+                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <div class="text-sm text-gray-500">Location</div>
+                    <span class="text-white">Remote-First, Global Team</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary"
+                  >
+                    <i data-lucide="clock" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <div class="text-sm text-gray-500">Response Time</div>
+                    <span class="text-white">Within 24 hours</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Form -->
+            <div class="gsap-fade-up">
+              <form
+                id="contactFormElement"
+                class="glass-card p-8 md:p-10 rounded-3xl space-y-6"
+              >
+                <div class="grid sm:grid-cols-2 gap-6">
+                  <div>
+                    <label
+                      for="name"
+                      class="block text-sm font-medium text-gray-300 mb-2"
+                      >Full Name *</label
+                    >
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      class="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+                      placeholder="John Doe"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="email"
+                      class="block text-sm font-medium text-gray-300 mb-2"
+                      >Email Address *</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      class="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+                      placeholder="john@company.com"
+                    />
+                  </div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-6">
+                  <div>
+                    <label
+                      for="company"
+                      class="block text-sm font-medium text-gray-300 mb-2"
+                      >Company</label
+                    >
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      class="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+                      placeholder="Your Company"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="project-type"
+                      class="block text-sm font-medium text-gray-300 mb-2"
+                      >Project Type</label
+                    >
+                    <select
+                      id="project-type"
+                      name="project-type"
+                      class="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all appearance-none cursor-pointer"
+                    >
+                      <option value="" class="bg-surface">
+                        Select type...
+                      </option>
+                      <option value="web-app" class="bg-surface">
+                        Web Application
+                      </option>
+                      <option value="mobile-app" class="bg-surface">
+                        Mobile App
+                      </option>
+                      <option value="ai-automation" class="bg-surface">
+                        AI & Automation
+                      </option>
+                      <option value="saas" class="bg-surface">
+                        SaaS Platform
+                      </option>
+                      <option value="consulting" class="bg-surface">
+                        Consulting
+                      </option>
+                      <option value="other" class="bg-surface">Other</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label
+                    for="message"
+                    class="block text-sm font-medium text-gray-300 mb-2"
+                    >Project Details *</label
+                  >
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    rows="5"
+                    class="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none"
+                    placeholder="Tell us about your project, goals, and timeline..."
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  class="w-full py-5 bg-primary text-white font-bold text-lg rounded-xl hover:bg-primary-dark transition-all shadow-lg shadow-primary/25 flex items-center justify-center gap-3 group"
+                >
+                  Send Message
+                  <i
+                    data-lucide="send"
+                    class="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                  ></i>
+                </button>
+
+                <p class="text-center text-gray-500 text-sm">
+                  By submitting, you agree to our
+                  <a href="privacy.html" class="text-primary hover:underline"
+                    >Privacy Policy</a
+                  >.
+                </p>
+              </form>
             </div>
           </div>
         </div>
@@ -776,8 +2303,8 @@
     <footer class="bg-surface border-t border-white/5 pt-20 pb-10">
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid md:grid-cols-5 gap-12 mb-16">
-          <div class="col-span-1 md:col-span-2">
-            <a href="index.html" class="flex items-center gap-2 mb-6">
+          <div class="md:col-span-2">
+            <a href="#" class="flex items-center gap-2 mb-6">
               <div
                 class="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center text-primary"
               >
@@ -809,56 +2336,47 @@
               ></a>
             </div>
           </div>
-
           <div>
             <h4 class="font-bold mb-6">Services</h4>
             <ul class="space-y-3 text-sm">
               <li>
                 <a
-                  href="services.html"
+                  href="#services"
                   class="text-gray-400 hover:text-primary transition-colors"
                   >Web Development</a
                 >
               </li>
               <li>
                 <a
-                  href="services.html"
+                  href="#services"
                   class="text-gray-400 hover:text-primary transition-colors"
                   >Cloud Solutions</a
                 >
               </li>
               <li>
                 <a
-                  href="services.html"
+                  href="#services"
                   class="text-gray-400 hover:text-primary transition-colors"
                   >Data & AI</a
                 >
               </li>
               <li>
                 <a
-                  href="services.html"
+                  href="#services"
                   class="text-gray-400 hover:text-primary transition-colors"
                   >Consulting</a
                 >
               </li>
             </ul>
           </div>
-
           <div>
             <h4 class="font-bold mb-6">Company</h4>
             <ul class="space-y-3 text-sm">
               <li>
                 <a
-                  href="about.html"
+                  href="#about"
                   class="text-gray-400 hover:text-primary transition-colors"
                   >About</a
-                >
-              </li>
-              <li>
-                <a
-                  href="projects.html"
-                  class="text-gray-400 hover:text-primary transition-colors"
-                  >Our Work</a
                 >
               </li>
               <li>
@@ -877,7 +2395,6 @@
               </li>
             </ul>
           </div>
-
           <div>
             <h4 class="font-bold mb-6">Legal</h4>
             <ul class="space-y-3 text-sm">
@@ -897,7 +2414,7 @@
               </li>
               <li>
                 <a
-                  href="contact.html"
+                  href="#contact"
                   class="text-gray-400 hover:text-primary transition-colors"
                   >Contact</a
                 >
@@ -905,11 +2422,9 @@
             </ul>
           </div>
         </div>
-
         <div
           class="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8"
         ></div>
-
         <div
           class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500"
         >
@@ -921,7 +2436,7 @@
             <a href="terms.html" class="hover:text-primary transition-colors"
               >Terms of Service</a
             >
-            <a href="contact.html" class="hover:text-primary transition-colors"
+            <a href="#contact" class="hover:text-primary transition-colors"
               >Contact Us</a
             >
           </div>
@@ -929,6 +2444,79 @@
       </div>
     </footer>
 
+    <!-- Cookie Consent Banner -->
+    <div
+      id="cookieBanner"
+      class="cookie-banner fixed bottom-0 left-0 right-0 bg-surface/95 backdrop-blur-xl border-t border-white/10 p-6 z-[100] transform translate-y-full transition-transform duration-500"
+    >
+      <div
+        class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4"
+      >
+        <div class="flex items-center gap-4">
+          <div
+            class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary shrink-0"
+          >
+            <i data-lucide="cookie" class="w-5 h-5"></i>
+          </div>
+          <p class="text-sm text-gray-400">
+            We use cookies to enhance your experience. By continuing to visit
+            this site, you agree to our use of cookies.
+            <a href="privacy.html" class="text-primary hover:underline"
+              >Learn more</a
+            >
+          </p>
+        </div>
+        <div class="flex gap-3 shrink-0">
+          <button
+            onclick="declineCookies()"
+            class="px-5 py-2.5 text-sm font-medium text-gray-400 hover:text-white border border-white/10 rounded-full hover:border-white/20 transition-all"
+          >
+            Decline
+          </button>
+          <button
+            onclick="acceptCookies()"
+            class="px-5 py-2.5 text-sm font-medium bg-primary text-white rounded-full hover:bg-primary-dark transition-all shadow-lg shadow-primary/25"
+          >
+            Accept All
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skip to Main Content (Accessibility) -->
+    <a
+      href="#hero-section"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-lg focus:outline-none"
+    >
+      Skip to main content
+    </a>
+
     <script src="js/features.js"></script>
+    <script>
+      // Section Navigation Active State
+      const sectionDots = document.querySelectorAll(".section-dot");
+      const sections = document.querySelectorAll("section[id]");
+
+      function updateActiveSection() {
+        let currentSection = "hero-section";
+        const scrollPos = window.scrollY + window.innerHeight / 3;
+
+        sections.forEach((section) => {
+          if (section.offsetTop <= scrollPos) {
+            currentSection = section.id;
+          }
+        });
+
+        sectionDots.forEach((dot) => {
+          dot.classList.remove("active");
+          if (dot.dataset.section === currentSection) {
+            dot.classList.add("active");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", updateActiveSection);
+      updateActiveSection();
+    </script>
   </body>
 </html>

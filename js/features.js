@@ -13,15 +13,39 @@ function initPageLoader() {
     }
 }
 
+// ===== PERFORMANCE HELPERS =====
+function throttle(func, limit) {
+    let lastFunc;
+    let lastRan;
+    return function() {
+        const context = this;
+        const args = arguments;
+        if (!lastRan) {
+            func.apply(context, args);
+            lastRan = Date.now();
+        } else {
+            clearTimeout(lastFunc);
+            lastFunc = setTimeout(function() {
+                if ((Date.now() - lastRan) >= limit) {
+                    func.apply(context, args);
+                    lastRan = Date.now();
+                }
+            }, limit - (Date.now() - lastRan));
+        }
+    }
+}
+
 // ===== CUSTOM CURSOR =====
 function initCustomCursor() {
     const cursor = document.getElementById('customCursor');
     if (!cursor || window.innerWidth < 768) return;
 
-    document.addEventListener('mousemove', (e) => {
+    const moveCursor = throttle((e) => {
         cursor.style.left = e.clientX + 'px';
         cursor.style.top = e.clientY + 'px';
-    });
+    }, 10);
+
+    document.addEventListener('mousemove', moveCursor);
 
     // Add hover effect to interactive elements
     const hoverElements = document.querySelectorAll('a, button, input, textarea, .anim-card, .faq-btn');
@@ -89,12 +113,14 @@ function initScrollProgress() {
     const progressBar = document.getElementById('scrollProgress');
     if (!progressBar) return;
 
-    window.addEventListener('scroll', () => {
+    const handleScroll = throttle(() => {
         const scrollTop = window.scrollY;
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
         const progress = (scrollTop / docHeight) * 100;
         progressBar.style.width = progress + '%';
-    });
+    }, 20);
+
+    window.addEventListener('scroll', handleScroll);
 }
 
 // ===== BACK TO TOP BUTTON =====
@@ -102,13 +128,15 @@ function initBackToTop() {
     const backToTop = document.getElementById('backToTop');
     if (!backToTop) return;
 
-    window.addEventListener('scroll', () => {
+    const handleScroll = throttle(() => {
         if (window.scrollY > 500) {
             backToTop.classList.add('visible');
         } else {
             backToTop.classList.remove('visible');
         }
-    });
+    }, 100);
+
+    window.addEventListener('scroll', handleScroll);
 
     backToTop.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -213,12 +241,14 @@ function initParallax() {
     const heroSection = document.getElementById('hero-section');
     if (!heroSection) return;
 
-    window.addEventListener('scroll', () => {
+    const handleParallax = throttle(() => {
         const scrolled = window.scrollY;
         if (scrolled < 800) {
             heroSection.style.transform = `translateY(${scrolled * 0.3}px)`;
         }
-    });
+    }, 10);
+
+    window.addEventListener('scroll', handleParallax);
 }
 
 // ===== SKELETON LOADER FOR IMAGES =====
@@ -254,20 +284,40 @@ function initGsapAnimations() {
 
     // Fade Up Animation
     const fadeElements = document.querySelectorAll(".gsap-fade-up");
-    fadeElements.forEach((el, index) => {
+    fadeElements.forEach((el) => {
         gsap.fromTo(
             el,
-            { opacity: 0, y: 40 },
+            { opacity: 0, y: 30 },
             {
                 opacity: 1,
                 y: 0,
-                duration: 0.8,
-                delay: index * 0.08,
+                duration: 0.6,
                 ease: "power3.out",
                 scrollTrigger: {
                     trigger: el,
-                    start: "top 85%",
+                    start: "top 95%",
                     toggleActions: "play none none none",
+                },
+            }
+        );
+    });
+
+    // Staggered Entrance for Children
+    const staggerContainers = document.querySelectorAll(".gsap-stagger");
+    staggerContainers.forEach((container) => {
+        gsap.fromTo(
+            container.children,
+            { opacity: 0, y: 20, scale: 0.98 },
+            {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 0.5,
+                stagger: 0.08,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: container,
+                    start: "top 95%",
                 },
             }
         );
@@ -347,6 +397,126 @@ function toggleFaq(btn) {
 // Make toggleFaq global for inline onclick handlers
 window.toggleFaq = toggleFaq;
 
+// ===== MAGNETIC BUTTONS =====
+function initMagneticButtons() {
+    const buttons = document.querySelectorAll('.magnetic-btn');
+    buttons.forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            
+            gsap.to(btn, {
+                x: x * 0.3,
+                y: y * 0.3,
+                duration: 0.6,
+                ease: "power2.out"
+            });
+        });
+
+        btn.addEventListener('mouseleave', () => {
+            gsap.to(btn, {
+                x: 0,
+                y: 0,
+                duration: 0.6,
+                ease: "elastic.out(1, 0.3)"
+            });
+        });
+    });
+}
+
+// ===== TILT EFFECT =====
+function initTiltEffect() {
+    const tiltCards = document.querySelectorAll('.tilt-card');
+    tiltCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / 15;
+            const rotateY = (centerX - x) / 15;
+            
+            gsap.to(card, {
+                rotateX: rotateX,
+                rotateY: rotateY,
+                duration: 0.5,
+                ease: "power2.out"
+            });
+        });
+
+        card.addEventListener('mouseleave', () => {
+            gsap.to(card, {
+                rotateX: 0,
+                rotateY: 0,
+                duration: 0.7,
+                ease: "power2.out"
+            });
+        });
+    });
+}
+
+// ===== GLASS CARD MOUSE TRACKING =====
+function initGlassCardTracking() {
+    const cards = document.querySelectorAll('.glass-card');
+    
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            card.style.setProperty('--mouse-x', `${x}%`);
+            card.style.setProperty('--mouse-y', `${y}%`);
+        });
+    });
+}
+
+// ===== DIGITAL CORE MOVEMENT =====
+function initDigitalCoreMovement() {
+    const core = document.querySelector('.hero-visual-right');
+    const sphere = document.querySelector('.core-sphere');
+    const rings = document.querySelectorAll('.orbit-ring');
+    const cards = document.querySelectorAll('.hero-visual-right .glass-card');
+
+    if (!core) return;
+
+    const handleCoreMove = throttle((e) => {
+        const x = (e.clientX - window.innerWidth / 2) / 20;
+        const y = (e.clientY - window.innerHeight / 2) / 20;
+
+        gsap.to(sphere, {
+            x: x * 0.5,
+            y: y * 0.5,
+            duration: 1,
+            ease: "power2.out"
+        });
+
+        rings.forEach((ring, i) => {
+            gsap.to(ring, {
+                x: x * (0.2 + i * 0.1),
+                y: y * (0.2 + i * 0.1),
+                rotationX: 70 + (y * 0.1),
+                duration: 1.5 + i * 0.2,
+                ease: "power2.out"
+            });
+        });
+
+        cards.forEach((card, i) => {
+            gsap.to(card, {
+                x: x * 0.8,
+                y: y * 1.2, // and y
+                duration: 1.2 + i * 0.1,
+                ease: "power2.out"
+            });
+        });
+    }, 20);
+
+    window.addEventListener('mousemove', handleCoreMove);
+}
+
 // ===== INITIALIZE ALL FEATURES =====
 function initAdvancedFeatures() {
     injectSharedUI();
@@ -362,6 +532,10 @@ function initAdvancedFeatures() {
     initSkeletonLoaders();
     initMobileMenu();
     initGsapAnimations();
+    initGlassCardTracking();
+    initMagneticButtons();
+    initTiltEffect();
+    initDigitalCoreMovement();
 }
 
 
